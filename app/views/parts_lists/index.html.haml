@@ -1,0 +1,23 @@
+.wrapper
+  .header
+    = link_to root_path, class: "header__logo" do
+      PC Partslist Site
+    .header__lists
+      = link_to "#", class: "header__lists__list" do
+        新規登録
+      = link_to "#", class: "header__lists__list" do
+        ログイン
+  .main
+    .side-bar
+      .parts-list
+        = link_to "#", class: "parts-list__category" do
+          CPU
+        = link_to "#", class: "parts-list__category" do
+          マザーボード
+        = link_to "#", class: "parts-list__category" do
+          HDD
+    .contents
+      .content
+
+  -# .footer
+  -#   このサイトについて
