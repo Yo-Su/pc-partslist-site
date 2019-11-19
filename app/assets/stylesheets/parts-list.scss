@@ -1,6 +1,8 @@
 .wrapper{
   box-sizing: border-box;
-  background-color: #000;
+  background-color: $wrapper-bgc;
+  height: 100vh;
+  width: 100vw;
   a{
     text-decoration: none;
   }
@@ -36,7 +38,7 @@
   .main{
     color: $main_color;
     background-color: $main-bgc;
-    height: calc(100vh - 60px);
+    height: calc(100% - 60px);
     display: flex;
 
     .side-bar{
