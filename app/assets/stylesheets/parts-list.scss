@@ -23,13 +23,13 @@
       padding: 0 20px;
     }
     &__lists{
-      color: $header-list-color;
       // background-color: $header-logo-bgc;
       display: flex;
       line-height: 60px;
       font-size: 20px;
-
+      
       &__list{
+        color: $header-list-color;
         padding: 0 30px;
       }
     }
@@ -47,7 +47,7 @@
       background-color: $side-bar-bgc;
       height: 100%;
       width: 25%;
-      padding: 20px;
+      padding: 5px;
 
       .parts-list{
         color: $parts-list_color;
@@ -57,13 +57,21 @@
 
         &__category{
           box-sizing: border-box;
-          background-color: #ccc;
           display: block;
-          color: #000;
+          color: $parts-list__category-color;
+          background-color: $parts-list__category-bgc;
+          display: block;
           font-size: 30px;
-          padding: 10px;
-          margin-bottom: 20px;
+          padding: 1px;
+          margin-bottom: 5px;
           text-align: center;
+          height: 60px;
+          line-height: 60px;
+
+          &:hover{
+            border: 3px solid #40b1ff;
+            background-color: #0e75ff;
+          }
         }
       }
     }
