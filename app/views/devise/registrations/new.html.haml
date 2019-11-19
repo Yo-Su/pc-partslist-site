@@ -1,26 +1,26 @@
 .wrapper
   .devise-area
     .devise-title
-      Sign up
+      新規登録
     .devise-form
       = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-        = render "devise/shared/error_messages", resource: resource
+        .devise-form__errors
+          = render "devise/shared/error_messages", resource: resource
         .field
-          = f.label :email
+          = f.label :email, value: "メールアドレス"
           %br/
-          = f.email_field :email, autofocus: true, autocomplete: "email"
+          = f.email_field :email, autofocus: true, autocomplete: "email", class: "devise-form__text"
         .field
-          = f.label :password
+          = f.label :password, value: "パスワード"
           - if @minimum_password_length
-            %em
-              (#{@minimum_password_length} characters minimum)
+            (#{@minimum_password_length} 文字以上)
           %br/
-          = f.password_field :password, autocomplete: "new-password"
+          = f.password_field :password, autocomplete: "new-password", class: "devise-form__text"
         .field
-          = f.label :password_confirmation
+          = f.label :password_confirmation, value: "パスワード(再確認)"
           %br/
-          = f.password_field :password_confirmation, autocomplete: "new-password"
+          = f.password_field :password_confirmation, autocomplete: "new-password", class: "devise-form__text"
         .actions
-          = f.submit "Sign up"
+          = f.submit "新規登録", class: "devise-btn"
     .devise-link
       = render "devise/shared/links"
