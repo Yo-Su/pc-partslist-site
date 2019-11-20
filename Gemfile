@@ -66,4 +66,5 @@ gem 'haml-rails'
 gem 'faker'
 gem 'kaminari'
 
-
+gem 'devise-i18n'
+gem 'devise-i18n-views'
