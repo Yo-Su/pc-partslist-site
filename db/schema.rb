@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_20_113744) do
+ActiveRecord::Schema.define(version: 2019_11_20_115320) do
 
   create_table "cpus", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
@@ -20,6 +20,19 @@ ActiveRecord::Schema.define(version: 2019_11_20_113744) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "pcpart_id"
+  end
+
+  create_table "hdds", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name"
+    t.string "brand"
+    t.string "series"
+    t.string "capacity"
+    t.string "speed"
+    t.string "interface1"
+    t.string "interface2"
+    t.string "cache"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "mbs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
