@@ -1,0 +1,134 @@
+.wrapper{
+  box-sizing: border-box;
+  background-color: $wrapper-bgc;
+  height: 100vh;
+  width: 100vw;
+  a{
+    text-decoration: none;
+  }
+
+  .header{
+    color: $header_color;
+    background-color: $header-bgc;
+    height: 60px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+    &__logo{
+      color: $header-logo-color;
+      // background-color: $header-logo-bgc;
+      line-height: 60px;
+      font-size: 40px;
+      padding: 0 20px;
+    }
+    &__lists{
+      // background-color: $header-logo-bgc;
+      display: flex;
+      line-height: 60px;
+      font-size: 20px;
+
+      &__list{
+        color: $header-list-color;
+        padding: 0 10px;
+        margin: 0 20px;
+        width: 100px;
+      }
+      .user_name{
+        width: 160px;
+        text-align: center;
+      }
+    }
+  }
+
+  .main{
+    color: $main_color;
+    background-color: $main-bgc;
+    height: calc(100% - 60px);
+    display: flex;
+
+    .side-bar{
+      box-sizing: border-box;
+      color: $side-bar_color;
+      background-color: $side-bar-bgc;
+      height: 100%;
+      width: 25%;
+      padding: 5px;
+
+      .parts-list{
+        color: $parts-list_color;
+        background-color: $parts-list-bgc;
+        width: 100%;
+        height: 100%;
+
+        &__category{
+          box-sizing: border-box;
+          display: block;
+          color: $parts-list__category-color;
+          background-color: $parts-list__category-bgc;
+          display: block;
+          font-size: 30px;
+          padding: 1px;
+          margin-bottom: 5px;
+          text-align: center;
+          height: 60px;
+          line-height: 60px;
+
+          &:hover{
+            border: 3px solid #40b1ff;
+            background-color: #0e75ff;
+          }
+        }
+      }
+    }
+
+    .contents{
+      box-sizing: border-box;
+      color: $contents_color;
+      background-color: $contents-bgc;
+      width: 100%;
+      height: 100%;
+      padding: 0 20px;
+
+      .contents-top{
+        display: flex;
+        justify-content: space-between;
+        height: 60px;
+        padding: 10px;
+        line-height: 60px;
+
+        &__name{
+          font-size: 32px;
+        }
+
+        &__list{
+          font-size: 24px;
+        }
+      }
+
+      .contents-main{
+        height: calc(100vh - 140px);
+        overflow: scroll;
+
+        .content{
+          box-sizing: border-box;
+          color: $content-color;
+          background-color: $content-bgc;
+          width: 100%;
+          height: 300px;
+          padding: 10px;
+          margin-bottom: 20px;
+        }
+
+      }
+    }
+  }
+
+  // .footer{
+  //   color: $footer_color;
+  //   background-color: $footer-bgc;
+  //   width: 100%;
+  //   height: 60px;
+  //   font-size: 30px;
+  // }
+}

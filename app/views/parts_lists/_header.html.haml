@@ -1,0 +1,13 @@
+= link_to root_path, class: "header__logo" do
+  PC Partslist Site
+.header__lists
+  - if user_signed_in?
+    = link_to "#", class: "header__lists__list user_name" do
+      ユーザーさん
+    = link_to destroy_user_session_path, method: :delete, class: "header__lists__list" do
+      ログアウト
+  - else
+    = link_to new_user_registration_path, class: "header__lists__list" do
+      新規登録
+    = link_to new_user_session_path, class: "header__lists__list" do
+      ログイン
