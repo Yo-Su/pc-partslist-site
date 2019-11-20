@@ -30,7 +30,13 @@
 
       &__list{
         color: $header-list-color;
-        padding: 0 30px;
+        padding: 0 10px;
+        margin: 0 20px;
+        width: 100px;
+      }
+      .user_name{
+        width: 160px;
+        text-align: center;
       }
     }
   }

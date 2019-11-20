@@ -1,12 +1,6 @@
 .wrapper
   .header
-    = link_to root_path, class: "header__logo" do
-      PC Partslist Site
-    .header__lists
-      = link_to new_user_registration_path, class: "header__lists__list" do
-        新規登録
-      = link_to new_user_session_path, class: "header__lists__list" do
-        ログイン
+    = render "header"
   .main
     .side-bar
       .parts-list
