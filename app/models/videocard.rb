@@ -1,0 +1,2 @@
+class Videocard < ApplicationRecord
+end
