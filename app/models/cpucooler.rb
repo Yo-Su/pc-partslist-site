@@ -1,0 +1,2 @@
+class Cpucooler < ApplicationRecord
+end

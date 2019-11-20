@@ -10,7 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_20_120527) do
+ActiveRecord::Schema.define(version: 2019_11_20_121047) do
+
+  create_table "cpucoolers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name"
+    t.string "brand"
+    t.string "intel"
+    t.string "amd"
+    t.string "type"
+    t.string "noise"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "cpus", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
@@ -69,6 +80,15 @@ ActiveRecord::Schema.define(version: 2019_11_20_120527) do
 
   create_table "pc_parts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "category"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "pccases", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name"
+    t.string "brand"
+    t.string "factor"
+    t.string "size"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

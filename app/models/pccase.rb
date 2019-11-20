@@ -1,0 +1,2 @@
+class Pccase < ApplicationRecord
+end
