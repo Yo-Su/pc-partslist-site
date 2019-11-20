@@ -1,0 +1,2 @@
+class Display < ApplicationRecord
+end
