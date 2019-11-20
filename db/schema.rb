@@ -10,12 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_20_034428) do
+ActiveRecord::Schema.define(version: 2019_11_20_035359) do
 
   create_table "cpus", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
     t.string "brand"
     t.string "processor"
+    t.string "socket"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "mbs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name"
+    t.string "brand"
+    t.string "chipset"
+    t.string "formfactor"
     t.string "socket"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

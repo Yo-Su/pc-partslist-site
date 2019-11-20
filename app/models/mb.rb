@@ -1,0 +1,2 @@
+class Mb < ApplicationRecord
+end
