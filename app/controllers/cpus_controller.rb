@@ -1,9 +1,10 @@
 class CpusController < ApplicationController
+
   def create
     @parts_lists = []
-    Cpu.all.destroy_all
     get_cpu
     save_cpu
+    redirect_to pcpart_path(1)
   end
 
   private
@@ -92,7 +93,8 @@ class CpusController < ApplicationController
 
     def save_cpu
       @parts_lists.each do |parts_list|
-        @cpu = Cpu.new(
+        cpu_list = Cpu.find_or_initialize_by(item_value: parts_list[4])
+        cpu_list.update_attributes(
           name: parts_list[1],
           brand: parts_list[0],
           processor: parts_list[2],
@@ -100,7 +102,6 @@ class CpusController < ApplicationController
           pcpart_id: 1,
           item_value: parts_list[4]
         )
-        @cpu.save
       end
     end
 
