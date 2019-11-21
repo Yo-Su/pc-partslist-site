@@ -8,4 +8,15 @@ class PcpartsController < ApplicationController
       @mb = @category.mbs
     end
   end
+
+  def create
+    
+  end
+
+  private
+    def get_cpu
+
+    end
+
+    def save_cpu
 end
