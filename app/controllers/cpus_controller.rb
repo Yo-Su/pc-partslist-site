@@ -22,6 +22,7 @@ class CpusController < ApplicationController
       list10 = [] #["マルチスレッド"]
       list11 = [] #["TDP"]
       list12 = [] #["画像"]
+      list13 = [] #["個別ID"]
       Anemone.crawl("https://kakaku.com/specsearch/0510/?st=2&_s=2&DispNonPrice=on&Sort=saledate_desc&DispSaleDate=on&", :depth_limit => 0) do |anemone|
         anemone.on_every_page do |page|
 
@@ -77,9 +78,14 @@ class CpusController < ApplicationController
           #   list12.push(title.to_s)
           # end
 
-          # リスト1~12を結合（各製品毎に配列をまとめる。多重配列になる）
-          # list0 = list1.zip(list2, list3, list4, list5, list6, list7, list8, list9, list10, list11, list12)
-          @parts_lists = list1.zip(list2, list3, list4)
+          # 個別IDを抜き出してlist13に入れる
+          page.doc.xpath("//input[contains(@value, 'K')]/@value").each do |title|
+            list13.push(title.to_s)
+          end
+
+          # リスト1~13を結合（各製品毎に配列をまとめる。多重配列になる）
+          # list0 = list1.zip(list2, list3, list4, list5, list6, list7, list8, list9, list10, list11, list12, list13)
+          @parts_lists = list1.zip(list2, list3, list4, list13)
         end
       end
     end
@@ -91,7 +97,8 @@ class CpusController < ApplicationController
           brand: parts_list[0],
           processor: parts_list[2],
           socket: parts_list[3],
-          pcpart_id: 1
+          pcpart_id: 1,
+          item_value: parts_list[4]
         )
         @cpu.save
       end
