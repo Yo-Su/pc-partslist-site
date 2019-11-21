@@ -1,2 +1,3 @@
 class PartsListsController < ApplicationController
+  
 end
