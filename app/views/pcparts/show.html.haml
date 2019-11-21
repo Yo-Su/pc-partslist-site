@@ -15,21 +15,22 @@
         .contents-top__name
           = "カテゴリー：#{@category.category}"
           = @category.id
+          = link_to "データベース登録", pcparts_path, method: :post
         .contents-top__list
           パーツリスト：リスト1番
       .contents-main
         - case @category.id
         - when 1
           = render partial: "pcparts/category/cpu", collection: @cpus
-        .content
-          - if @category.id == 1
-            = @cpus.find(1)
-          - else
-            = @mb.column_names[1]
-            = @mb.find(1).name
-        .content
-        .content
-        .content
+        -# .content
+        -#   - if @category.id == 1
+        -#     = @cpus.find(1)
+        -#   - else
+        -#     = @mb.column_names[1]
+        -#     = @mb.find(1).name
+        -# .content
+        -# .content
+        -# .content
 
   -# .footer
   -#   このサイトについて
