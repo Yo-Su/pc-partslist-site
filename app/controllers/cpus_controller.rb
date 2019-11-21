@@ -1,6 +1,7 @@
 class CpusController < ApplicationController
   def create
     @parts_lists = []
+    Cpu.all.destroy_all
     get_cpu
     save_cpu
   end
