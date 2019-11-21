@@ -4,11 +4,11 @@
   .main
     .side-bar
       .parts-list
-        = link_to "#", class: "parts-list__category" do
+        = link_to pcpart_path(1), class: "parts-list__category" do
           CPU
-        = link_to "#", class: "parts-list__category" do
+        = link_to pcpart_path(2), class: "parts-list__category" do
           マザーボード
-        = link_to "#", class: "parts-list__category" do
+        = link_to pcpart_path(3), class: "parts-list__category" do
           HDD
     .contents
       .contents-top
