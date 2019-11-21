@@ -1,0 +1,35 @@
+.wrapper
+  .header
+    = render "parts_lists/header"
+  .main
+    .side-bar
+      .parts-list
+        = link_to "#", class: "parts-list__category" do
+          CPU
+        = link_to "#", class: "parts-list__category" do
+          マザーボード
+        = link_to "#", class: "parts-list__category" do
+          HDD
+    .contents
+      .contents-top
+        .contents-top__name
+          = "カテゴリー：#{@category.category}"
+          = @category.id
+        .contents-top__list
+          パーツリスト：リスト1番
+      .contents-main
+        - case @category.id
+        - when 1
+          = render partial: "pcparts/category/cpu", collection: @cpus
+        .content
+          - if @category.id == 1
+            = @cpus.find(1)
+          - else
+            = @mb.column_names[1]
+            = @mb.find(1).name
+        .content
+        .content
+        .content
+
+  -# .footer
+  -#   このサイトについて

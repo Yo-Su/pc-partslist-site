@@ -8,6 +8,10 @@
           .devise-form__errors
             = render "devise/shared/error_messages", resource: resource
           .field.devise-form__box
+            = f.label :name, value: "名前"
+            %br/
+            = f.text_field :name, autofocus: true, autocomplete: "name", class: "devise-form__box__text"
+          .field.devise-form__box
             = f.label :email, value: "メールアドレス"
             %br/
             = f.email_field :email, autofocus: true, autocomplete: "email", class: "devise-form__box__text"

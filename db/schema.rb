@@ -10,7 +10,74 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_19_062738) do
+ActiveRecord::Schema.define(version: 2019_11_20_123148) do
+
+  create_table "cpucoolers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name"
+    t.string "brand"
+    t.string "intel"
+    t.string "amd"
+    t.string "type"
+    t.string "noise"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "cpus", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name"
+    t.string "brand"
+    t.string "processor"
+    t.string "socket"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "pcpart_id"
+  end
+
+  create_table "displays", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name"
+    t.string "brand"
+    t.string "size"
+    t.string "type"
+    t.string "area"
+    t.string "contrast"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "hdds", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name"
+    t.string "brand"
+    t.string "series"
+    t.string "capacity"
+    t.string "speed"
+    t.string "interface1"
+    t.string "interface2"
+    t.string "cache"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "mbs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name"
+    t.string "brand"
+    t.string "chipset"
+    t.string "formfactor"
+    t.string "socket"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "pcpart_id"
+  end
+
+  create_table "memories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name"
+    t.string "brand"
+    t.string "capacity"
+    t.string "setnumber"
+    t.string "standard"
+    t.string "interface"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "parts_lists", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -18,6 +85,48 @@ ActiveRecord::Schema.define(version: 2019_11_19_062738) do
     t.boolean "public_private", null: false
     t.integer "cpu_id"
     t.integer "mb_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "pc_parts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "category"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "pccases", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name"
+    t.string "brand"
+    t.string "factor"
+    t.string "size"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "pcparts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "category"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "powers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name"
+    t.string "brand"
+    t.string "standard"
+    t.string "capacity"
+    t.string "plus"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "ssds", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name"
+    t.string "brand"
+    t.string "capacity"
+    t.string "size"
+    t.string "interface"
+    t.string "type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -30,8 +139,21 @@ ActiveRecord::Schema.define(version: 2019_11_19_062738) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "name"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  end
+
+  create_table "videocards", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name"
+    t.string "brand"
+    t.string "chip"
+    t.string "core"
+    t.string "memory"
+    t.string "clock"
+    t.string "interface"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end

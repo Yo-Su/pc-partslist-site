@@ -1,0 +1,19 @@
+.content
+
+  %table.parts__table
+    %thead.parts__table__head
+      %tr.parts__table__head__tr
+        %th.th1 製品名
+        %th.th2 メーカー
+        %th.th3 プロセッサー
+        %th.th4 ソケット形状
+
+    %tbody.parts__table__body
+      %tr.parts__table__body__tr
+        %th= cpu.name
+        %th= cpu.brand
+        %th= cpu.processor
+        %th= cpu.socket
+  = image_tag "https://img1.kakaku.k-img.com/images/productimage/m/05100011435.jpg", size: "100x100", alt: "test"
+
+
