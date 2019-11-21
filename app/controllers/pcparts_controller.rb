@@ -10,7 +10,7 @@ class PcpartsController < ApplicationController
   end
 
   def create
-    parts_lists = []
+    @parts_lists = []
     get_cpu
     save_cpu
   end
@@ -33,6 +33,7 @@ class PcpartsController < ApplicationController
       list12 = [] #["画像"]
       Anemone.crawl("https://kakaku.com/specsearch/0510/?st=2&_s=2&DispNonPrice=on&Sort=saledate_desc&DispSaleDate=on&", :depth_limit => 0) do |anemone|
         anemone.on_every_page do |page|
+
           # メーカー名と製品名はテーブルの同じセルに記載されているため他と処理を分ける
           # メーカー名を抜き出してlist1に入れる
           page.doc.xpath("//td[contains(@class, 'textL')]").each do |title|
@@ -46,11 +47,11 @@ class PcpartsController < ApplicationController
           page.doc.xpath("//label[contains(@title, 'ソケット形状')]").each do |title|
             list3.push(title.text)
           end
+          # コア数を抜き出してlist4に入れる
+          page.doc.xpath("//label[contains(@title, 'コア数')]").each do |title|
+            list4.push(title.text)
+          end
 
-          # # コア数を抜き出してlist4に入れる
-          # page.doc.xpath("//label[contains(@title, 'コア数')]").each do |title|
-          #   list4.push(title.text)
-          # end
           # # スレッド数を抜き出してlist5に入れる
           # page.doc.xpath("//label[contains(@title, 'スレッド数')]").each do |title|
           #   list5.push(title.text)
@@ -87,13 +88,13 @@ class PcpartsController < ApplicationController
 
           # リスト1~12を結合（各製品毎に配列をまとめる。多重配列になる）
           # list0 = list1.zip(list2, list3, list4, list5, list6, list7, list8, list9, list10, list11, list12)
-          parts_lists = list1.zip(list2, list3, list4)
+          @parts_lists = list1.zip(list2, list3, list4)
         end
       end
     end
 
     def save_cpu
-      parts_lists.each do |parts_list|
+      @parts_lists.each do |parts_list|
         @cpu = Cpu.new(
           name: parts_list[1],
           brand: parts_list[0],
