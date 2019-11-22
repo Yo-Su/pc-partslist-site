@@ -26,7 +26,9 @@ class PartsListsController < ApplicationController
   end
 
   def destroy
-
+    @parts_list = PartsList.find(params[:id])
+    @parts_list.destroy
+    redirect_to user_parts_lists_path(current_user.id)
   end
 
   private

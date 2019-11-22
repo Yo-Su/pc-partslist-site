@@ -14,6 +14,7 @@
           .partslists__content__list-name
             = list.name
             = link_to "編集", edit_user_parts_list_path(current_user.id, list.id)
+            = link_to "リスト削除", user_parts_list_path(current_user.id, list.id), method: :delete
           %table.parts__table
             %thead.parts__table__head
               %tr.parts__table__head__tr
