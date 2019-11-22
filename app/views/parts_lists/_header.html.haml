@@ -2,8 +2,8 @@
   PC Partslist Site
 .header__lists
   - if user_signed_in?
-    = link_to "#", class: "header__lists__list user_name" do
-      ユーザーさん
+    = link_to user_parts_lists_path(current_user.id), class: "header__lists__list user_name" do
+      = "#{current_user.name} さん"
     = link_to destroy_user_session_path, method: :delete, class: "header__lists__list" do
       ログアウト
   - else
