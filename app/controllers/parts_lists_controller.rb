@@ -10,6 +10,22 @@ class PartsListsController < ApplicationController
     redirect_to user_parts_lists_path(current_user.id)
   end
 
+  def create
+
+  end
+
+  def edit
+
+  end
+
+  def update
+
+  end
+
+  def destroy
+    
+  end
+
   private
     def parts_list_params
       params.merge(name: "testlist", public_private: 1).merge(user_id: current_user.id)
