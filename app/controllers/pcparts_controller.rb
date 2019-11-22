@@ -1,4 +1,8 @@
 class PcpartsController < ApplicationController
+  def index
+
+  end
+  
   def show
     @category = Pcpart.find(params[:id])
     case @category.category
