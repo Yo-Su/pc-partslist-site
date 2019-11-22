@@ -16,11 +16,13 @@ class PartsListsController < ApplicationController
   end
 
   def edit
-
+    @parts_list = PartsList.find(params[:id])
   end
 
   def update
-
+    @parts_list = PartsList..find(params[:id])
+    @parts_list.save(parts_list_params)
+    redirect_to user_parts_lists_path(current_user.id)
   end
 
   def destroy
