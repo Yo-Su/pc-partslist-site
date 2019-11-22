@@ -3,6 +3,20 @@
     = render "header"
   .main
     .contents
-      .partslist-content
-        - @lists.each do |list|
-          = list.name
+      - @lists.each do |list|
+        .partslists__content
+          .partslists__content__list-name
+            = list.name
+          %table.parts__table
+            %thead.parts__table__head
+              %tr.parts__table__head__tr
+                %th.th1 CPU
+                %th.th2 マザーボード
+                %th.th3 メモリー
+                %th.th4 HDD
+
+            %tbody.parts__table__body
+              %tr.parts__table__body__tr
+                %th= Cpu.find(list.cpu_id).name
+                %th= Mb.find(list.mb_id).name
+                %th= Memory.find(list.memory_id).name
