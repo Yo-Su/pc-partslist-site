@@ -14,9 +14,29 @@
                 %th.th2 マザーボード
                 %th.th3 メモリー
                 %th.th4 HDD
+                %th.th5 SSD
 
             %tbody.parts__table__body
               %tr.parts__table__body__tr
-                %th= Cpu.find(list.cpu_id).name
-                %th= Mb.find(list.mb_id).name
-                %th= Memory.find(list.memory_id).name
+                %th= get_cpu_name(list.cpu_id)
+                %th= get_motherboard_name(list.mb_id)
+                %th= get_memory_name(list.memory_id)
+                %th= get_hdd_name(list.hdd_id)
+                %th= get_ssd_name(list.ssd_id)
+
+          %table.parts__table
+            %thead.parts__table__head
+              %tr.parts__table__head__tr
+                %th.th1 グラフィックボード
+                %th.th2 電源ユニット
+                %th.th3 PCケース
+                %th.th4 CPUクーラー
+                %th.th5 液晶ディスプレイ
+
+            %tbody.parts__table__body
+              %tr.parts__table__body__tr
+                %th= get_videocard_name(list.videocard_id)
+                %th= get_powersupply_name(list.powersupply_id)
+                %th= get_pccase_name(list.pccase_id)
+                %th= get_cpucooler_name(list.cpucooler_id)
+                %th= get_display_name(list.display_id)
