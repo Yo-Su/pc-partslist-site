@@ -3,7 +3,12 @@
     = render "header"
   .main
     .contents
-      = link_to "リストを新規作成", new_user_parts_list_path(current_user.id), class: ".partslists__new__btn"
+      .partslists__controller
+        .partslists__controller__box
+          
+          = link_to "リストを新規作成", new_user_parts_list_path(current_user.id), class: ".partslists__controller__box__btn"
+          -# = link_to "リストを変更", 
+          -# = link_to "リストを破棄", 
       - @lists.each do |list|
         .partslists__content
           .partslists__content__list-name

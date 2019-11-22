@@ -5,13 +5,14 @@ class PartsListsController < ApplicationController
   end
 
   def new
-    @parts_list = PartsList.new(name: "testlist", public_private: 1, user_id: current_user.id)
-    @parts_list.save
-    redirect_to user_parts_lists_path(current_user.id)
+    @parts_list = PartsList.new
+
   end
 
   def create
-
+    @parts_list = PartsList.new(parts_list_params)
+    @parts_list.save
+    redirect_to user_parts_lists_path(current_user.id)
   end
 
   def edit
@@ -23,12 +24,12 @@ class PartsListsController < ApplicationController
   end
 
   def destroy
-    
+
   end
 
   private
     def parts_list_params
-      params.merge(name: "testlist", public_private: 1).merge(user_id: current_user.id)
+      params.permit(:name).merge(public_private: 1).merge(user_id: current_user.id)
     end
 
 end
