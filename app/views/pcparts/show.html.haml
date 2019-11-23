@@ -16,7 +16,7 @@
           -# = form_for(@parts_lists) do |f|
           = form_with(model: @parts_list) do |f|
             = f.select :id, @parts_lists.map { |parts_list| parts_list.name }
-            = f.submit
+            -# = f.submit
           = "カテゴリー：#{@category.category}"
           = @category.id
           = link_to "データベース登録", "/pcparts/1/cpus", method: :post
