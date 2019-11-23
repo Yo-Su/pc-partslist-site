@@ -13,28 +13,16 @@
     .contents
       .contents-top
         .contents-top__name
-          -# = form_for(@parts_lists) do |f|
-          = form_with(model: @parts_list) do |f|
-            = f.select :id, @parts_lists.map { |parts_list| parts_list.name }
-            = f.submit
           = "カテゴリー：#{@category.category}"
-          = @category.id
+          -# = @category.id
           = link_to "データベース登録", "/pcparts/1/cpus", method: :post
         .contents-top__list
-          = "パーツリスト： #{@parts_lists.find(1).name}"
+          -# = form_for(@parts_lists) do |f|
+          = form_with(model: @parts_list, class: "contents-top__list__select") do |f|
+            = "パーツリスト："
+            = f.select :id, @parts_lists.map { |parts_list| parts_list.name }
+            -# = f.submit
       .contents-main
         - case @category.id
         - when 1
           = render partial: "pcparts/category/cpu", collection: @cpus
-        -# .content
-        -#   - if @category.id == 1
-        -#     = @cpus.find(1)
-        -#   - else
-        -#     = @mb.column_names[1]
-        -#     = @mb.find(1).name
-        -# .content
-        -# .content
-        -# .content
-
-  -# .footer
-  -#   このサイトについて
