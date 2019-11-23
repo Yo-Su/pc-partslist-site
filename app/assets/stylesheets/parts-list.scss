@@ -93,7 +93,7 @@
       .contents-top{
         display: flex;
         justify-content: space-between;
-        height: 60px;
+        height: 120px;
         padding: 10px;
         line-height: 60px;
 
@@ -103,6 +103,12 @@
 
         &__list{
           font-size: 24px;
+          display: flex;
+          select{
+            font-size: 24px;
+            width: 300px;
+            height: 50px;
+          }
         }
       }
 
