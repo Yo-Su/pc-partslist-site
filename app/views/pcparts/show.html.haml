@@ -19,9 +19,8 @@
         .contents-top__list
           -# = form_for(@parts_lists) do |f|
           = form_with(model: @parts_list, class: "contents-top__list__select") do |f|
-            = f.label :lists do
-              = "パーツリスト："
-              = f.select :id, @parts_lists.map { |parts_list| parts_list.name }
+            = "パーツリスト："
+            = f.select :id, @parts_lists.map { |parts_list| parts_list.name }
             -# = f.submit
       .contents-main
         - case @category.id
