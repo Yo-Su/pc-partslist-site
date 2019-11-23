@@ -13,11 +13,15 @@
     .contents
       .contents-top
         .contents-top__name
+          -# = form_for(@parts_lists) do |f|
+          = form_with(model: @parts_list) do |f|
+            = f.select :id, @parts_lists.map { |parts_list| parts_list.name }
+            = f.submit
           = "カテゴリー：#{@category.category}"
           = @category.id
           = link_to "データベース登録", "/pcparts/1/cpus", method: :post
         .contents-top__list
-          パーツリスト：リスト1番
+          = "パーツリスト： #{@parts_lists.find(1).name}"
       .contents-main
         - case @category.id
         - when 1

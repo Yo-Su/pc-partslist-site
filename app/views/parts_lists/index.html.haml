@@ -3,6 +3,48 @@
     = render "header"
   .main
     .contents
-      .partslist-content
-        - @lists.each do |list|
-          = list.name
+      .partslists__controller
+        .partslists__controller__box
+
+          = link_to "リストを新規作成", new_user_parts_list_path(current_user.id), class: ".partslists__controller__box__btn"
+          -# = link_to "リストを変更", 
+          -# = link_to "リストを破棄", 
+      - @lists.each do |list|
+        .partslists__content
+          .partslists__content__list-name
+            = list.name
+            = link_to "編集", edit_user_parts_list_path(current_user.id, list.id)
+            = link_to "リスト削除", user_parts_list_path(current_user.id, list.id), method: :delete
+          %table.parts__table
+            %thead.parts__table__head
+              %tr.parts__table__head__tr
+                %th.th1 CPU
+                %th.th2 マザーボード
+                %th.th3 メモリー
+                %th.th4 HDD
+                %th.th5 SSD
+
+            %tbody.parts__table__body
+              %tr.parts__table__body__tr
+                %th= get_cpu_name(list.cpu_id)
+                %th= get_motherboard_name(list.mb_id)
+                %th= get_memory_name(list.memory_id)
+                %th= get_hdd_name(list.hdd_id)
+                %th= get_ssd_name(list.ssd_id)
+
+          %table.parts__table
+            %thead.parts__table__head
+              %tr.parts__table__head__tr
+                %th.th1 グラフィックボード
+                %th.th2 電源ユニット
+                %th.th3 PCケース
+                %th.th4 CPUクーラー
+                %th.th5 液晶ディスプレイ
+
+            %tbody.parts__table__body
+              %tr.parts__table__body__tr
+                %th= get_videocard_name(list.videocard_id)
+                %th= get_powersupply_name(list.powersupply_id)
+                %th= get_pccase_name(list.pccase_id)
+                %th= get_cpucooler_name(list.cpucooler_id)
+                %th= get_display_name(list.display_id)
