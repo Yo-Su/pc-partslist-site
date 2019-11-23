@@ -20,8 +20,12 @@ class PartsListsController < ApplicationController
   end
 
   def update
-    @parts_list = PartsList..find(params[:id])
-    @parts_list.save(parts_list_params)
+    params[:id] = params[:list_id] if :list_id
+    @parts_list = PartsList.find(params[:id])
+    # binding.pry
+    @parts_list.update(parts_list_params)
+    # @parts_list.update(params[:hdd_id])
+    # binding.pry
     redirect_to user_parts_lists_path(current_user.id)
   end
 
@@ -33,7 +37,7 @@ class PartsListsController < ApplicationController
 
   private
     def parts_list_params
-      params.permit(:name).merge(public_private: 1).merge(user_id: current_user.id)
+      params.permit(:name, :hdd_id).merge(public_private: 1).merge(user_id: current_user.id)
     end
 
 end
