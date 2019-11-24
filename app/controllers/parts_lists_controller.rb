@@ -20,7 +20,7 @@ class PartsListsController < ApplicationController
   end
 
   def update
-    binding.pry
+    # binding.pry
     params[:id] = params[:list_id] if :list_id
     @parts_list = PartsList.find(params[:id])
     @parts_list.update(parts_list_params)

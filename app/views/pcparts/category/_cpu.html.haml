@@ -1,7 +1,7 @@
 .content
 
-  = f.submit name: cpu.id
-  = f.hidden_field :cpu_id, value: cpu.id
+  = f.submit name: cpu.id, class: "add-btn"
+  -# = f.hidden_field :cpu_id, value: cpu.id
   %table.parts__table
     %thead.parts__table__head
       %tr.parts__table__head__tr

@@ -27,7 +27,7 @@
               = "パーツリスト"
               = f.select :list_id, @parts_lists.map { |parts_list| [parts_list.name, parts_list.id] }
               = f.submit
-              = f.hidden_field :hdd_id, value: "1"
+              -# = f.hidden_field :hdd_id, value: "1"
               -# - binding.pry
         .contents-main
           - case @category.id
