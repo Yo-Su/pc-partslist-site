@@ -32,4 +32,4 @@
         .contents-main
           - case @category.id
           - when 1
-            = render partial: "pcparts/category/cpu", collection: @cpus
+            = render partial: "pcparts/category/cpu", collection: @cpus, locals: {:f => f}
