@@ -1,7 +1,7 @@
 .content
 
-  = f.submit
-  = f.hidden_field :hdd_id, value: "1"
+  = f.submit name: cpu.id
+  = f.hidden_field :cpu_id, value: cpu.id
   %table.parts__table
     %thead.parts__table__head
       %tr.parts__table__head__tr

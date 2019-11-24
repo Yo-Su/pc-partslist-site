@@ -20,9 +20,9 @@ class PartsListsController < ApplicationController
   end
 
   def update
+    binding.pry
     params[:id] = params[:list_id] if :list_id
     @parts_list = PartsList.find(params[:id])
-    # binding.pry
     @parts_list.update(parts_list_params)
     # @parts_list.update(params[:hdd_id])
     # binding.pry
@@ -37,7 +37,7 @@ class PartsListsController < ApplicationController
 
   private
     def parts_list_params
-      params.permit(:name, :hdd_id).merge(public_private: 1).merge(user_id: current_user.id)
+      params.permit(:name, :cpu_id, :hdd_id).merge(public_private: 1).merge(user_id: current_user.id)
     end
 
 end

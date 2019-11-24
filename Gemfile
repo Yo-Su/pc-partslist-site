@@ -71,3 +71,5 @@ gem 'devise-i18n-views'
 
 gem 'nokogiri'
 gem 'anemone'
+
+gem 'jquery-rails'
