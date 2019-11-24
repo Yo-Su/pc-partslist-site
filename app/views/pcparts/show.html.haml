@@ -11,25 +11,25 @@
         = link_to pcpart_path(3), class: "parts-list__category" do
           HDD
     .contents
-      .contents-top
-        .contents-top__name
-          = "カテゴリー：#{@category.category}"
-          -# = @category.id
-          = link_to "データベース更新", "/pcparts/1/cpus", method: :post
-        - if current_user
-          .contents-top__list
-            -# = form_for(@parts_lists) do |f|
-            = form_with(model: @parts_list,
-              local: true,
-              method: :patch,
-              url: user_parts_list_path(current_user.id),
-              class: "contents-top__list__select") do |f|
+      = form_with(model: @parts_list,
+        local: true,
+        method: :patch,
+        url: user_parts_list_path(current_user.id),
+        class: "contents-top__list__select") do |f|
+        .contents-top
+          .contents-top__name
+            = "カテゴリー：#{@category.category}"
+            -# = @category.id
+            = link_to "データベース更新", "/pcparts/1/cpus", method: :post
+          - if current_user
+            .contents-top__list
+              -# = form_for(@parts_lists) do |f|
               = "パーツリスト"
               = f.select :list_id, @parts_lists.map { |parts_list| [parts_list.name, parts_list.id] }
               = f.submit
-              = f.hidden_field :hdd_id, value: "2"
+              = f.hidden_field :hdd_id, value: "1"
               -# - binding.pry
-      .contents-main
-        - case @category.id
-        - when 1
-          = render partial: "pcparts/category/cpu", collection: @cpus
+        .contents-main
+          - case @category.id
+          - when 1
+            = render partial: "pcparts/category/cpu", collection: @cpus
