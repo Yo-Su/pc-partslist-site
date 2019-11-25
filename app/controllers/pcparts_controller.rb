@@ -9,7 +9,7 @@ class PcpartsController < ApplicationController
     when "CPU"
       @cpus = @category.cpus
     when "マザーボード"
-      @mb = @category.mbs
+      @mbs = @category.mbs
     end
   end
 end

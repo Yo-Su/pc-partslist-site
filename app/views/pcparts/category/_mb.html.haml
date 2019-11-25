@@ -1,0 +1,23 @@
+.content
+  -# - binding.pry
+  = f.submit name: mb.id, class: "add-btn"
+  -# = f.hidden_field :mb_id, value: mb.id
+  %table.parts__table
+    %thead.parts__table__head
+      %tr.parts__table__head__tr
+        %th.th-mb 製品名
+        %th.th-mb メーカー
+        %th.th-mb チップセット
+        %th.th-mb フォームファクタ
+        %th.th-mb ソケット形状
+
+    %tbody.parts__table__body
+      %tr.parts__table__body__tr
+        %th= mb.name
+        %th= mb.brand
+        %th= mb.chipset
+        %th= mb.formfactor
+        %th= mb.socket
+  -# = image_tag "https://img1.kakaku.k-img.com/images/productimage/m/05100011435.jpg", size: "100x100", alt: "test"
+
+
