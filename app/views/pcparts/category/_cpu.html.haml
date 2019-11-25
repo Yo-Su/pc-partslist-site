@@ -1,21 +1,20 @@
 .content
-
-  = f.submit name: cpu.id, class: "add-btn"
-  -# = f.hidden_field :cpu_id, value: cpu.id
+  = f.submit name: cpu.id, class: "add-btn", value: "リストに追加", "data-disable-with":"リストに追加"
   %table.parts__table
-    %thead.parts__table__head
-      %tr.parts__table__head__tr
-        %th.th-4th 製品名
-        %th.th-4th メーカー
-        %th.th-4th プロセッサー
-        %th.th-4th ソケット形状
+    %tr.parts__table__head__tr
+      %th.th-4th.th-name= cpu.name
+      %th.th-4th メーカー
+      %th.th-4th プロセッサー
 
-    %tbody.parts__table__body
-      %tr.parts__table__body__tr
-        %th= cpu.name
-        %th= cpu.brand
-        %th= cpu.processor
-        %th= cpu.socket
-  -# = image_tag "https://img1.kakaku.k-img.com/images/productimage/m/05100011435.jpg", size: "100x100", alt: "test"
+    %tr.parts__table__body__tr
+      %td{:rowspan => "3"}= image_tag "#{cpu.image}", size: "120x120", alt: "No Image"
+      %td= cpu.brand
+      %td= cpu.processor
+
+    %tr.parts__table__head__tr
+      %th.th-4th ソケット形状
+
+    %tr.parts__table__body__tr
+      %td= cpu.socket
 
 
