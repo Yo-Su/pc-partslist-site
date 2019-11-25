@@ -24,9 +24,10 @@
           - if current_user
             .contents-top__list
               -# = form_for(@parts_lists) do |f|
-              = "パーツリスト"
-              = f.select :list_id, @parts_lists.map { |parts_list| [parts_list.name, parts_list.id] }
-              = f.submit
+              %p.list-title パーツリスト
+              .select-list
+                = f.select :list_id, @parts_lists.map { |parts_list| [parts_list.name, parts_list.id] }
+              -# = f.submit
               -# = f.hidden_field :hdd_id, value: "1"
               -# - binding.pry
         .contents-main
