@@ -1,16 +1,16 @@
-class CpusController < ApplicationController
+class MbsController < ApplicationController
 
   def create
     @parts_lists = []
-    get_cpu
-    save_cpu
-    redirect_to pcpart_path(1)
+    get_motherboard
+    save_motherboard
+    redirect_to pcpart_path(2)
   end
 
   private
     require "anemone"
 
-    def get_cpu
+    def get_motherboard
       list1  = [] #["メーカー名"]
       list2  = [] #["製品名"]
       list3  = [] #["ソケット形状"]
@@ -24,7 +24,7 @@ class CpusController < ApplicationController
       list11 = [] #["TDP"]
       list12 = [] #["画像"]
       list13 = [] #["個別ID"]
-      Anemone.crawl("https://kakaku.com/specsearch/0510/?st=2&_s=2&DispNonPrice=on&Sort=saledate_desc&DispSaleDate=on&", :depth_limit => 0) do |anemone|
+      Anemone.crawl("https://kakaku.com/specsearch/0540/?st=2&_s=2&Sort=saledate_desc&DispSaleDate=on&", :depth_limit => 0) do |anemone|
         anemone.on_every_page do |page|
 
           # メーカー名と製品名はテーブルの同じセルに記載されているため他と処理を分ける
@@ -36,30 +36,32 @@ class CpusController < ApplicationController
           page.doc.xpath("//td[contains(@class, 'textL')]").each do |title|
             list2.push(title.elements[2].text)
           end
-          # ソケット形状を抜き出してlist3に入れる
-          page.doc.xpath("//label[contains(@title, 'ソケット形状')]").each do |title|
+          # チップセットを抜き出してlist3に入れる
+          page.doc.xpath("//label[contains(@title, 'チップセット')]").each do |title|
             list3.push(title.text)
           end
-          # コア数を抜き出してlist4に入れる
-          page.doc.xpath("//label[contains(@title, 'コア数')]").each do |title|
+          # フォームファクタを抜き出してlist4に入れる
+          page.doc.xpath("//label[contains(@title, 'フォームファクタ')]").each do |title|
             list4.push(title.text)
           end
+          # CPUソケットを抜き出してlist5に入れる
+          page.doc.xpath("//label[contains(@title, 'CPUソケット')]").each do |title|
+            list5.push(title.text)
+          end
 
-          # # スレッド数を抜き出してlist5に入れる
-          # page.doc.xpath("//label[contains(@title, 'スレッド数')]").each do |title|
-          #   list5.push(title.text)
-          # end
-          # # クロック周波数を抜き出してlist6に入れる
-          # page.doc.xpath("//label[contains(@title, 'クロック周波数')]").each do |title|
+          # # 詳細メモリタイプを抜き出してlist6に入れる
+          # page.doc.xpath("//label[contains(@title, '詳細メモリタイプ')]").each do |title|
           #   list6.push(title.text)
           # end
-          # # 最大動作クロック周波数を抜き出してlist7に入れる
-          # page.doc.xpath("//label[contains(@title, '最大動作クロック周波数')]").each do |title|
+          # # メモリスロット数を抜き出してlist7に入れる
+          # page.doc.xpath("//label[contains(@title, 'メモリスロット数')]").each do |title|
           #   list7.push(title.text)
           # end
-          # # 二次キャッシュを抜き出してlist8に入れる
-          # page.doc.xpath("//label[contains(@title, '二次キャッシュ')]").each do |title|
+          # # 最大メモリー容量を抜き出してlist8に入れる
+          # page.doc.xpath("//label[contains(@title, '最大メモリー容量')]").each do |title|
           #   list8.push(title.text)
+
+          # 以下未編集==================================================================================
           # end
           # # 三次キャッシュを抜き出してlist9に入れる
           # page.doc.xpath("//label[contains(@title, '三次キャッシュ')]").each do |title|
@@ -86,24 +88,24 @@ class CpusController < ApplicationController
 
           # リスト1~13を結合（各製品毎に配列をまとめる。多重配列になる）
           # list0 = list1.zip(list2, list3, list4, list5, list6, list7, list8, list9, list10, list11, list12, list13)
-          @parts_lists = list1.zip(list2, list3, list4, list12, list13)
+          @parts_lists = list1.zip(list2, list3, list4, list5, list12, list13)
         end
       end
     end
 
-    def save_cpu
+    def save_motherboard
       @parts_lists.each do |parts_list|
-        cpu_list = Cpu.find_or_initialize_by(item_value: parts_list[5])
-        cpu_list.update_attributes(
+        motherboard_list = Mb.find_or_initialize_by(item_value: parts_list[6])
+        motherboard_list.update_attributes(
           name: parts_list[1],
           brand: parts_list[0],
-          processor: parts_list[2],
-          socket: parts_list[3],
-          image: parts_list[4],
-          pcpart_id: 1,
-          item_value: parts_list[5]
+          chipset: parts_list[2],
+          formfactor: parts_list[3],
+          socket: parts_list[4],
+          image: parts_list[5],
+          pcpart_id: 2,
+          item_value: parts_list[6]
         )
       end
     end
-
 end
