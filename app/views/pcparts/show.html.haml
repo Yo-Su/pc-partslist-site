@@ -20,8 +20,7 @@
           .contents-top__name
             = "カテゴリー：#{@category.category}"
             -# = @category.id
-            = link_to "データベース更新", "/pcparts/1/cpus", method: :post
-            = link_to "MB更新", "/pcparts/2/mbs", method: :post
+            = render "updatedb"
           - if current_user
             .contents-top__list
               -# = form_for(@parts_lists) do |f|
@@ -34,3 +33,6 @@
           - case @category.id
           - when 1
             = render partial: "pcparts/category/cpu", collection: @cpus, locals: {:f => f}
+          - when 2
+            = render partial: "pcparts/category/mb", collection: @mbs, locals: {:f => f}
+
