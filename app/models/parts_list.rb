@@ -2,7 +2,7 @@ class PartsList < ApplicationRecord
   validates :name, presence: true
 
   belongs_to :cpu
-  belongs_to :mb
+  belongs_to :motherboard
   belongs_to :hdd
   belongs_to :ssd
   belongs_to :videocard

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_21_105553) do
+ActiveRecord::Schema.define(version: 2019_11_25_060752) do
 
   create_table "cpucoolers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
@@ -58,17 +58,6 @@ ActiveRecord::Schema.define(version: 2019_11_21_105553) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "mbs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "name"
-    t.string "brand"
-    t.string "chipset"
-    t.string "formfactor"
-    t.string "socket"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer "pcpart_id"
-  end
-
   create_table "memories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
     t.string "brand"
@@ -78,6 +67,17 @@ ActiveRecord::Schema.define(version: 2019_11_21_105553) do
     t.string "interface"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "motherboards", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name"
+    t.string "brand"
+    t.string "chipset"
+    t.string "formfactor"
+    t.string "socket"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "pcpart_id"
   end
 
   create_table "parts_lists", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
