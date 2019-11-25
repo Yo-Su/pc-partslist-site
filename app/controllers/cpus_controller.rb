@@ -73,12 +73,12 @@ class CpusController < ApplicationController
           # page.doc.xpath("//label[contains(@title, 'TDP')]").each do |title|
           #   list11.push(title.text)
           # end
-          # # 画像URLを抜き出してlist12に入れる
-          # page.doc.xpath("//img[contains(@src, '.jpg') or contains(@src, 'nowprinting.gif')]/@src").each do |title|
-          #   title = "no image" if title.to_s.match(/.gif/)
-          #   list12.push(title.to_s)
-          # end
 
+          # 画像URLを抜き出してlist12に入れる
+          page.doc.xpath("//img[contains(@src, '.jpg') or contains(@src, 'nowprinting.gif')]/@src").each do |title|
+            title = "no image" if title.to_s.match(/.gif/)
+            list12.push(title.to_s)
+          end
           # 個別IDを抜き出してlist13に入れる
           page.doc.xpath("//input[contains(@value, 'K')]/@value").each do |title|
             list13.push(title.to_s)
@@ -86,21 +86,22 @@ class CpusController < ApplicationController
 
           # リスト1~13を結合（各製品毎に配列をまとめる。多重配列になる）
           # list0 = list1.zip(list2, list3, list4, list5, list6, list7, list8, list9, list10, list11, list12, list13)
-          @parts_lists = list1.zip(list2, list3, list4, list13)
+          @parts_lists = list1.zip(list2, list3, list4, list12, list13)
         end
       end
     end
 
     def save_cpu
       @parts_lists.each do |parts_list|
-        cpu_list = Cpu.find_or_initialize_by(item_value: parts_list[4])
+        cpu_list = Cpu.find_or_initialize_by(item_value: parts_list[5])
         cpu_list.update_attributes(
           name: parts_list[1],
           brand: parts_list[0],
           processor: parts_list[2],
           socket: parts_list[3],
+          image: parts_list[4],
           pcpart_id: 1,
-          item_value: parts_list[4]
+          item_value: parts_list[5]
         )
       end
     end
