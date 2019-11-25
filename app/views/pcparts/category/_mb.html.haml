@@ -1,23 +1,25 @@
 .content
   -# - binding.pry
-  = f.submit name: mb.id, class: "add-btn"
+  = f.submit name: mb.id, class: "add-btn", value: "リストに追加", "data-disable-with":"リストに追加"
   -# = f.hidden_field :mb_id, value: mb.id
   %table.parts__table
-    %thead.parts__table__head
-      %tr.parts__table__head__tr
-        %th.th-5th 製品名
-        %th.th-5th メーカー
-        %th.th-5th チップセット
-        %th.th-5th フォームファクタ
-        %th.th-5th ソケット形状
+    %tr.parts__table__head__tr
+      %th.th-5th.th-name= mb.name
+      %th.th-5th メーカー
+      %th.th-5th チップセット
 
-    %tbody.parts__table__body
-      %tr.parts__table__body__tr
-        %th= mb.name
-        %th= mb.brand
-        %th= mb.chipset
-        %th= mb.formfactor
-        %th= mb.socket
-  -# = image_tag "https://img1.kakaku.k-img.com/images/productimage/m/05100011435.jpg", size: "100x100", alt: "test"
+    %tr.parts__table__body__tr
+      %td{:rowspan => "3"}= image_tag "#{mb.image}", size: "120x120", alt: "No Image"
+      %td= mb.brand
+      %td= mb.chipset
+
+
+    %tr.parts__table__head__tr
+      %th.th-5th フォームファクタ
+      %th.th-5th ソケット形状
+
+    %tr.parts__table__body__tr
+      %td= mb.formfactor
+      %td= mb.socket
 
 
