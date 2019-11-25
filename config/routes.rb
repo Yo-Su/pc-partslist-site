@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   devise_for :users
   resources :pcparts, only: [:index, :show] do
     resources :cpus, only: [:index, :create]
-    resources :mbs, only: :index
+    resources :mbs, only: [:index, :create]
   end
   resources :users, only: :show do
     resources :parts_lists, only: [:index, :new, :create, :edit, :update, :destroy]

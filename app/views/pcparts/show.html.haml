@@ -21,6 +21,7 @@
             = "カテゴリー：#{@category.category}"
             -# = @category.id
             = link_to "データベース更新", "/pcparts/1/cpus", method: :post
+            = link_to "MB更新", "/pcparts/2/mbs", method: :post
           - if current_user
             .contents-top__list
               -# = form_for(@parts_lists) do |f|
