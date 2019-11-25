@@ -44,11 +44,11 @@ class MbsController < ApplicationController
           page.doc.xpath("//label[contains(@title, 'フォームファクタ')]").each do |title|
             list4.push(title.text)
           end
+          # CPUソケットを抜き出してlist5に入れる
+          page.doc.xpath("//label[contains(@title, 'CPUソケット')]").each do |title|
+            list5.push(title.text)
+          end
 
-          # # CPUソケットを抜き出してlist5に入れる
-          # page.doc.xpath("//label[contains(@title, 'CPUソケット')]").each do |title|
-          #   list5.push(title.text)
-          # end
           # # 詳細メモリタイプを抜き出してlist6に入れる
           # page.doc.xpath("//label[contains(@title, '詳細メモリタイプ')]").each do |title|
           #   list6.push(title.text)
@@ -88,7 +88,7 @@ class MbsController < ApplicationController
 
           # リスト1~13を結合（各製品毎に配列をまとめる。多重配列になる）
           # list0 = list1.zip(list2, list3, list4, list5, list6, list7, list8, list9, list10, list11, list12, list13)
-          @parts_lists = list1.zip(list2, list3, list4, list13)
+          @parts_lists = list1.zip(list2, list3, list4, list5, list13)
         end
       end
     end
@@ -96,14 +96,15 @@ class MbsController < ApplicationController
     def save_motherboard
       binding.pry
       @parts_lists.each do |parts_list|
-        motherboard_list = Mb.find_or_initialize_by(item_value: parts_list[4])
+        motherboard_list = Mb.find_or_initialize_by(item_value: parts_list[5])
         motherboard_list.update_attributes(
           name: parts_list[1],
           brand: parts_list[0],
           chipset: parts_list[2],
           formfactor: parts_list[3],
+          socket: parts_list[4],
           pcpart_id: 2,
-          item_value: parts_list[4]
+          item_value: parts_list[5]
         )
       end
     end
