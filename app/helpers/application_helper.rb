@@ -8,7 +8,7 @@ module ApplicationHelper
   end
 
   def get_motherboard_name(id)
-    data = Motherboard.find_by_id(id)
+    data = Mb.find_by_id(id)
     data ? data.name : ""
   end
 

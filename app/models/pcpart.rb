@@ -1,6 +1,6 @@
 class Pcpart < ApplicationRecord
   has_many :cpus
-  has_many :motherboards
+  has_many :mbs
   has_many :memories
   has_many :hdds
   has_many :ssds
