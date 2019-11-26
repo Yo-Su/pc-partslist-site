@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_26_013512) do
+ActiveRecord::Schema.define(version: 2019_11_26_014258) do
 
   create_table "cpucoolers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 2019_11_26_013512) do
     t.string "noise"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "pcpart_id"
     t.string "item_value"
     t.string "image"
   end
@@ -46,6 +47,7 @@ ActiveRecord::Schema.define(version: 2019_11_26_013512) do
     t.string "contrast"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "pcpart_id"
     t.string "item_value"
     t.string "image"
   end
@@ -61,6 +63,7 @@ ActiveRecord::Schema.define(version: 2019_11_26_013512) do
     t.string "cache"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "pcpart_id"
     t.string "item_value"
     t.string "image"
   end
@@ -87,6 +90,7 @@ ActiveRecord::Schema.define(version: 2019_11_26_013512) do
     t.string "interface"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "pcpart_id"
     t.string "item_value"
     t.string "image"
   end
@@ -122,6 +126,7 @@ ActiveRecord::Schema.define(version: 2019_11_26_013512) do
     t.string "size"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "pcpart_id"
     t.string "item_value"
     t.string "image"
   end
@@ -140,6 +145,7 @@ ActiveRecord::Schema.define(version: 2019_11_26_013512) do
     t.string "plus"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "pcpart_id"
     t.string "item_value"
     t.string "image"
   end
@@ -153,6 +159,7 @@ ActiveRecord::Schema.define(version: 2019_11_26_013512) do
     t.string "type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "pcpart_id"
     t.string "item_value"
     t.string "image"
   end
@@ -180,6 +187,7 @@ ActiveRecord::Schema.define(version: 2019_11_26_013512) do
     t.string "interface"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "pcpart_id"
     t.string "item_value"
     t.string "image"
   end
