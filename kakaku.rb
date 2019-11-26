@@ -1,6 +1,6 @@
 require 'anemone'
 
-Anemone.crawl("https://kakaku.com/specsearch/0590/?st=2&_s=2&Sort=saledate_desc&DispSaleDate=on&", :depth_limit => 0) do |anemone|
+Anemone.crawl("https://kakaku.com/specsearch/0580/?st=2&_s=2&DispNonPrice=on&Sort=saledate_desc&DispSaleDate=on&DispTypeColor=1&", :depth_limit => 0) do |anemone|
   anemone.on_every_page do |page|
     list1  = [] #["メーカー名"]
     list2  = [] #["製品名"]
@@ -25,7 +25,8 @@ Anemone.crawl("https://kakaku.com/specsearch/0590/?st=2&_s=2&Sort=saledate_desc&
     end
 
     # 個別IDを抜き出してlist13に入れる
-    page.doc.xpath("//input[contains(@value, 'K')]/@value").each do |title|
+    # page.doc.xpath("//input[contains(@value, '000')]/@value").each do |title|
+    page.doc.xpath("//input[contains(@value, 'J') or contains(@value, 'K')]/@value").each do |title|
       list13.push(title.to_s)
     end
 
@@ -36,7 +37,7 @@ Anemone.crawl("https://kakaku.com/specsearch/0590/?st=2&_s=2&Sort=saledate_desc&
     end
 
     
-    p list12.length
+    p list13.length
 
     # # メモリを抜き出してlist5に入れる(完全一致)
     # page.doc.xpath("//label[@title='メモリ']").each do |title|
