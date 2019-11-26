@@ -1,6 +1,6 @@
 require 'anemone'
 
-Anemone.crawl("https://kakaku.com/specsearch/0530/?st=2&_s=2&Sort=saledate_desc&DispSaleDate=on&", :depth_limit => 0) do |anemone|
+Anemone.crawl("https://kakaku.com/specsearch/0537/?st=2&_s=2&Sort=saledate_desc&DispSaleDate=on&InstallationType=1&", :depth_limit => 0) do |anemone|
   anemone.on_every_page do |page|
     list1  = [] #["メーカー名"]
     list2  = [] #["製品名"]
@@ -29,24 +29,21 @@ Anemone.crawl("https://kakaku.com/specsearch/0530/?st=2&_s=2&Sort=saledate_desc&
       list13.push(title.to_s)
     end
 
+    # タイプを抜き出してlist3に入れる
+    page.doc.xpath("//label[@title='タイプ']").each do |title|
+      list3.push(title.text)
+    end
+
     # インターフェイスを抜き出してlist6に入れる
-    page.doc.xpath("//label[contains(@title, 'インターフェイス')]").each do |title|
-      list14.push(title.text)
-    end
-    list14.each_slice(2) do |arr1, arr2|
-      list6.push(arr1)
-      list7.push(arr2)
-    end
-
-    # # 製品名を抜き出してlist2に入れる
-    # page.doc.xpath("//td[contains(@class, 'textL')]").each do |title|
-    #   list2.push(title.elements[2].text)
+    # page.doc.xpath("//label[contains(@title, 'インターフェイス')]").each do |title|
+    #   list14.push(title.text)
+    # end
+    # list14.each_slice(2) do |arr1, arr2|
+    #   list6.push(arr1)
+    #   list7.push(arr2)
     # end
 
-    # # ソケット形状を抜き出してlist3に入れる
-    # page.doc.xpath("//label[contains(@title, 'ソケット形状')]").each do |title|
-    #   list3.push(title.text)
-    # end
+
 
     # # コア数を抜き出してlist4に入れる
     # page.doc.xpath("//label[contains(@title, 'コア数')]").each do |title|
@@ -98,7 +95,7 @@ Anemone.crawl("https://kakaku.com/specsearch/0530/?st=2&_s=2&Sort=saledate_desc&
     # list0 = list1.zip(list2, list3, list4, list5, list6, list7, list8, list9, list10, list11, list12)
     # list0 = list1.zip(list2, list3, list4)
     list0 = list1.zip(list2, list13)
-    p list7
+    p list3
     # 多重配列を1行ずつ製品毎に書き出し
     # list0.each do |list|
     #   p list

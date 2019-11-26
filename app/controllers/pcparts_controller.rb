@@ -14,6 +14,8 @@ class PcpartsController < ApplicationController
       @memories = @category.memories
     when "HDD"
       @hdds = @category.hdds
+    when "SSD"
+      @ssds = @category.ssds
     end
   end
 end
