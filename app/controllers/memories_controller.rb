@@ -21,8 +21,8 @@ class MemoriesController < ApplicationController
       # list9  = [] #["三次キャッシュ"]
       # list10 = [] #["マルチスレッド"]
       # list11 = [] #["TDP"]
-      # list12 = [] #["画像"]
-      # list13 = [] #["個別ID"]
+      list12 = [] #["画像"]
+      list13 = [] #["個別ID"]
       Anemone.crawl("https://kakaku.com/specsearch/0520/?st=2&_s=2&Sort=entrydate_desc&DispSaleDate=on&", :depth_limit => 0) do |anemone|
         anemone.on_every_page do |page|
 
