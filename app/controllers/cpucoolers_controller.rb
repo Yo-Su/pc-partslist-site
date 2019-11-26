@@ -1,21 +1,21 @@
 class CpucoolersController < ApplicationController
   def create
     @parts_lists = []
-    get_pccase
-    save_pccase
+    get_cpucooler
+    save_cpucooler
     redirect_to pcpart_path(9)
   end
 
   private
     require "anemone"
 
-    def get_pccase
+    def get_cpucooler
       list1  = [] #["メーカー名"]
       list2  = [] #["製品名"]
-      list3  = [] #["対応ファクター"]
-      list4  = [] #["重量"]
-      list5  = [] #["幅x高さx奥行"]
-      # list6  = [] #["プラグイン対応"]
+      list3  = [] #["Intel対応ソケット"]
+      list4  = [] #["AMD対応ソケット"]
+      list5  = [] #["タイプ"]
+      list6  = [] #["ノイズレベル"]
       # list7  = [] #["バスインターフェイス"]
       # list8  = [] #["バスインターフェイス"]
       # list9  = [] #["三次キャッシュ"]
@@ -23,7 +23,7 @@ class CpucoolersController < ApplicationController
       # list11 = [] #["TDP"]
       list12 = [] #["画像"]
       list13 = [] #["個別ID"]
-      Anemone.crawl("https://kakaku.com/specsearch/0580/?st=2&_s=2&DispNonPrice=on&Sort=saledate_desc&DispSaleDate=on&DispTypeColor=1&", :depth_limit => 0) do |anemone|
+      Anemone.crawl("https://kakaku.com/specsearch/0512/?st=2&_s=2&Sort=saledate_desc&DispSaleDate=on&", :depth_limit => 0) do |anemone|
         anemone.on_every_page do |page|
 
           # メーカー名と製品名はテーブルの同じセルに記載されているため他と処理を分ける
@@ -35,24 +35,24 @@ class CpucoolersController < ApplicationController
           page.doc.xpath("//td[contains(@class, 'textL')]").each do |title|
             list2.push(title.elements[2].text)
           end
-          # 対応ファクターを抜き出してlist3に入れる
-          page.doc.xpath("//label[contains(@title, '対応ファクター')]").each do |title|
+          # Intel対応ソケットを抜き出してlist3に入れる
+          page.doc.xpath("//label[contains(@title, 'Intel対応ソケット')]").each do |title|
             title.search('br').each { |br| br.replace(" ") }
             list3.push(title.text)
           end
-          # 重量を抜き出してlist4に入れる
-          page.doc.xpath("//label[contains(@title, '重量')]").each do |title|
+          # AMD対応ソケットを抜き出してlist4に入れる
+          page.doc.xpath("//label[contains(@title, 'AMD対応ソケット')]").each do |title|
             list4.push(title.text)
           end
-          # 幅x高さx奥行を抜き出してlist5に入れる
-          page.doc.xpath("//label[contains(@title, '幅x高さx奥行')]").each do |title|
+          # タイプを抜き出してlist5に入れる
+          page.doc.xpath("//label[contains(@title, 'タイプ')]").each do |title|
             list5.push(title.text)
           end
+          # ノイズレベルを抜き出してlist6に入れる
+          page.doc.xpath("//label[contains(@title, 'ノイズレベル')]").each do |title|
+            list6.push(title.text)
+          end
 
-          # # プラグイン対応を抜き出してlist6に入れる
-          # page.doc.xpath("//label[contains(@title, 'プラグイン対応')]").each do |title|
-          #   list6.push(title.text)
-          # end
 
           # # バスインターフェイスを抜き出してlist8に入れる
           # page.doc.xpath("//label[contains(@title, 'バスインターフェイス')]").each do |title|
@@ -79,23 +79,24 @@ class CpucoolersController < ApplicationController
 
           # リスト1~13を結合（各製品毎に配列をまとめる。多重配列になる）
           # list0 = list1.zip(list2, list3, list4, list5, list6, list7, list8, list9, list10, list11, list12, list13)
-          @parts_lists = list1.zip(list2, list3, list4, list5, list12, list13)
+          @parts_lists = list1.zip(list2, list3, list4, list5, list6, list12, list13)
         end
       end
     end
 
-    def save_pccase
+    def save_cpucooler
       @parts_lists.each do |parts_list|
-        pccase_list = Pccase.find_or_initialize_by(item_value: parts_list[6])
-        pccase_list.update_attributes(
+        cpucooler_list = Cpucooler.find_or_initialize_by(item_value: parts_list[7])
+        cpucooler_list.update_attributes(
           brand:      parts_list[0],
           name:       parts_list[1],
-          factor:     parts_list[2],
-          weight:     parts_list[3],
-          size_wdh:   parts_list[4],
+          intel:      parts_list[2],
+          amd:        parts_list[3],
+          flowtype:   parts_list[4],
+          noise:      parts_list[5],
           pcpart_id:  9,
-          image:      parts_list[5],
-          item_value: parts_list[6]
+          image:      parts_list[6],
+          item_value: parts_list[7]
         )
       end
     end
