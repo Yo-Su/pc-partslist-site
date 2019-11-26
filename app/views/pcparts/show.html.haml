@@ -39,3 +39,5 @@
             = render partial: "pcparts/category/ssd", collection: @ssds, locals: {:f => f}
           - when 6
             = render partial: "pcparts/category/videocard", collection: @videocards, locals: {:f => f}
+          - when 7
+            = render partial: "pcparts/category/power", collection: @powers, locals: {:f => f}
