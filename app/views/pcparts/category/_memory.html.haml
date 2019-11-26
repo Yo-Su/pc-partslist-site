@@ -1,0 +1,23 @@
+.content
+  = f.submit name: memory.id, class: "add-btn", value: "リストに追加", "data-disable-with":"リストに追加"
+  %table.parts__table
+    %tr.parts__table__head__tr
+      %th.th-5th.th-name= memory.name
+      %th.th-5th メーカー
+      %th.th-5th メモリ容量(1枚あたり)
+      %th.th-5th 枚数
+
+    %tr.parts__table__body__tr
+      %td{:rowspan => "3"}= image_tag "#{memory.image}", size: "120x120", alt: "No Image", class: "td-image"
+      %td= memory.brand
+      %td= memory.capacity
+      %td= memory.setnumber
+
+    %tr.parts__table__head__tr
+      %th.th-5th メモリ規格
+      %th.th-5th メモリインターフェイス
+
+    %tr.parts__table__body__tr
+      %td= memory.standard
+      %td= memory.interface
+

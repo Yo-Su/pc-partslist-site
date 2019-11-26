@@ -1,30 +1,29 @@
-class CpusController < ApplicationController
-
+class MemoriesController < ApplicationController
   def create
     @parts_lists = []
-    get_cpu
-    save_cpu
+    get_memory
+    save_memory
     redirect_to pcpart_path(1)
   end
 
   private
     require "anemone"
 
-    def get_cpu
+    def get_memory
       list1  = [] #["メーカー名"]
       list2  = [] #["製品名"]
-      list3  = [] #["ソケット形状"]
-      list4  = [] #["コア数"]
-      list5  = [] #["スレッド数"]
-      list6  = [] #["クロック周波数"]
-      list7  = [] #["最大動作クロック周波数"]
-      list8  = [] #["二次キャッシュ"]
-      list9  = [] #["三次キャッシュ"]
-      list10 = [] #["マルチスレッド"]
-      list11 = [] #["TDP"]
+      list3  = [] #["メモリ容量(1枚あたり)"]
+      list4  = [] #["枚数"]
+      list5  = [] #["メモリ規格"]
+      list6  = [] #["メモリインターフェイス"]
+      # list7  = [] #["最大動作クロック周波数"]
+      # list8  = [] #["二次キャッシュ"]
+      # list9  = [] #["三次キャッシュ"]
+      # list10 = [] #["マルチスレッド"]
+      # list11 = [] #["TDP"]
       list12 = [] #["画像"]
       list13 = [] #["個別ID"]
-      Anemone.crawl("https://kakaku.com/specsearch/0510/?st=2&_s=2&DispNonPrice=on&Sort=saledate_desc&DispSaleDate=on&", :depth_limit => 0) do |anemone|
+      Anemone.crawl("https://kakaku.com/specsearch/0520/?st=2&_s=2&Sort=entrydate_desc&DispSaleDate=on&", :depth_limit => 0) do |anemone|
         anemone.on_every_page do |page|
 
           # メーカー名と製品名はテーブルの同じセルに記載されているため他と処理を分ける
@@ -36,23 +35,23 @@ class CpusController < ApplicationController
           page.doc.xpath("//td[contains(@class, 'textL')]").each do |title|
             list2.push(title.elements[2].text)
           end
-          # ソケット形状を抜き出してlist3に入れる
-          page.doc.xpath("//label[contains(@title, 'ソケット形状')]").each do |title|
+          # メモリ容量(1枚あたり)を抜き出してlist3に入れる
+          page.doc.xpath("//label[contains(@title, 'メモリ容量(1枚あたり)')]").each do |title|
             list3.push(title.text)
           end
-          # コア数を抜き出してlist4に入れる
-          page.doc.xpath("//label[contains(@title, 'コア数')]").each do |title|
+          # 枚数を抜き出してlist4に入れる
+          page.doc.xpath("//label[contains(@title, '枚数')]").each do |title|
             list4.push(title.text)
           end
+          # メモリ規格を抜き出してlist5に入れる
+          page.doc.xpath("//label[contains(@title, 'メモリ規格')]").each do |title|
+            list5.push(title.text)
+          end
+          # メモリインターフェイスを抜き出してlist6に入れる
+          page.doc.xpath("//label[contains(@title, 'メモリインターフェイス')]").each do |title|
+            list6.push(title.text)
+          end
 
-          # # スレッド数を抜き出してlist5に入れる
-          # page.doc.xpath("//label[contains(@title, 'スレッド数')]").each do |title|
-          #   list5.push(title.text)
-          # end
-          # # クロック周波数を抜き出してlist6に入れる
-          # page.doc.xpath("//label[contains(@title, 'クロック周波数')]").each do |title|
-          #   list6.push(title.text)
-          # end
           # # 最大動作クロック周波数を抜き出してlist7に入れる
           # page.doc.xpath("//label[contains(@title, '最大動作クロック周波数')]").each do |title|
           #   list7.push(title.text)
@@ -86,22 +85,24 @@ class CpusController < ApplicationController
 
           # リスト1~13を結合（各製品毎に配列をまとめる。多重配列になる）
           # list0 = list1.zip(list2, list3, list4, list5, list6, list7, list8, list9, list10, list11, list12, list13)
-          @parts_lists = list1.zip(list2, list3, list4, list12, list13)
+          @parts_lists = list1.zip(list2, list3, list4, list5, list6, list12, list13)
         end
       end
     end
 
-    def save_cpu
+    def save_memory
       @parts_lists.each do |parts_list|
-        cpu_list = Cpu.find_or_initialize_by(item_value: parts_list[5])
-        cpu_list.update_attributes(
-          brand: parts_list[0],
-          name: parts_list[1],
-          processor: parts_list[2],
-          socket: parts_list[3],
-          pcpart_id: 1,
-          image: parts_list[4],
-          item_value: parts_list[5]
+        memory_list = Memory.find_or_initialize_by(item_value: parts_list[7])
+        memory_list.update_attributes(
+          brand:      parts_list[0],
+          name:       parts_list[1],
+          capacity:   parts_list[2],
+          setnumber:  parts_list[3],
+          standard:   parts_list[4],
+          interface:  parts_list[5],
+          pcpart_id:  3,
+          image:      parts_list[6],
+          item_value: parts_list[7]
         )
       end
     end

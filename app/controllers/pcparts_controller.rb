@@ -10,6 +10,8 @@ class PcpartsController < ApplicationController
       @cpus = @category.cpus
     when "マザーボード"
       @mbs = @category.mbs
+    when "メモリー"
+      @memories = @category.memories
     end
   end
 end

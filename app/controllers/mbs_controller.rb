@@ -97,13 +97,13 @@ class MbsController < ApplicationController
       @parts_lists.each do |parts_list|
         motherboard_list = Mb.find_or_initialize_by(item_value: parts_list[6])
         motherboard_list.update_attributes(
-          name: parts_list[1],
           brand: parts_list[0],
+          name: parts_list[1],
           chipset: parts_list[2],
           formfactor: parts_list[3],
           socket: parts_list[4],
-          image: parts_list[5],
           pcpart_id: 2,
+          image: parts_list[5],
           item_value: parts_list[6]
         )
       end
