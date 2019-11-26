@@ -1,0 +1,20 @@
+.content
+  = f.submit name: power.id, class: "add-btn", value: "リストに追加", "data-disable-with":"リストに追加"
+  %table.parts__table
+    %tr.parts__table__head__tr
+      %th.th-4th.th-name= power.name
+      %th.th-4th メーカー
+      %th.th-4th 対応規格
+
+    %tr.parts__table__body__tr
+      %td{:rowspan => "3"}= image_tag "#{power.image}", size: "120x120", alt: "No Image", class: "td-image"
+      %td= power.brand
+      %td= power.standard
+
+    %tr.parts__table__head__tr
+      %th.th-4th 電源容量
+      %th.th-4th 80PLUS認証
+
+    %tr.parts__table__body__tr
+      %td= power.capacity
+      %td= power.plus

@@ -18,6 +18,8 @@ class PcpartsController < ApplicationController
       @ssds = @category.ssds
     when "グラフィックボード"
       @videocards = @category.videocards
+    when "電源ユニット"
+      @powers = @category.powers
     end
   end
 end

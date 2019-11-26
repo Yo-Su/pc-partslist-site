@@ -1,6 +1,6 @@
 require 'anemone'
 
-Anemone.crawl("https://kakaku.com/specsearch/0550/?st=2&_s=2&Sort=saledate_desc&DispSaleDate=on&Bus_Interface=12%2c9%2c8%2c7%2c1%2c6&", :depth_limit => 0) do |anemone|
+Anemone.crawl("https://kakaku.com/specsearch/0590/?st=2&_s=2&Sort=saledate_desc&DispSaleDate=on&", :depth_limit => 0) do |anemone|
   anemone.on_every_page do |page|
     list1  = [] #["メーカー名"]
     list2  = [] #["製品名"]
@@ -29,13 +29,21 @@ Anemone.crawl("https://kakaku.com/specsearch/0550/?st=2&_s=2&Sort=saledate_desc&
       list13.push(title.to_s)
     end
 
-    # メモリを抜き出してlist5に入れる(完全一致)
-    page.doc.xpath("//label[@title='メモリ']").each do |title|
-      title.search('br').each { |br| br.replace(" ") }
-      list5.push(title.text)
+    # 画像URLを抜き出してlist12に入れる
+    page.doc.xpath("//img[contains(@src, 'productimage') or contains(@src, 'nowprinting.gif')]/@src").each do |title|
+      title = "no_image.jpg" if title.to_s.match(/.gif/)
+      list12.push(title.to_s)
     end
 
-    p list5
+    
+    p list12.length
+
+    # # メモリを抜き出してlist5に入れる(完全一致)
+    # page.doc.xpath("//label[@title='メモリ']").each do |title|
+    #   title.search('br').each { |br| br.replace(" ") }
+    #   list5.push(title.text)
+    # end
+
     # list5.each do |list|
     #   list.search('br').each { |br| br.replace(" ") }
     # end

@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     resources :hdds, only: [:index, :create]
     resources :ssds, only: [:index, :create]
     resources :videocards, only: [:index, :create]
+    resources :powers, only: [:index, :create]
   end
   resources :users, only: :show do
     resources :parts_lists, only: [:index, :new, :create, :edit, :update, :destroy]
