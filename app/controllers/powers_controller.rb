@@ -67,7 +67,7 @@ class PowersController < ApplicationController
           # end
 
           # 画像URLを抜き出してlist12に入れる
-          page.doc.xpath("//img[contains(@src, '.jpg') or contains(@src, 'nowprinting.gif')]/@src").each do |title|
+          page.doc.xpath("//img[contains(@src, 'productimage') or contains(@src, 'nowprinting.gif')]/@src").each do |title|
             title = "no_image.jpg" if title.to_s.match(/.gif/)
             list12.push(title.to_s)
           end
@@ -85,7 +85,7 @@ class PowersController < ApplicationController
 
     def save_power
       @parts_lists.each do |parts_list|
-        power_list = Power.find_or_initialize_by(item_value: parts_list[7])
+        power_list = Power.find_or_initialize_by(item_value: parts_list[6])
         power_list.update_attributes(
           brand:      parts_list[0],
           name:       parts_list[1],
