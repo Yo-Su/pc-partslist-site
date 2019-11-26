@@ -43,3 +43,5 @@
             = render partial: "pcparts/category/power", collection: @powers, locals: {:f => f}
           - when 8
             = render partial: "pcparts/category/pccase", collection: @pccases, locals: {:f => f}
+          - when 9
+            = render partial: "pcparts/category/cpucooler", collection: @cpucoolers, locals: {:f => f}

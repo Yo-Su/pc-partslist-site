@@ -22,6 +22,8 @@ class PcpartsController < ApplicationController
       @powers = @category.powers
     when "PCケース"
       @pccases = @category.pccases
+    when "CPUクーラー"
+      @cpucoolers = @category.cpucoolers
     end
   end
 end

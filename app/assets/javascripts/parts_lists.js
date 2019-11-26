@@ -12,6 +12,7 @@ $(function(){
       case "6" : category_id = "videocard_id"; break;
       case "7" : category_id = "power_id"; break;
       case "8" : category_id = "pccase_id"; break;
+      case "9" : category_id = "cpucooler_id"; break;
     }
   }
   // if (category && category[1] == 1){
