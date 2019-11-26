@@ -94,13 +94,15 @@ class MemoriesController < ApplicationController
       @parts_lists.each do |parts_list|
         memory_list = Memory.find_or_initialize_by(item_value: parts_list[7])
         memory_list.update_attributes(
-          name: parts_list[1],
-          brand: parts_list[0],
-          capacity: parts_list[2],
-          setnumber: parts_list[3],
-          interface: parts_list[4],
-          pcpart_id: 1,
-          item_value: parts_list[5]
+          brand:      parts_list[0],
+          name:       parts_list[1],
+          capacity:   parts_list[2],
+          setnumber:  parts_list[3],
+          standard:   parts_list[4],
+          interface:  parts_list[5],
+          pcpart_id:  3,
+          image:      parts_list[6],
+          item_value: parts_list[7]
         )
       end
     end

@@ -95,12 +95,12 @@ class CpusController < ApplicationController
       @parts_lists.each do |parts_list|
         cpu_list = Cpu.find_or_initialize_by(item_value: parts_list[5])
         cpu_list.update_attributes(
-          name: parts_list[1],
           brand: parts_list[0],
+          name: parts_list[1],
           processor: parts_list[2],
           socket: parts_list[3],
-          image: parts_list[4],
           pcpart_id: 1,
+          image: parts_list[4],
           item_value: parts_list[5]
         )
       end
