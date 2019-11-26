@@ -33,3 +33,5 @@
             = render partial: "pcparts/category/mb", collection: @mbs, locals: {:f => f}
           - when 3
             = render partial: "pcparts/category/memory", collection: @memories, locals: {:f => f}
+          - when 4
+            = render partial: "pcparts/category/hdd", collection: @hdds, locals: {:f => f}

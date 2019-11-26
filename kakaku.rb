@@ -1,6 +1,6 @@
 require 'anemone'
 
-Anemone.crawl("https://kakaku.com/specsearch/0510/?st=2&_s=2&DispNonPrice=on&Sort=saledate_desc&DispSaleDate=on&", :depth_limit => 0) do |anemone|
+Anemone.crawl("https://kakaku.com/specsearch/0530/?st=2&_s=2&Sort=saledate_desc&DispSaleDate=on&", :depth_limit => 0) do |anemone|
   anemone.on_every_page do |page|
     list1  = [] #["メーカー名"]
     list2  = [] #["製品名"]
@@ -15,6 +15,7 @@ Anemone.crawl("https://kakaku.com/specsearch/0510/?st=2&_s=2&DispNonPrice=on&Sor
     list11 = [] #["TDP"]
     list12 = [] #["画像"]
     list13 = []
+    list14 = [] #インターフェース用
 
     # メーカー名と製品名はテーブルの同じセルに記載されているため他と処理を分ける
 
@@ -28,6 +29,14 @@ Anemone.crawl("https://kakaku.com/specsearch/0510/?st=2&_s=2&DispNonPrice=on&Sor
       list13.push(title.to_s)
     end
 
+    # インターフェイスを抜き出してlist6に入れる
+    page.doc.xpath("//label[contains(@title, 'インターフェイス')]").each do |title|
+      list14.push(title.text)
+    end
+    list14.each_slice(2) do |arr1, arr2|
+      list6.push(arr1)
+      list7.push(arr2)
+    end
 
     # # 製品名を抜き出してlist2に入れる
     # page.doc.xpath("//td[contains(@class, 'textL')]").each do |title|
@@ -88,8 +97,8 @@ Anemone.crawl("https://kakaku.com/specsearch/0510/?st=2&_s=2&DispNonPrice=on&Sor
     # リスト1~12を結合（各製品毎に配列をまとめる。多重配列になる）
     # list0 = list1.zip(list2, list3, list4, list5, list6, list7, list8, list9, list10, list11, list12)
     # list0 = list1.zip(list2, list3, list4)
-    list0 = list1.zip(list13)
-    p list0
+    list0 = list1.zip(list2, list13)
+    p list7
     # 多重配列を1行ずつ製品毎に書き出し
     # list0.each do |list|
     #   p list

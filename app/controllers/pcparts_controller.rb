@@ -12,6 +12,8 @@ class PcpartsController < ApplicationController
       @mbs = @category.mbs
     when "メモリー"
       @memories = @category.memories
+    when "HDD"
+      @hdds = @category.hdds
     end
   end
 end
