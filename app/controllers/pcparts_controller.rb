@@ -20,6 +20,8 @@ class PcpartsController < ApplicationController
       @videocards = @category.videocards
     when "電源ユニット"
       @powers = @category.powers
+    when "PCケース"
+      @pccases = @category.pccases
     end
   end
 end
