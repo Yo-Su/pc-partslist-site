@@ -9,6 +9,7 @@ $(function(){
       case "3" : category_id = "memory_id"; break;
       case "4" : category_id = "hdd_id"; break;
       case "5" : category_id = "ssd_id"; break;
+      case "6" : category_id = "videocard_id"; break;
     }
   }
   // if (category && category[1] == 1){
