@@ -1,0 +1,26 @@
+.content
+  = f.submit name: hdd.id, class: "add-btn", value: "リストに追加", "data-disable-with":"リストに追加"
+  %table.parts__table
+    %tr.parts__table__head__tr
+      %th.th-6th.th-name= hdd.name
+      %th.th-6th メーカー
+      %th.th-6th シリーズ
+      %th.th-6th 容量
+      %th.th-6th 回転数
+
+    %tr.parts__table__body__tr
+      %td{:rowspan => "3"}= image_tag "#{hdd.image}", size: "120x120", alt: "No Image", class: "td-image"
+      %td= hdd.brand
+      %td= hdd.series
+      %td= hdd.capacity
+      %td= hdd.speed
+
+    %tr.parts__table__head__tr
+      %th.th-6th インターフェイス
+      %th.th-6th インターフェイス
+      %th.th-6th キャッシュ
+
+    %tr.parts__table__body__tr
+      %td= hdd.interface1
+      %td= hdd.interface2
+      %td= hdd.cache
