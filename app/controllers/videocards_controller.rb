@@ -45,6 +45,7 @@ class VideocardsController < ApplicationController
           end
           # メモリを抜き出してlist5に入れる(完全一致)
           page.doc.xpath("//label[@title='メモリ']").each do |title|
+            title.search('br').each { |br| br.replace(" ") }
             list5.push(title.text)
           end
           # メモリクロックを抜き出してlist6に入れる

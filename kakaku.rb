@@ -1,6 +1,6 @@
 require 'anemone'
 
-Anemone.crawl("https://kakaku.com/specsearch/0537/?st=2&_s=2&Sort=saledate_desc&DispSaleDate=on&InstallationType=1&", :depth_limit => 0) do |anemone|
+Anemone.crawl("https://kakaku.com/specsearch/0550/?st=2&_s=2&Sort=saledate_desc&DispSaleDate=on&Bus_Interface=12%2c9%2c8%2c7%2c1%2c6&", :depth_limit => 0) do |anemone|
   anemone.on_every_page do |page|
     list1  = [] #["メーカー名"]
     list2  = [] #["製品名"]
@@ -29,10 +29,23 @@ Anemone.crawl("https://kakaku.com/specsearch/0537/?st=2&_s=2&Sort=saledate_desc&
       list13.push(title.to_s)
     end
 
-    # タイプを抜き出してlist3に入れる
-    page.doc.xpath("//label[@title='タイプ']").each do |title|
-      list3.push(title.text)
+    # メモリを抜き出してlist5に入れる(完全一致)
+    page.doc.xpath("//label[@title='メモリ']").each do |title|
+      title.search('br').each { |br| br.replace(" ") }
+      list5.push(title.text)
     end
+
+    p list5
+    # list5.each do |list|
+    #   list.search('br').each { |br| br.replace(" ") }
+    # end
+
+    # list5[0].search('br').each { |br| br.replace(" ") }
+
+    # # タイプを抜き出してlist3に入れる
+    # page.doc.xpath("//label[@title='タイプ']").each do |title|
+    #   list3.push(title.text)
+    # end
 
     # インターフェイスを抜き出してlist6に入れる
     # page.doc.xpath("//label[contains(@title, 'インターフェイス')]").each do |title|
@@ -95,7 +108,7 @@ Anemone.crawl("https://kakaku.com/specsearch/0537/?st=2&_s=2&Sort=saledate_desc&
     # list0 = list1.zip(list2, list3, list4, list5, list6, list7, list8, list9, list10, list11, list12)
     # list0 = list1.zip(list2, list3, list4)
     list0 = list1.zip(list2, list13)
-    p list3
+    
     # 多重配列を1行ずつ製品毎に書き出し
     # list0.each do |list|
     #   p list
