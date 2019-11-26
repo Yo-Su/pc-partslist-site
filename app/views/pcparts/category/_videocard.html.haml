@@ -1,0 +1,24 @@
+.content
+  = f.submit name: videocard.id, class: "add-btn", value: "リストに追加", "data-disable-with":"リストに追加"
+  %table.parts__table
+    %tr.parts__table__head__tr
+      %th.th-5th.th-name= videocard.name
+      %th.th-5th メーカー
+      %th.th-5th 搭載チップ
+      %th.th-5th CUDAコア数
+
+    %tr.parts__table__body__tr
+      %td{:rowspan => "3"}= image_tag "#{videocard.image}", size: "120x120", alt: "No Image", class: "td-image"
+      %td= videocard.brand
+      %td= videocard.chip
+      %td= videocard.core
+
+    %tr.parts__table__head__tr
+      %th.th-5th メモリ
+      %th.th-5th メモリクロック
+      %th.th-5th バスインターフェイス
+
+    %tr.parts__table__body__tr
+      %td= videocard.memory
+      %td= videocard.clock
+      %td= videocard.interface
