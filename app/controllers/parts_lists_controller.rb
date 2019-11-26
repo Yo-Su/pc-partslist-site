@@ -37,7 +37,7 @@ class PartsListsController < ApplicationController
 
   private
     def parts_list_params
-      params.permit(:name, :cpu_id, :mb_id, :memory_id, :hdd_id, :ssd_id, :videocard_id, :power_id, :pccase_id).merge(public_private: 1).merge(user_id: current_user.id)
+      params.permit(:name, :cpu_id, :mb_id, :memory_id, :hdd_id, :ssd_id, :videocard_id, :power_id, :pccase_id, :cpucooler_id).merge(public_private: 1).merge(user_id: current_user.id)
     end
 
 end

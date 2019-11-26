@@ -1,0 +1,23 @@
+.content
+  = f.submit name: cpucooler.id, class: "add-btn", value: "リストに追加", "data-disable-with":"リストに追加"
+  %table.parts__table
+    %tr.parts__table__head__tr
+      %th.th-5th.th-name= cpucooler.name
+      %th.th-5th メーカー
+      %th.th-5th Intel対応ソケット
+      %th.th-5th AMD対応ソケット
+
+    %tr.parts__table__body__tr
+      %td{:rowspan => "3"}= image_tag "#{cpucooler.image}", size: "120x120", alt: "No Image", class: "td-image"
+      %td= cpucooler.brand
+      %td= cpucooler.intel
+      %td= cpucooler.amd
+
+    %tr.parts__table__head__tr
+      %th.th-5th タイプ
+      %th.th-5th ノイズレベル
+
+    %tr.parts__table__body__tr
+      %td= cpucooler.flowtype
+      %td= cpucooler.noise
+
