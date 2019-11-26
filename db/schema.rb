@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_26_085910) do
+ActiveRecord::Schema.define(version: 2019_11_26_101535) do
 
   create_table "cpucoolers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
@@ -105,7 +105,7 @@ ActiveRecord::Schema.define(version: 2019_11_26_085910) do
     t.integer "hdd_id"
     t.integer "ssd_id"
     t.integer "videocard_id"
-    t.integer "powersupply_id"
+    t.integer "power_id"
     t.integer "pccase_id"
     t.integer "cpucooler_id"
     t.integer "display_id"
