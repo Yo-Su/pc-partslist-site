@@ -9,7 +9,7 @@
         = link_to pcpart_path(2), class: "parts-list__category" do
           マザーボード
         = link_to pcpart_path(3), class: "parts-list__category" do
-          HDD
+          メモリー
     .contents
       = form_with(model: @parts_list,
         local: true,
@@ -36,4 +36,5 @@
             = render partial: "pcparts/category/cpu", collection: @cpus, locals: {:f => f}
           - when 2
             = render partial: "pcparts/category/mb", collection: @mbs, locals: {:f => f}
-
+          - when 3
+            = render partial: "pcparts/category/memory", collection: @memories, locals: {:f => f}
