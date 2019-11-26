@@ -8,6 +8,7 @@ $(function(){
       case "2" : category_id = "mb_id"; break;
       case "3" : category_id = "memory_id"; break;
       case "4" : category_id = "hdd_id"; break;
+      case "5" : category_id = "ssd_id"; break;
     }
   }
   // if (category && category[1] == 1){
