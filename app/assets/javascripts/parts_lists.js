@@ -6,6 +6,7 @@ $(function(){
     switch (category[1].toString()){
       case "1" : category_id = "cpu_id"; break;
       case "2" : category_id = "mb_id"; break;
+      case "3" : category_id = "memory_id"; break;
     }
   }
   // if (category && category[1] == 1){
