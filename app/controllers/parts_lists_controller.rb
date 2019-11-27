@@ -20,13 +20,14 @@ class PartsListsController < ApplicationController
   end
 
   def update
-    # binding.pry
-    params[:id] = params[:list_id] if :list_id
-    @parts_list = PartsList.find(params[:id])
-    @parts_list.update(parts_list_params)
-    # @parts_list.update(params[:hdd_id])
-    # binding.pry
-    redirect_to user_parts_lists_path(current_user.id)
+    if params[:list_id]
+      params[:id] = params[:list_id]
+      @parts_list = PartsList.find(params[:id])
+      @parts_list.update(parts_list_params)
+      redirect_to user_parts_lists_path(current_user.id)
+    else
+      redirect_to user_parts_lists_path(current_user.id)
+    end
   end
 
   def destroy
