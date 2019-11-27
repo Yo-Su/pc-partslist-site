@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_26_114032) do
+ActiveRecord::Schema.define(version: 2019_11_26_120458) do
 
   create_table "cpucoolers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
@@ -42,7 +42,7 @@ ActiveRecord::Schema.define(version: 2019_11_26_114032) do
     t.string "name"
     t.string "brand"
     t.string "size"
-    t.string "type"
+    t.string "monitortype"
     t.string "area"
     t.string "contrast"
     t.datetime "created_at", null: false
