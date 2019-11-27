@@ -27,6 +27,7 @@ class PartsListsController < ApplicationController
       redirect_to user_parts_lists_path(current_user.id)
     else
       redirect_to user_parts_lists_path(current_user.id)
+      flash[:alert] = "パーツリストがありません"
     end
   end
 
