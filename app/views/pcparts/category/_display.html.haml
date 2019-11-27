@@ -1,7 +1,7 @@
 .content
   .content-top
     - if user_signed_in?
-      = f.submit name: cpu.id, class: "add-btn", value: "リストに追加", "data-disable-with":"リストに追加"
+      = f.submit name: display.id, class: "add-btn", value: "リストに追加", "data-disable-with":"リストに追加"
     .content-clearbox
   %table.parts__table
     %tr.parts__table__head__tr
