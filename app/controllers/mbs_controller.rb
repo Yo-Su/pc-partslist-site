@@ -77,7 +77,7 @@ class MbsController < ApplicationController
           # end
 
           # 画像URLを抜き出してlist12に入れる
-          page.doc.xpath("//img[contains(@src, 'productimage') or contains(@src, 'nowprinting.gif')]/@src").each do |title|
+          page.doc.xpath("//img[not(contains(@src, 'guide')) and (contains(@src, '.jpg') or contains(@src, 'nowprinting.gif'))]/@src").each do |title|
             title = "no_image.jpg" if title.to_s.match(/.gif/)
             list12.push(title.to_s)
           end
