@@ -7,8 +7,7 @@
         .partslists__controller__box
 
           = link_to "リストを新規作成", new_user_parts_list_path(current_user.id), class: ".partslists__controller__box__btn"
-          -# = link_to "リストを変更", 
-          -# = link_to "リストを破棄", 
+
       - @lists.each do |list|
         .partslists__content
           .partslists__content__list-name
@@ -18,11 +17,11 @@
           %table.parts__table
             %thead.parts__table__head
               %tr.parts__table__head__tr
-                %th.th1 CPU
-                %th.th2 マザーボード
-                %th.th3 メモリー
-                %th.th4 HDD
-                %th.th5 SSD
+                %th.th1=link_to "CPU", pcpart_path(1)
+                %th.th2=link_to "マザーボード", pcpart_path(2)
+                %th.th3=link_to "メモリー", pcpart_path(3)
+                %th.th4=link_to "HDD", pcpart_path(4)
+                %th.th5=link_to "SSD", pcpart_path(5)
 
             %tbody.parts__table__body
               %tr.parts__table__body__tr
@@ -35,11 +34,11 @@
           %table.parts__table
             %thead.parts__table__head
               %tr.parts__table__head__tr
-                %th.th1 グラフィックボード
-                %th.th2 電源ユニット
-                %th.th3 PCケース
-                %th.th4 CPUクーラー
-                %th.th5 液晶ディスプレイ
+                %th.th1=link_to "グラフィックボード", pcpart_path(6)
+                %th.th2=link_to "電源ユニット", pcpart_path(7)
+                %th.th3=link_to "PCケース", pcpart_path(8)
+                %th.th4=link_to "CPUクーラー", pcpart_path(9)
+                %th.th5=link_to "液晶ディスプレイ", pcpart_path(10)
 
             %tbody.parts__table__body
               %tr.parts__table__body__tr
