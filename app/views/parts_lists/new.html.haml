@@ -1,4 +1,14 @@
-= form_with url: user_parts_lists_path do |f|
-  -# = f.label :name, value: "リスト名", for: "parts_list_name"
-  = f.text_field :name
-  = f.submit
+.wrapper
+  .header
+    = render "header"
+  .devise-wrapper
+    .devise-area
+      .devise-title
+        リスト新規作成
+      .devise-form
+        = form_with url: user_parts_lists_path do |f|
+          = f.text_field :name, autofocus: true, autocomplete: "name", class: "devise-form__box__text"
+          = f.submit "新規作成", class: "devise-btn"
+      .devise-link
+        = link_to root_path do
+          トップページに戻る
