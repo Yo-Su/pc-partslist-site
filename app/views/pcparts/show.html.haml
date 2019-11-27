@@ -9,22 +9,18 @@
       = form_with(model: @parts_list,
         local: true,
         method: :patch,
-        url: user_parts_list_path(current_user.id),
+        url: user_signed_in? ? user_parts_list_path(current_user.id) : nil,
         class: "contents-top__list__select") do |f|
         .contents-top
           .contents-top__name
             = "カテゴリー：#{@category.category}"
-            -# = @category.id
-            = render "updatedb"
-          - if current_user
+            - if user_signed_in?
+              = render "updatedb"
+          - if user_signed_in?
             .contents-top__list
-              -# = form_for(@parts_lists) do |f|
               %p.list-title パーツリスト
               .select-list
                 = f.select :list_id, @parts_lists.map { |parts_list| [parts_list.name, parts_list.id] }, selected: params[:list_id]
-              -# = f.submit
-              -# = f.hidden_field :hdd_id, value: "1"
-              -# - binding.pry
         .contents-main
           - case @category.id
           - when 1

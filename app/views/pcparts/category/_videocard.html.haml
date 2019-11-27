@@ -1,5 +1,8 @@
 .content
-  = f.submit name: videocard.id, class: "add-btn", value: "リストに追加", "data-disable-with":"リストに追加"
+  .content-top
+    - if user_signed_in?
+      = f.submit name: cpu.id, class: "add-btn", value: "リストに追加", "data-disable-with":"リストに追加"
+    .content-clearbox
   %table.parts__table
     %tr.parts__table__head__tr
       %th.th-5th.th-name= videocard.name
