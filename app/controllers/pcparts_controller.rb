@@ -24,6 +24,8 @@ class PcpartsController < ApplicationController
       @pccases = @category.pccases
     when "CPUクーラー"
       @cpucoolers = @category.cpucoolers
+    when "液晶ディスプレイ"
+      @displays = @category.displays
     end
   end
 end
