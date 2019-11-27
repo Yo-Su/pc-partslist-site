@@ -76,7 +76,7 @@ class VideocardsController < ApplicationController
             list12.push(title.to_s)
           end
           # 個別IDを抜き出してlist13に入れる
-          page.doc.xpath("//input[contains(@value, 'K')]/@value").each do |title|
+          page.doc.xpath("//input[contains(@name, 'ProductID')]/@value").each do |title|
             list13.push(title.to_s)
           end
 
