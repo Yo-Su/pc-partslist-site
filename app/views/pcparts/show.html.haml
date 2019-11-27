@@ -21,7 +21,7 @@
               -# = form_for(@parts_lists) do |f|
               %p.list-title パーツリスト
               .select-list
-                = f.select :list_id, @parts_lists.map { |parts_list| [parts_list.name, parts_list.id] }
+                = f.select :list_id, @parts_lists.map { |parts_list| [parts_list.name, parts_list.id] }, selected: params[:list_id]
               -# = f.submit
               -# = f.hidden_field :hdd_id, value: "1"
               -# - binding.pry
