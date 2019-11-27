@@ -4,7 +4,7 @@ class PcpartsController < ApplicationController
 
   def show
     @category = Pcpart.find(params[:id])
-    @parts_lists = PartsList.includes(:user)
+    @parts_lists = PartsList.includes(:user).where(user_id: current_user.id)
     case @category.category
     when "CPU"
       @cpus = @category.cpus
