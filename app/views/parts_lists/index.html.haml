@@ -16,36 +16,36 @@
             = link_to "リスト削除", user_parts_list_path(current_user.id, list.id), method: :delete
           %table.parts__table
             %tr.parts__table__head__tr
-              %th.th1=link_to "CPU", pcpart_path(1)
-              %th.th2=link_to "マザーボード", pcpart_path(2)
+              %th.th1=link_to "CPU", pcpart_path(1, list_id: list.id)
+              %th.th2=link_to "マザーボード", pcpart_path(2, list_id: list.id)
             %tr.parts__table__body__tr
               %th= get_cpu_name(list.cpu_id)
               %th= get_motherboard_name(list.mb_id)
 
             %tr.parts__table__head__tr
-              %th.th3=link_to "メモリー", pcpart_path(3)
-              %th.th4=link_to "HDD", pcpart_path(4)
+              %th.th3=link_to "メモリー", pcpart_path(3, list_id: list.id)
+              %th.th4=link_to "HDD", pcpart_path(4, list_id: list.id)
             %tr.parts__table__body__tr
               %th= get_memory_name(list.memory_id)
               %th= get_hdd_name(list.hdd_id)
 
             %tr.parts__table__head__tr
-              %th.th5=link_to "SSD", pcpart_path(5)
-              %th.th1=link_to "グラフィックボード", pcpart_path(6)
+              %th.th5=link_to "SSD", pcpart_path(5, list_id: list.id)
+              %th.th1=link_to "グラフィックボード", pcpart_path(6, list_id: list.id)
             %tr.parts__table__body__tr
               %th= get_ssd_name(list.ssd_id)
               %th= get_videocard_name(list.videocard_id)
 
             %tr.parts__table__head__tr
-              %th.th2=link_to "電源ユニット", pcpart_path(7)
-              %th.th3=link_to "PCケース", pcpart_path(8)
+              %th.th2=link_to "電源ユニット", pcpart_path(7, list_id: list.id)
+              %th.th3=link_to "PCケース", pcpart_path(8, list_id: list.id)
             %tr.parts__table__body__tr
               %th= get_powersupply_name(list.power_id)
               %th= get_pccase_name(list.pccase_id)
 
             %tr.parts__table__head__tr
-              %th.th4=link_to "CPUクーラー", pcpart_path(9)
-              %th.th5=link_to "液晶ディスプレイ", pcpart_path(10)
+              %th.th4=link_to "CPUクーラー", pcpart_path(9, list_id: list.id)
+              %th.th5=link_to "液晶ディスプレイ", pcpart_path(10, list_id: list.id)
             %tr.parts__table__body__tr
               %th= get_cpucooler_name(list.cpucooler_id)
               %th= get_display_name(list.display_id)
