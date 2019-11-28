@@ -6,6 +6,236 @@
 
   .main
     .contents
-      .partslists__controller
-        
-      = @parts_list.name
+      .partslists__content
+        .partslists__content__title
+          .partslists__content__title__list-name
+            = link_to @parts_list.name, user_parts_list_path(current_user.id, @parts_list.id)
+          .partslists__content__title__box
+            = link_to "リストを編集", edit_user_parts_list_path(current_user.id, @parts_list.id), class: "partslists__content__title__box__edit"
+            = link_to "リストを削除", user_parts_list_path(current_user.id, @parts_list.id), method: :delete, class: "partslists__content__title__box__delete"
+      - if get_cpu(@parts_list.cpu_id)
+        .content
+          %table.parts__table
+            %tr.parts__table__head__tr
+              %th.th-4th.th-name= get_cpu(@parts_list.cpu_id).name
+              %th.th-4th メーカー
+              %th.th-4th プロセッサー
+
+            %tr.parts__table__body__tr
+              %td{:rowspan => "3"}= image_tag "#{get_cpu(@parts_list.cpu_id).image}", size: "120x120", alt: "No Image", class: "td-image"
+              %td= get_cpu(@parts_list.cpu_id).brand
+              %td= get_cpu(@parts_list.cpu_id).processor
+
+            %tr.parts__table__head__tr
+              %th.th-4th ソケット形状
+
+            %tr.parts__table__body__tr
+              %td= get_cpu(@parts_list.cpu_id).socket
+
+      - if get_motherboard(@parts_list.mb_id)
+        .content
+          %table.parts__table
+            %tr.parts__table__head__tr
+              %th.th-4th.th-name= get_motherboard(@parts_list.mb_id).name
+              %th.th-4th メーカー
+              %th.th-4th チップセット
+
+            %tr.parts__table__body__tr
+              %td{:rowspan => "3"}= image_tag "#{get_motherboard(@parts_list.mb_id).image}", size: "120x120", alt: "No Image", class: "td-image"
+              %td= get_motherboard(@parts_list.mb_id).brand
+              %td= get_motherboard(@parts_list.mb_id).chipset
+
+            %tr.parts__table__head__tr
+              %th.th-4th フォームファクタ
+              %th.th-4th ソケット形状
+
+            %tr.parts__table__body__tr
+              %td= get_motherboard(@parts_list.mb_id).formfactor
+              %td= get_motherboard(@parts_list.mb_id).socket
+
+      - if get_memory(@parts_list.memory_id)
+        .content
+          %table.parts__table
+            %tr.parts__table__head__tr
+              %th.th-5th.th-name= get_memory(@parts_list.memory_id).name
+              %th.th-5th メーカー
+              %th.th-5th メモリ容量(1枚あたり)
+              %th.th-5th 枚数
+
+            %tr.parts__table__body__tr
+              %td{:rowspan => "3"}= image_tag "#{get_memory(@parts_list.memory_id).image}", size: "120x120", alt: "No Image", class: "td-image"
+              %td= get_memory(@parts_list.memory_id).brand
+              %td= get_memory(@parts_list.memory_id).capacity
+              %td= get_memory(@parts_list.memory_id).setnumber
+
+            %tr.parts__table__head__tr
+              %th.th-5th メモリ規格
+              %th.th-5th メモリインターフェイス
+
+            %tr.parts__table__body__tr
+              %td= get_memory(@parts_list.memory_id).standard
+              %td= get_memory(@parts_list.memory_id).interface
+
+      - if get_hdd(@parts_list.hdd_id)
+        .content
+          %table.parts__table
+            %tr.parts__table__head__tr
+              %th.th-6th.th-name= get_hdd(@parts_list.hdd_id).name
+              %th.th-6th メーカー
+              %th.th-6th シリーズ
+              %th.th-6th 容量
+              %th.th-6th 回転数
+
+            %tr.parts__table__body__tr
+              %td{:rowspan => "3"}= image_tag "#{get_hdd(@parts_list.hdd_id).image}", size: "120x120", alt: "No Image", class: "td-image"
+              %td= get_hdd(@parts_list.hdd_id).brand
+              %td= get_hdd(@parts_list.hdd_id).series
+              %td= get_hdd(@parts_list.hdd_id).capacity
+              %td= get_hdd(@parts_list.hdd_id).speed
+
+            %tr.parts__table__head__tr
+              %th.th-6th インターフェイス
+              %th.th-6th インターフェイス
+              %th.th-6th キャッシュ
+
+            %tr.parts__table__body__tr
+              %td= get_hdd(@parts_list.hdd_id).interface1
+              %td= get_hdd(@parts_list.hdd_id).interface2
+              %td= get_hdd(@parts_list.hdd_id).cache
+
+      - if get_ssd(@parts_list.ssd_id)
+        .content
+          %table.parts__table
+            %tr.parts__table__head__tr
+              %th.th-5th.th-name= get_ssd(@parts_list.ssd_id).name
+              %th.th-5th メーカー
+              %th.th-5th 容量
+              %th.th-5th 規格サイズ
+
+            %tr.parts__table__body__tr
+              %td{:rowspan => "3"}= image_tag "#{get_ssd(@parts_list.ssd_id).image}", size: "120x120", alt: "No Image", class: "td-image"
+              %td= get_ssd(@parts_list.ssd_id).brand
+              %td= get_ssd(@parts_list.ssd_id).capacity
+              %td= get_ssd(@parts_list.ssd_id).size
+
+            %tr.parts__table__head__tr
+              %th.th-5th インターフェイス
+              %th.th-5th タイプ
+
+            %tr.parts__table__body__tr
+              %td= get_ssd(@parts_list.ssd_id).interface
+              %td= get_ssd(@parts_list.ssd_id).ssdtype
+
+      - if get_videocard(@parts_list.videocard_id)
+        .content
+          %table.parts__table
+            %tr.parts__table__head__tr
+              %th.th-5th.th-name= get_videocard(@parts_list.videocard_id).name
+              %th.th-5th メーカー
+              %th.th-5th 搭載チップ
+              %th.th-5th CUDAコア数
+
+            %tr.parts__table__body__tr
+              %td{:rowspan => "3"}= image_tag "#{get_videocard(@parts_list.videocard_id).image}", size: "120x120", alt: "No Image", class: "td-image"
+              %td= get_videocard(@parts_list.videocard_id).brand
+              %td= get_videocard(@parts_list.videocard_id).chip
+              %td= get_videocard(@parts_list.videocard_id).core
+
+            %tr.parts__table__head__tr
+              %th.th-5th メモリ
+              %th.th-5th メモリクロック
+              %th.th-5th バスインターフェイス
+
+            %tr.parts__table__body__tr
+              %td= get_videocard(@parts_list.videocard_id).memory
+              %td= get_videocard(@parts_list.videocard_id).clock
+              %td= get_videocard(@parts_list.videocard_id).interface
+
+      - if get_powersupply(@parts_list.power_id)
+        .content
+          %table.parts__table
+            %tr.parts__table__head__tr
+              %th.th-4th.th-name= get_powersupply(@parts_list.power_id).name
+              %th.th-4th メーカー
+              %th.th-4th 対応規格
+
+            %tr.parts__table__body__tr
+              %td{:rowspan => "3"}= image_tag "#{get_powersupply(@parts_list.power_id).image}", size: "120x120", alt: "No Image", class: "td-image"
+              %td= get_powersupply(@parts_list.power_id).brand
+              %td= get_powersupply(@parts_list.power_id).standard
+
+            %tr.parts__table__head__tr
+              %th.th-4th 電源容量
+              %th.th-4th 80PLUS認証
+
+            %tr.parts__table__body__tr
+              %td= get_powersupply(@parts_list.power_id).capacity
+              %td= get_powersupply(@parts_list.power_id).plus
+
+      - if get_pccase(@parts_list.pccase_id)
+        .content
+          %table.parts__table
+            %tr.parts__table__head__tr
+              %th.th-5th.th-name= get_pccase(@parts_list.pccase_id).name
+              %th.th-5th メーカー
+              %th.th-5th 対応ファクター
+
+            %tr.parts__table__body__tr
+              %td{:rowspan => "3"}= image_tag "#{get_pccase(@parts_list.pccase_id).image}", size: "120x120", alt: "No Image", class: "td-image"
+              %td= get_pccase(@parts_list.pccase_id).brand
+              %td= get_pccase(@parts_list.pccase_id).factor
+
+
+            %tr.parts__table__head__tr
+              %th.th-5th 重量
+              %th.th-5th 幅x高さx奥行
+
+            %tr.parts__table__body__tr
+              %td= get_pccase(@parts_list.pccase_id).weight
+              %td= get_pccase(@parts_list.pccase_id).size_wdh
+
+      - if get_cpucooler(@parts_list.cpucooler_id)
+        .content
+          %table.parts__table
+            %tr.parts__table__head__tr
+              %th.th-5th.th-name= get_cpucooler(@parts_list.cpucooler_id).name
+              %th.th-5th メーカー
+              %th.th-5th Intel対応ソケット
+              %th.th-5th AMD対応ソケット
+
+            %tr.parts__table__body__tr
+              %td{:rowspan => "3"}= image_tag "#{get_cpucooler(@parts_list.cpucooler_id).image}", size: "120x120", alt: "No Image", class: "td-image"
+              %td= get_cpucooler(@parts_list.cpucooler_id).brand
+              %td= get_cpucooler(@parts_list.cpucooler_id).intel
+              %td= get_cpucooler(@parts_list.cpucooler_id).amd
+
+            %tr.parts__table__head__tr
+              %th.th-5th タイプ
+              %th.th-5th ノイズレベル
+
+            %tr.parts__table__body__tr
+              %td= get_cpucooler(@parts_list.cpucooler_id).flowtype
+              %td= get_cpucooler(@parts_list.cpucooler_id).noise
+
+      - if get_display(@parts_list.display_id)
+        .content
+          %table.parts__table
+            %tr.parts__table__head__tr
+              %th.th-5th.th-name= get_display(@parts_list.display_id).name
+              %th.th-5th メーカー
+              %th.th-5th モニタサイズ
+              %th.th-5th モニタタイプ
+
+            %tr.parts__table__body__tr
+              %td{:rowspan => "3"}= image_tag "#{get_display(@parts_list.display_id).image}", size: "120x120", alt: "No Image", class: "td-image"
+              %td= get_display(@parts_list.display_id).brand
+              %td= get_display(@parts_list.display_id).size
+              %td= get_display(@parts_list.display_id).monitortype
+
+            %tr.parts__table__head__tr
+              %th.th-5th 表示領域
+              %th.th-5th コントラスト比
+
+            %tr.parts__table__body__tr
+              %td= get_display(@parts_list.display_id).area
+              %td= get_display(@parts_list.display_id).contrast
