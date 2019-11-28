@@ -15,7 +15,7 @@
         .partslists__content
           .partslists__content__title
             .partslists__content__title__list-name
-              = list.name
+              = link_to list.name, user_parts_list_path(current_user.id, list.id)
             .partslists__content__title__box
               = link_to "リストを編集", edit_user_parts_list_path(current_user.id, list.id), class: "partslists__content__title__box__edit"
               = link_to "リストを削除", user_parts_list_path(current_user.id, list.id), method: :delete, class: "partslists__content__title__box__delete"

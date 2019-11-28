@@ -7,9 +7,12 @@ class PartsListsController < ApplicationController
     @lists = @user.parts_lists.includes(:user)
   end
 
+  def show
+    @parts_list = PartsList.find(params[:id])
+  end
+
   def new
     @parts_list = PartsList.new
-
   end
 
   def create
