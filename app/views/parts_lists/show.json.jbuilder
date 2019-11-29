@@ -13,3 +13,12 @@ json.cpucooler_id @parts_list.cpucooler_id
 json.display_id @parts_list.display_id
 
 json.cpu @cpu
+json.mb @mb
+json.memory @memory
+json.hdd @hdd
+json.ssd @ssd
+json.videocard @videocard
+json.power @power
+json.pccase @pccase
+json.cpucooler @cpucooler
+json.display @display
