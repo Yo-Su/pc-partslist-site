@@ -6,245 +6,248 @@
 
   .main
     .contents
-      .partslists__show
-        .partslists__show__box
-          .partslists__content__title__list-name
-            = link_to @parts_list.name, user_parts_list_path(current_user.id, @parts_list.id)
-          .partslists__content__title__box
-            = link_to "リストを編集", edit_user_parts_list_path(current_user.id, @parts_list.id), class: "partslists__content__title__box__edit"
-            = link_to "リストを削除", user_parts_list_path(current_user.id, @parts_list.id), method: :delete, class: "partslists__content__title__box__delete"
-      - if get_cpu(@parts_list.cpu_id)
-        .show-space
-        .show-list
-          .show-list__head
-            .show-title= "CPU"
-          .show-list__head
-            .show-image= image_tag "#{get_cpu(@parts_list.cpu_id).image}", size: "120x120", alt: "No Image", class: "td-image"
-            .show-image-name= get_cpu(@parts_list.cpu_id).name
-          .show-list__head
-            .show-key メーカー
-            .show-value= get_cpu(@parts_list.cpu_id).brand
-          .show-list__head
-            .show-key プロセッサー
-            .show-value= get_cpu(@parts_list.cpu_id).processor
-          .show-list__head
-            .show-key ソケット形状
-            .show-value= get_cpu(@parts_list.cpu_id).socket
+      .show-line-up
+        .show-line-up__box
+          %p.list-title パーツリスト
+          .select-list
+            = form_with(model: @parts_list,
+              local: true,
+              url: user_parts_list_path(current_user.id),
+              class: "contents-top__list__select") do |f|
+              = f.select :list_id, @lists.map { |parts_list| [parts_list.name, parts_list.id] }, selected: params[:list_id]
+              = f.submit class: "show-line-up__add-btn", value: "パーツリストを追加", "data-disable-with":"パーツリストを追加"
+        .show-line-up__btn
+          
+      .show
+        .partslists__show
+          .partslists__show__box
+            .partslists__content__title__list-name
+              = link_to @parts_list.name, user_parts_list_path(current_user.id, @parts_list.id)
+            .partslists__content__title__box
+              = link_to "リストを編集", edit_user_parts_list_path(current_user.id, @parts_list.id), class: "partslists__content__title__box__edit"
+              = link_to "リストを削除", user_parts_list_path(current_user.id, @parts_list.id), method: :delete, class: "partslists__content__title__box__delete"
+        - if get_cpu(@parts_list.cpu_id)
+          .show-list
+            .show-list__head
+              .show-title= "CPU"
+            .show-list__head
+              .show-image= image_tag "#{get_cpu(@parts_list.cpu_id).image}", size: "120x120", alt: "No Image", class: "td-image"
+              .show-image-name= get_cpu(@parts_list.cpu_id).name
+            .show-list__head
+              .show-key メーカー
+              .show-value= get_cpu(@parts_list.cpu_id).brand
+            .show-list__head
+              .show-key プロセッサー
+              .show-value= get_cpu(@parts_list.cpu_id).processor
+            .show-list__head
+              .show-key ソケット形状
+              .show-value= get_cpu(@parts_list.cpu_id).socket
 
-      - if get_motherboard(@parts_list.mb_id)
-        .show-space
-        .show-list
-          .show-list__head
-            .show-title= "マザーボード"
-          .show-list__head
-            .show-image= image_tag "#{get_motherboard(@parts_list.mb_id).image}", size: "120x120", alt: "No Image", class: "td-image"
-            .show-image-name= get_motherboard(@parts_list.mb_id).name
-          .show-list__head
-            .show-key メーカー
-            .show-value= get_motherboard(@parts_list.mb_id).brand
-          .show-list__head
-            .show-key チップセット
-            .show-value= get_motherboard(@parts_list.mb_id).chipset
-          .show-list__head
-            .show-key フォームファクタ
-            .show-value= get_motherboard(@parts_list.mb_id).formfactor
-          .show-list__head
-            .show-key ソケット形状
-            .show-value= get_motherboard(@parts_list.mb_id).socket
+        - if get_motherboard(@parts_list.mb_id)
+          .show-list
+            .show-list__head
+              .show-title= "マザーボード"
+            .show-list__head
+              .show-image= image_tag "#{get_motherboard(@parts_list.mb_id).image}", size: "120x120", alt: "No Image", class: "td-image"
+              .show-image-name= get_motherboard(@parts_list.mb_id).name
+            .show-list__head
+              .show-key メーカー
+              .show-value= get_motherboard(@parts_list.mb_id).brand
+            .show-list__head
+              .show-key チップセット
+              .show-value= get_motherboard(@parts_list.mb_id).chipset
+            .show-list__head
+              .show-key フォームファクタ
+              .show-value= get_motherboard(@parts_list.mb_id).formfactor
+            .show-list__head
+              .show-key ソケット形状
+              .show-value= get_motherboard(@parts_list.mb_id).socket
 
-      - if get_memory(@parts_list.memory_id)
-        .show-space
-        .show-list
-          .show-list__head
-            .show-title= "メモリー"
-          .show-list__head
-            .show-image= image_tag "#{get_memory(@parts_list.memory_id).image}", size: "120x120", alt: "No Image", class: "td-image"
-            .show-image-name= get_memory(@parts_list.memory_id).name
-          .show-list__head
-            .show-key メーカー
-            .show-value= get_memory(@parts_list.memory_id).brand
-          .show-list__head
-            .show-key メモリ容量(1枚あたり)
-            .show-value= get_memory(@parts_list.memory_id).capacity
-          .show-list__head
-            .show-key 枚数
-            .show-value= get_memory(@parts_list.memory_id).setnumber
-          .show-list__head
-            .show-key メモリ規格
-            .show-value= get_memory(@parts_list.memory_id).standard
-          .show-list__head
-            .show-key メモリインターフェイス
-            .show-value= get_memory(@parts_list.memory_id).interface
+        - if get_memory(@parts_list.memory_id)
+          .show-list
+            .show-list__head
+              .show-title= "メモリー"
+            .show-list__head
+              .show-image= image_tag "#{get_memory(@parts_list.memory_id).image}", size: "120x120", alt: "No Image", class: "td-image"
+              .show-image-name= get_memory(@parts_list.memory_id).name
+            .show-list__head
+              .show-key メーカー
+              .show-value= get_memory(@parts_list.memory_id).brand
+            .show-list__head
+              .show-key メモリ容量(1枚あたり)
+              .show-value= get_memory(@parts_list.memory_id).capacity
+            .show-list__head
+              .show-key 枚数
+              .show-value= get_memory(@parts_list.memory_id).setnumber
+            .show-list__head
+              .show-key メモリ規格
+              .show-value= get_memory(@parts_list.memory_id).standard
+            .show-list__head
+              .show-key メモリインターフェイス
+              .show-value= get_memory(@parts_list.memory_id).interface
 
-      - if get_hdd(@parts_list.hdd_id)
-        .show-space
-        .show-list
-          .show-list__head
-            .show-title= "HDD"
-          .show-list__head
-            .show-image= image_tag "#{get_hdd(@parts_list.hdd_id).image}", size: "120x120", alt: "No Image", class: "td-image"
-            .show-image-name= get_hdd(@parts_list.hdd_id).name
-          .show-list__head
-            .show-key メーカー
-            .show-value= get_hdd(@parts_list.hdd_id).brand
-          .show-list__head
-            .show-key シリーズ
-            .show-value= get_hdd(@parts_list.hdd_id).series
-          .show-list__head
-            .show-key 容量
-            .show-value= get_hdd(@parts_list.hdd_id).capacity
-          .show-list__head
-            .show-key 回転数
-            .show-value= get_hdd(@parts_list.hdd_id).speed
-          .show-list__head
-            .show-key インターフェイス
-            .show-value= get_hdd(@parts_list.hdd_id).interface1
-          .show-list__head
-            .show-key インターフェイス
-            .show-value= get_hdd(@parts_list.hdd_id).interface2
-          .show-list__head
-            .show-key キャッシュ
-            .show-value= get_hdd(@parts_list.hdd_id).cache
+        - if get_hdd(@parts_list.hdd_id)
+          .show-list
+            .show-list__head
+              .show-title= "HDD"
+            .show-list__head
+              .show-image= image_tag "#{get_hdd(@parts_list.hdd_id).image}", size: "120x120", alt: "No Image", class: "td-image"
+              .show-image-name= get_hdd(@parts_list.hdd_id).name
+            .show-list__head
+              .show-key メーカー
+              .show-value= get_hdd(@parts_list.hdd_id).brand
+            .show-list__head
+              .show-key シリーズ
+              .show-value= get_hdd(@parts_list.hdd_id).series
+            .show-list__head
+              .show-key 容量
+              .show-value= get_hdd(@parts_list.hdd_id).capacity
+            .show-list__head
+              .show-key 回転数
+              .show-value= get_hdd(@parts_list.hdd_id).speed
+            .show-list__head
+              .show-key インターフェイス
+              .show-value= get_hdd(@parts_list.hdd_id).interface1
+            .show-list__head
+              .show-key インターフェイス
+              .show-value= get_hdd(@parts_list.hdd_id).interface2
+            .show-list__head
+              .show-key キャッシュ
+              .show-value= get_hdd(@parts_list.hdd_id).cache
 
-      - if get_ssd(@parts_list.ssd_id)
-        .show-space
-        .show-list
-          .show-list__head
-            .show-title= "SSD"
-          .show-list__head
-            .show-image= image_tag "#{get_ssd(@parts_list.ssd_id).image}", size: "120x120", alt: "No Image", class: "td-image"
-            .show-image-name= get_ssd(@parts_list.ssd_id).name
-          .show-list__head
-            .show-key メーカー
-            .show-value= get_ssd(@parts_list.ssd_id).brand
-          .show-list__head
-            .show-key 容量
-            .show-value= get_ssd(@parts_list.ssd_id).capacity
-          .show-list__head
-            .show-key 規格サイズ
-            .show-value= get_ssd(@parts_list.ssd_id).size
-          .show-list__head
-            .show-key インターフェイス
-            .show-value= get_ssd(@parts_list.ssd_id).interface
-          .show-list__head
-            .show-key タイプ
-            .show-value= get_ssd(@parts_list.ssd_id).ssdtype
+        - if get_ssd(@parts_list.ssd_id)
+          .show-list
+            .show-list__head
+              .show-title= "SSD"
+            .show-list__head
+              .show-image= image_tag "#{get_ssd(@parts_list.ssd_id).image}", size: "120x120", alt: "No Image", class: "td-image"
+              .show-image-name= get_ssd(@parts_list.ssd_id).name
+            .show-list__head
+              .show-key メーカー
+              .show-value= get_ssd(@parts_list.ssd_id).brand
+            .show-list__head
+              .show-key 容量
+              .show-value= get_ssd(@parts_list.ssd_id).capacity
+            .show-list__head
+              .show-key 規格サイズ
+              .show-value= get_ssd(@parts_list.ssd_id).size
+            .show-list__head
+              .show-key インターフェイス
+              .show-value= get_ssd(@parts_list.ssd_id).interface
+            .show-list__head
+              .show-key タイプ
+              .show-value= get_ssd(@parts_list.ssd_id).ssdtype
 
 
-      - if get_videocard(@parts_list.videocard_id)
-        .show-space
-        .show-list
-          .show-list__head
-            .show-title= "グラフィックボード"
-          .show-list__head
-            .show-image= image_tag "#{get_videocard(@parts_list.videocard_id).image}", size: "120x120", alt: "No Image", class: "td-image"
-            .show-image-name= get_videocard(@parts_list.videocard_id).name
-          .show-list__head
-            .show-key メーカー
-            .show-value= get_videocard(@parts_list.videocard_id).brand
-          .show-list__head
-            .show-key 搭載チップ
-            .show-value= get_videocard(@parts_list.videocard_id).chip
-          .show-list__head
-            .show-key CUDAコア数
-            .show-value= get_videocard(@parts_list.videocard_id).core
-          .show-list__head
-            .show-key メモリ
-            .show-value= get_videocard(@parts_list.videocard_id).memory
-          .show-list__head
-            .show-key メモリクロック
-            .show-value= get_videocard(@parts_list.videocard_id).clock
-          .show-list__head
-            .show-key バスインターフェイス
-            .show-value= get_videocard(@parts_list.videocard_id).interface
+        - if get_videocard(@parts_list.videocard_id)
+          .show-list
+            .show-list__head
+              .show-title= "グラフィックボード"
+            .show-list__head
+              .show-image= image_tag "#{get_videocard(@parts_list.videocard_id).image}", size: "120x120", alt: "No Image", class: "td-image"
+              .show-image-name= get_videocard(@parts_list.videocard_id).name
+            .show-list__head
+              .show-key メーカー
+              .show-value= get_videocard(@parts_list.videocard_id).brand
+            .show-list__head
+              .show-key 搭載チップ
+              .show-value= get_videocard(@parts_list.videocard_id).chip
+            .show-list__head
+              .show-key CUDAコア数
+              .show-value= get_videocard(@parts_list.videocard_id).core
+            .show-list__head
+              .show-key メモリ
+              .show-value= get_videocard(@parts_list.videocard_id).memory
+            .show-list__head
+              .show-key メモリクロック
+              .show-value= get_videocard(@parts_list.videocard_id).clock
+            .show-list__head
+              .show-key バスインターフェイス
+              .show-value= get_videocard(@parts_list.videocard_id).interface
 
-      - if get_powersupply(@parts_list.power_id)
-        .show-space
-        .show-list
-          .show-list__head
-            .show-title= "電源ユニット"
-          .show-list__head
-            .show-image= image_tag "#{get_powersupply(@parts_list.power_id).image}", size: "120x120", alt: "No Image", class: "td-image"
-            .show-image-name= get_powersupply(@parts_list.power_id).name
-          .show-list__head
-            .show-key メーカー
-            .show-value= get_powersupply(@parts_list.power_id).brand
-          .show-list__head
-            .show-key 対応規格
-            .show-value= get_powersupply(@parts_list.power_id).standard
-          .show-list__head
-            .show-key 電源容量
-            .show-value= get_powersupply(@parts_list.power_id).capacity
-          .show-list__head
-            .show-key 80PLUS認証
-            .show-value= get_powersupply(@parts_list.power_id).plus
+        - if get_powersupply(@parts_list.power_id)
+          .show-list
+            .show-list__head
+              .show-title= "電源ユニット"
+            .show-list__head
+              .show-image= image_tag "#{get_powersupply(@parts_list.power_id).image}", size: "120x120", alt: "No Image", class: "td-image"
+              .show-image-name= get_powersupply(@parts_list.power_id).name
+            .show-list__head
+              .show-key メーカー
+              .show-value= get_powersupply(@parts_list.power_id).brand
+            .show-list__head
+              .show-key 対応規格
+              .show-value= get_powersupply(@parts_list.power_id).standard
+            .show-list__head
+              .show-key 電源容量
+              .show-value= get_powersupply(@parts_list.power_id).capacity
+            .show-list__head
+              .show-key 80PLUS認証
+              .show-value= get_powersupply(@parts_list.power_id).plus
 
-      - if get_pccase(@parts_list.pccase_id)
-        .show-space
-        .show-list
-          .show-list__head
-            .show-title= "PCケース"
-          .show-list__head
-            .show-image= image_tag "#{get_pccase(@parts_list.pccase_id).image}", size: "120x120", alt: "No Image", class: "td-image"
-            .show-image-name= get_pccase(@parts_list.pccase_id).name
-          .show-list__head
-            .show-key メーカー
-            .show-value= get_pccase(@parts_list.pccase_id).brand
-          .show-list__head
-            .show-key 対応ファクター
-            .show-value= get_pccase(@parts_list.pccase_id).factor
-          .show-list__head
-            .show-key 重量
-            .show-value= get_pccase(@parts_list.pccase_id).weight
-          .show-list__head
-            .show-key 幅x高さx奥行
-            .show-value= get_pccase(@parts_list.pccase_id).size_wdh
+        - if get_pccase(@parts_list.pccase_id)
+          .show-list
+            .show-list__head
+              .show-title= "PCケース"
+            .show-list__head
+              .show-image= image_tag "#{get_pccase(@parts_list.pccase_id).image}", size: "120x120", alt: "No Image", class: "td-image"
+              .show-image-name= get_pccase(@parts_list.pccase_id).name
+            .show-list__head
+              .show-key メーカー
+              .show-value= get_pccase(@parts_list.pccase_id).brand
+            .show-list__head
+              .show-key 対応ファクター
+              .show-value= get_pccase(@parts_list.pccase_id).factor
+            .show-list__head
+              .show-key 重量
+              .show-value= get_pccase(@parts_list.pccase_id).weight
+            .show-list__head
+              .show-key 幅x高さx奥行
+              .show-value= get_pccase(@parts_list.pccase_id).size_wdh
 
-      - if get_cpucooler(@parts_list.cpucooler_id)
-        .show-space
-        .show-list
-          .show-list__head
-            .show-title= "CPUクーラー"
-          .show-list__head
-            .show-image= image_tag "#{get_cpucooler(@parts_list.cpucooler_id).image}", size: "120x120", alt: "No Image", class: "td-image"
-            .show-image-name= get_cpucooler(@parts_list.cpucooler_id).name
-          .show-list__head
-            .show-key メーカー
-            .show-value= get_cpucooler(@parts_list.cpucooler_id).brand
-          .show-list__head
-            .show-key Intel対応ソケット
-            .show-value= get_cpucooler(@parts_list.cpucooler_id).intel
-          .show-list__head
-            .show-key AMD対応ソケット
-            .show-value= get_cpucooler(@parts_list.cpucooler_id).amd
-          .show-list__head
-            .show-key タイプ
-            .show-value= get_cpucooler(@parts_list.cpucooler_id).flowtype
-          .show-list__head
-            .show-key ノイズレベル
-            .show-value= get_cpucooler(@parts_list.cpucooler_id).noise
+        - if get_cpucooler(@parts_list.cpucooler_id)
+          .show-list
+            .show-list__head
+              .show-title= "CPUクーラー"
+            .show-list__head
+              .show-image= image_tag "#{get_cpucooler(@parts_list.cpucooler_id).image}", size: "120x120", alt: "No Image", class: "td-image"
+              .show-image-name= get_cpucooler(@parts_list.cpucooler_id).name
+            .show-list__head
+              .show-key メーカー
+              .show-value= get_cpucooler(@parts_list.cpucooler_id).brand
+            .show-list__head
+              .show-key Intel対応ソケット
+              .show-value= get_cpucooler(@parts_list.cpucooler_id).intel
+            .show-list__head
+              .show-key AMD対応ソケット
+              .show-value= get_cpucooler(@parts_list.cpucooler_id).amd
+            .show-list__head
+              .show-key タイプ
+              .show-value= get_cpucooler(@parts_list.cpucooler_id).flowtype
+            .show-list__head
+              .show-key ノイズレベル
+              .show-value= get_cpucooler(@parts_list.cpucooler_id).noise
 
-      - if get_display(@parts_list.display_id)
+        - if get_display(@parts_list.display_id)
+          .show-list
+            .show-list__head
+              .show-title= "液晶ディスプレイ"
+            .show-list__head
+              .show-image= image_tag "#{get_display(@parts_list.display_id).image}", size: "120x120", alt: "No Image", class: "td-image"
+              .show-image-name= get_display(@parts_list.display_id).name
+            .show-list__head
+              .show-key メーカー
+              .show-value= get_display(@parts_list.display_id).brand
+            .show-list__head
+              .show-key モニタサイズ
+              .show-value= get_display(@parts_list.display_id).size
+            .show-list__head
+              .show-key モニタタイプ
+              .show-value= get_display(@parts_list.display_id).monitortype
+            .show-list__head
+              .show-key 表示領域
+              .show-value= get_display(@parts_list.display_id).area
+            .show-list__head
+              .show-key コントラスト比
+              .show-value= get_display(@parts_list.display_id).contrast
         .show-space
-        .show-list
-          .show-list__head
-            .show-title= "液晶ディスプレイ"
-          .show-list__head
-            .show-image= image_tag "#{get_display(@parts_list.display_id).image}", size: "120x120", alt: "No Image", class: "td-image"
-            .show-image-name= get_display(@parts_list.display_id).name
-          .show-list__head
-            .show-key メーカー
-            .show-value= get_display(@parts_list.display_id).brand
-          .show-list__head
-            .show-key モニタサイズ
-            .show-value= get_display(@parts_list.display_id).size
-          .show-list__head
-            .show-key モニタタイプ
-            .show-value= get_display(@parts_list.display_id).monitortype
-          .show-list__head
-            .show-key 表示領域
-            .show-value= get_display(@parts_list.display_id).area
-          .show-list__head
-            .show-key コントラスト比
-            .show-value= get_display(@parts_list.display_id).contrast
-      .show-space
