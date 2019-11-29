@@ -18,25 +18,24 @@
           %table.parts__table
             %tr.parts__table__head__tr
               %th.th-4th.th-name= get_cpu(@parts_list.cpu_id).name
+            %tr.parts__table__head__tr
+              %th.th-4th 画像
               %th.th-4th メーカー
               %th.th-4th プロセッサー
-
+              %th.th-4th ソケット形状
             %tr.parts__table__body__tr
               %td{:rowspan => "3"}= image_tag "#{get_cpu(@parts_list.cpu_id).image}", size: "120x120", alt: "No Image", class: "td-image"
-              %td= get_cpu(@parts_list.cpu_id).brand
-              %td= get_cpu(@parts_list.cpu_id).processor
-
-            %tr.parts__table__head__tr
-              %th.th-4th ソケット形状
-
-            %tr.parts__table__body__tr
-              %td= get_cpu(@parts_list.cpu_id).socket
+              %td{:rowspan => "3"}= get_cpu(@parts_list.cpu_id).brand
+              %td{:rowspan => "3"}= get_cpu(@parts_list.cpu_id).processor
+              %td{:rowspan => "3"}= get_cpu(@parts_list.cpu_id).socket
 
       - if get_motherboard(@parts_list.mb_id)
         .content
           %table.parts__table
             %tr.parts__table__head__tr
               %th.th-4th.th-name= get_motherboard(@parts_list.mb_id).name
+            %tr.parts__table__head__tr
+              %th.th-4th 画像
               %th.th-4th メーカー
               %th.th-4th チップセット
 
