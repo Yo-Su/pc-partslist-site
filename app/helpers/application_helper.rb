@@ -52,7 +52,47 @@ module ApplicationHelper
     data ? data.name : ""
   end
 
+# ==================================================================================
+  # パーツリスト一覧で各パーツのデータ取得用
+  def get_cpu(id)
+    Cpu.find_by_id(id)
+  end
 
+  def get_motherboard(id)
+    Mb.find_by_id(id)
+  end
+
+  def get_memory(id)
+    Memory.find_by_id(id)
+  end
+
+  def get_hdd(id)
+    Hdd.find_by_id(id)
+  end
+
+  def get_ssd(id)
+    Ssd.find_by_id(id)
+  end
+
+  def get_videocard(id)
+    Videocard.find_by_id(id)
+  end
+
+  def get_powersupply(id)
+    Power.find_by_id(id)
+  end
+
+  def get_pccase(id)
+    Pccase.find_by_id(id)
+  end
+
+  def get_cpucooler(id)
+    Cpucooler.find_by_id(id)
+  end
+
+  def get_display(id)
+    Display.find_by_id(id)
+  end
 
 
 
