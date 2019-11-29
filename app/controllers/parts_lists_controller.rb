@@ -9,6 +9,19 @@ class PartsListsController < ApplicationController
 
   def show
     @parts_list = PartsList.find(params[:id])
+    @user = User.find(params[:user_id])
+    @lists = @user.parts_lists.includes(:user)
+
+    @cpu = Cpu.find_by_id(@parts_list.cpu_id)
+    @mb = Mb.find_by_id(@parts_list.mb_id)
+    @memory = Memory.find_by_id(@parts_list.memory_id)
+    @hdd = Hdd.find_by_id(@parts_list.hdd_id)
+    @ssd = Ssd.find_by_id(@parts_list.ssd_id)
+    @videocard = Videocard.find_by_id(@parts_list.videocard_id)
+    @power = Power.find_by_id(@parts_list.power_id)
+    @pccase = Pccase.find_by_id(@parts_list.pccase_id)
+    @cpucooler = Cpucooler.find_by_id(@parts_list.cpucooler_id)
+    @display = Display.find_by_id(@parts_list.display_id)
   end
 
   def new
