@@ -65,6 +65,7 @@
     background-color: $main-bgc;
     height: calc(100% - 60px);
     display: flex;
+    width: 100%;
     // overflow: scroll;
 
     .side-bar{
@@ -334,8 +335,14 @@
           cursor: pointer;
         }
       }
+      .shows{
+        width: 100%;
+        display: flex;
+      }
       .show{
+        display: block;
         background-color: #fcfcfc;
+        width: 100%;
         .show-space{
           height: 50px;
           width: 100px;

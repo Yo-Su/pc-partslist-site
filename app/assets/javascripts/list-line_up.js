@@ -1,17 +1,19 @@
 $(function(){
 
   function buildPartsList(partsList){
+    var image = partsList.image == "no_image.jpg" ? partsList.image : "aa"
+    console.log(partsList.cpu.image);
     var html = `
 
     <div class="show">
       <div class="partslists__show">
         <div class="partslists__show__box">
           <div class="partslists__content__title__list-name">
-            <a href="/users/2/parts_lists/11">試し打ち2</a>
+            <a href="/users/${partsList.user_id}/parts_lists/${partsList.id}">${partsList.name}</a>
           </div>
         <div class="partslists__content__title__box">
-          <a class="partslists__content__title__box__edit" href="/users/2/parts_lists/11/edit">リストを編集</a>
-          <a class="partslists__content__title__box__delete" rel="nofollow" data-method="delete" href="/users/2/parts_lists/11">リストを削除</a>
+          <a class="partslists__content__title__box__edit" href="/users/${partsList.user_id}/parts_lists/${partsList.id}/edit">リストを編集</a>
+          <a class="partslists__content__title__box__delete" rel="nofollow" data-method="delete" href="/users/${partsList.user_id}/parts_lists/${partsList.id}">リストを削除</a>
         </div>
       </div>
     </div>
@@ -20,20 +22,20 @@ $(function(){
     <div class="show-title">CPU</div>
     </div>
     <div class="show-list__head">
-    <div class="show-image"><img alt="No Image" class="td-image" src="https://images-fe.ssl-images-amazon.com/images/I/41bcJWJLZ1L._SL160_.jpg" width="120" height="120"></div>
-    <div class="show-image-name">Core i7 9700KF BOX</div>
+    <div class="show-image"><img alt="No Image" class="td-image" src="${partsList.cpu.image}" width="120" height="120"></div>
+    <div class="show-image-name">${partsList.cpu.name}</div>
     </div>
     <div class="show-list__head">
     <div class="show-key">メーカー</div>
-    <div class="show-value">インテル</div>
+    <div class="show-value">${partsList.cpu.brand}</div>
     </div>
     <div class="show-list__head">
     <div class="show-key">プロセッサー</div>
-    <div class="show-value">LGA1151</div>
+    <div class="show-value">${partsList.cpu.processor}</div>
     </div>
     <div class="show-list__head">
     <div class="show-key">ソケット形状</div>
-    <div class="show-value">8コア</div>
+    <div class="show-value">${partsList.cpu.socket}</div>
     </div>
     </div>
     <div class="show-list">
@@ -308,7 +310,7 @@ $(function(){
 
   $('select').on('change select', function(){
     listval = $(this).val();
-    console.log(listval);
+    // console.log(listval);
   }).change();
 
   $('#line-up-button').on('click', function(e){
@@ -319,7 +321,7 @@ $(function(){
     var path = location.pathname.match(new RegExp(/\/users\/\d+\/parts_lists\//))
     var url = `${path + listval}`
     // var url = location.pathname
-    console.log(url)
+    // console.log(url)
     $.ajax({
       url: url,
       type: 'get',
@@ -327,8 +329,8 @@ $(function(){
       data: {id: listval}
     })
     .done(function(partsList){
-      console.log(partsList.name);
-      console.log(partsList.cpu_id)
+      const html = buildPartsList(partsList)
+      $('.shows').append(html);
 
     })
     .fail(function(partsList){

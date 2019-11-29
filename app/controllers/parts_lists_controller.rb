@@ -11,6 +11,8 @@ class PartsListsController < ApplicationController
     @parts_list = PartsList.find(params[:id])
     @user = User.find(params[:user_id])
     @lists = @user.parts_lists.includes(:user)
+    @cpu = Cpu.find_by_id(@parts_list.cpu_id)
+
   end
 
   def new
