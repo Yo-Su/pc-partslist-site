@@ -14,10 +14,10 @@
               local: true,
               url: user_parts_list_path(current_user.id),
               class: "contents-top__list__select") do |f|
-              = f.select :list_id, @lists.map { |parts_list| [parts_list.name, parts_list.id] }, selected: params[:list_id]
-              = f.submit class: "show-line-up__add-btn", value: "パーツリストを追加", "data-disable-with":"パーツリストを追加"
+              = f.select :list_id, @lists.map { |parts_list| [parts_list.name, parts_list.id] }, selected: params[:list_id], id: "line-up-select"
+              = f.submit id: "line-up-button",class: "show-line-up__add-btn", value: "パーツリストを追加", "data-disable-with":"パーツリストを追加"
         .show-line-up__btn
-          
+
       .show
         .partslists__show
           .partslists__show__box
