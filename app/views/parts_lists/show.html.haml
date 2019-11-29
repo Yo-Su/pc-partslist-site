@@ -14,20 +14,19 @@
             = link_to "リストを編集", edit_user_parts_list_path(current_user.id, @parts_list.id), class: "partslists__content__title__box__edit"
             = link_to "リストを削除", user_parts_list_path(current_user.id, @parts_list.id), method: :delete, class: "partslists__content__title__box__delete"
       - if get_cpu(@parts_list.cpu_id)
-        .content
-          %table.parts__table
-            %tr.parts__table__head__tr
-              %th.th-4th.th-name= get_cpu(@parts_list.cpu_id).name
-            %tr.parts__table__head__tr
-              %th.th-4th 画像
-              %th.th-4th メーカー
-              %th.th-4th プロセッサー
-              %th.th-4th ソケット形状
-            %tr.parts__table__body__tr
-              %td{:rowspan => "3"}= image_tag "#{get_cpu(@parts_list.cpu_id).image}", size: "120x120", alt: "No Image", class: "td-image"
-              %td{:rowspan => "3"}= get_cpu(@parts_list.cpu_id).brand
-              %td{:rowspan => "3"}= get_cpu(@parts_list.cpu_id).processor
-              %td{:rowspan => "3"}= get_cpu(@parts_list.cpu_id).socket
+        %table.show-list
+          %tr.show-list__head
+            %td.show-image= image_tag "#{get_cpu(@parts_list.cpu_id).image}", size: "120x120", alt: "No Image", class: "td-image"
+            %td.show-image-name= get_cpu(@parts_list.cpu_id).name
+          %tr.show-list__head
+            %td.show-key メーカー
+            %td.show-value= get_cpu(@parts_list.cpu_id).brand
+          %tr.show-list__head
+            %td.show-key プロセッサー
+            %td.show-value= get_cpu(@parts_list.cpu_id).processor
+          %tr.show-list__head
+            %td.show-key ソケット形状
+            %td.show-value= get_cpu(@parts_list.cpu_id).socket
 
       - if get_motherboard(@parts_list.mb_id)
         .content
