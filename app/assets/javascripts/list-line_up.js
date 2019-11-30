@@ -26,7 +26,9 @@ $(function(){
       </div>
       <div class="show-list__head">
         <div class="show-image"><img alt="No Image" class="td-image" src="${partsList.cpu.image}" width="120" height="120"></div>
-        <div class="show-image-name">${partsList.cpu.name}</div>
+        <div class="show-image-name-box">
+          <div class="show-image-name-content">${partsList.cpu.name}</div>
+        </div>
       </div>
         <div class="show-list__head">
           <div class="show-key">メーカー</div>
@@ -80,7 +82,9 @@ $(function(){
         </div>
         <div class="show-list__head">
           <div class="show-image"><img alt="No Image" class="td-image" src="${partsList.mb.image}" width="120" height="120"></div>
-          <div class="show-image-name">${partsList.mb.name}</div>
+          <div class="show-image-name-box">
+            <div class="show-image-name-content">${partsList.mb.name}</div>
+          </div>
         </div>
         <div class="show-list__head">
           <div class="show-key">メーカー</div>
@@ -142,7 +146,9 @@ $(function(){
       </div>
       <div class="show-list__head">
       <div class="show-image"><img alt="No Image" class="td-image" src="${partsList.memory.image}" width="120" height="120"></div>
-      <div class="show-image-name">${partsList.memory.name}</div>
+      <div class="show-image-name-box">
+        <div class="show-image-name-content">${partsList.memory.name}</div>
+      </div>
       </div>
       <div class="show-list__head">
       <div class="show-key">メーカー</div>
@@ -204,41 +210,6 @@ $(function(){
     return html
   }
 
-  function HiddenMemory(){
-    var html = `
-      <div class="show-list hidden">
-      <div class="show-list__head">
-      <div class="show-title">メモリー</div>
-      </div>
-      <div class="show-list__head">
-      <div class="show-image"><img alt="No Image" class="td-image" src="https://placehold.jp/150x150.png" width="120" height="120"></div>
-      <div class="show-image-name"></div>
-      </div>
-      <div class="show-list__head">
-      <div class="show-key">メーカー</div>
-      <div class="show-value"></div>
-      </div>
-      <div class="show-list__head">
-      <div class="show-key">メモリ容量(1枚あたり)</div>
-      <div class="show-value"></div>
-      </div>
-      <div class="show-list__head">
-      <div class="show-key">枚数</div>
-      <div class="show-value"></div>
-      </div>
-      <div class="show-list__head">
-      <div class="show-key">メモリ規格</div>
-      <div class="show-value"></div>
-      </div>
-      <div class="show-list__head">
-      <div class="show-key">メモリインターフェイス</div>
-      <div class="show-value"></div>
-      </div>
-      </div>
-    `
-    return html
-  }
-
   function buildPartsListHdd(partsList){
     var html = `
       <div class="show-list">
@@ -247,7 +218,9 @@ $(function(){
       </div>
       <div class="show-list__head">
       <div class="show-image"><img alt="No Image" class="td-image" src="${partsList.hdd.image}" width="120" height="120"></div>
-      <div class="show-image-name">${partsList.hdd.name}</div>
+      <div class="show-image-name-box">
+        <div class="show-image-name-content">${partsList.hdd.name}</div>
+      </div>
       </div>
       <div class="show-list__head">
       <div class="show-key">メーカー</div>
@@ -333,7 +306,9 @@ $(function(){
       </div>
       <div class="show-list__head">
       <div class="show-image"><img alt="No Image" class="td-image" src="${partsList.ssd.image}" width="120" height="120"></div>
-      <div class="show-image-name">${partsList.ssd.name}</div>
+        <div class="show-image-name-box">
+          <div class="show-image-name-content">${partsList.ssd.name}</div>
+        </div>
       </div>
       <div class="show-list__head">
       <div class="show-key">メーカー</div>
@@ -403,7 +378,9 @@ $(function(){
       </div>
       <div class="show-list__head">
       <div class="show-image"><img alt="No Image" class="td-image" src="${partsList.videocard.image}" width="120" height="120"></div>
-      <div class="show-image-name">${partsList.videocard.name}</div>
+        <div class="show-image-name-box">
+          <div class="show-image-name-content">${partsList.videocard.name}</div>
+        </div>
       </div>
       <div class="show-list__head">
       <div class="show-key">メーカー</div>
@@ -481,7 +458,9 @@ $(function(){
       </div>
       <div class="show-list__head">
       <div class="show-image"><img alt="No Image" class="td-image" src="${partsList.power.image}" width="120" height="120"></div>
-      <div class="show-image-name">${partsList.power.name}</div>
+        <div class="show-image-name-box">
+          <div class="show-image-name-content">${partsList.power.name}</div>
+        </div>
       </div>
       <div class="show-list__head">
       <div class="show-key">メーカー</div>
@@ -543,7 +522,9 @@ $(function(){
       </div>
       <div class="show-list__head">
       <div class="show-image"><img alt="No Image" class="td-image" src="${partsList.pccase.image}" width="120" height="120"></div>
-      <div class="show-image-name">${partsList.pccase.name}</div>
+        <div class="show-image-name-box">
+          <div class="show-image-name-content">${partsList.pccase.name}</div>
+        </div>
       </div>
       <div class="show-list__head">
       <div class="show-key">メーカー</div>
@@ -605,7 +586,9 @@ $(function(){
       </div>
       <div class="show-list__head">
       <div class="show-image"><img alt="No Image" class="td-image" src="${partsList.cpucooler.image}" width="120" height="120"></div>
-      <div class="show-image-name">${partsList.cpucooler.name}</div>
+        <div class="show-image-name-box">
+          <div class="show-image-name-content">${partsList.cpucooler.name}</div>
+        </div>
       </div>
       <div class="show-list__head">
       <div class="show-key">メーカー</div>
@@ -675,7 +658,9 @@ $(function(){
       </div>
       <div class="show-list__head">
       <div class="show-image"><img alt="No Image" class="td-image" src="${partsList.display.image}" width="120" height="120"></div>
-      <div class="show-image-name">${partsList.display.name}</div>
+        <div class="show-image-name-box">
+          <div class="show-image-name-content">${partsList.display.name}</div>
+        </div>
       </div>
       <div class="show-list__head">
       <div class="show-key">メーカー</div>

@@ -33,7 +33,8 @@
                 .show-title= "CPU"
               .show-list__head
                 .show-image= image_tag "#{get_cpu(@parts_list.cpu_id).image}", size: "120x120", alt: "No Image", class: "td-image"
-                .show-image-name= get_cpu(@parts_list.cpu_id).name
+                .show-image-name-box
+                  .show-image-name-content= get_cpu(@parts_list.cpu_id).name
               .show-list__head
                 .show-key メーカー
                 .show-value= get_cpu(@parts_list.cpu_id).brand
@@ -50,7 +51,8 @@
                 .show-title= "マザーボード"
               .show-list__head
                 .show-image= image_tag "#{get_motherboard(@parts_list.mb_id).image}", size: "120x120", alt: "No Image", class: "td-image"
-                .show-image-name= get_motherboard(@parts_list.mb_id).name
+                .show-image-name-box
+                  .show-image-name-content= get_motherboard(@parts_list.mb_id).name
               .show-list__head
                 .show-key メーカー
                 .show-value= get_motherboard(@parts_list.mb_id).brand
@@ -70,7 +72,8 @@
                 .show-title= "メモリー"
               .show-list__head
                 .show-image= image_tag "#{get_memory(@parts_list.memory_id).image}", size: "120x120", alt: "No Image", class: "td-image"
-                .show-image-name= get_memory(@parts_list.memory_id).name
+                .show-image-name-box
+                  .show-image-name-content= get_memory(@parts_list.memory_id).name
               .show-list__head
                 .show-key メーカー
                 .show-value= get_memory(@parts_list.memory_id).brand
@@ -93,7 +96,8 @@
                 .show-title= "HDD"
               .show-list__head
                 .show-image= image_tag "#{get_hdd(@parts_list.hdd_id).image}", size: "120x120", alt: "No Image", class: "td-image"
-                .show-image-name= get_hdd(@parts_list.hdd_id).name
+                .show-image-name-box
+                  .show-image-name-content= get_hdd(@parts_list.hdd_id).name
               .show-list__head
                 .show-key メーカー
                 .show-value= get_hdd(@parts_list.hdd_id).brand
@@ -122,7 +126,8 @@
                 .show-title= "SSD"
               .show-list__head
                 .show-image= image_tag "#{get_ssd(@parts_list.ssd_id).image}", size: "120x120", alt: "No Image", class: "td-image"
-                .show-image-name= get_ssd(@parts_list.ssd_id).name
+                .show-image-name-box
+                  .show-image-name-content= get_ssd(@parts_list.ssd_id).name
               .show-list__head
                 .show-key メーカー
                 .show-value= get_ssd(@parts_list.ssd_id).brand
@@ -146,7 +151,8 @@
                 .show-title= "グラフィックボード"
               .show-list__head
                 .show-image= image_tag "#{get_videocard(@parts_list.videocard_id).image}", size: "120x120", alt: "No Image", class: "td-image"
-                .show-image-name= get_videocard(@parts_list.videocard_id).name
+                .show-image-name-box
+                  .show-image-name-content= get_videocard(@parts_list.videocard_id).name
               .show-list__head
                 .show-key メーカー
                 .show-value= get_videocard(@parts_list.videocard_id).brand
@@ -172,7 +178,8 @@
                 .show-title= "電源ユニット"
               .show-list__head
                 .show-image= image_tag "#{get_powersupply(@parts_list.power_id).image}", size: "120x120", alt: "No Image", class: "td-image"
-                .show-image-name= get_powersupply(@parts_list.power_id).name
+                .show-image-name-box
+                  .show-image-name-content= get_powersupply(@parts_list.power_id).name
               .show-list__head
                 .show-key メーカー
                 .show-value= get_powersupply(@parts_list.power_id).brand
@@ -192,7 +199,8 @@
                 .show-title= "PCケース"
               .show-list__head
                 .show-image= image_tag "#{get_pccase(@parts_list.pccase_id).image}", size: "120x120", alt: "No Image", class: "td-image"
-                .show-image-name= get_pccase(@parts_list.pccase_id).name
+                .show-image-name-box
+                  .show-image-name-content= get_pccase(@parts_list.pccase_id).name
               .show-list__head
                 .show-key メーカー
                 .show-value= get_pccase(@parts_list.pccase_id).brand
@@ -212,7 +220,8 @@
                 .show-title= "CPUクーラー"
               .show-list__head
                 .show-image= image_tag "#{get_cpucooler(@parts_list.cpucooler_id).image}", size: "120x120", alt: "No Image", class: "td-image"
-                .show-image-name= get_cpucooler(@parts_list.cpucooler_id).name
+                .show-image-name-box
+                  .show-image-name-content= get_cpucooler(@parts_list.cpucooler_id).name
               .show-list__head
                 .show-key メーカー
                 .show-value= get_cpucooler(@parts_list.cpucooler_id).brand
@@ -235,7 +244,8 @@
                 .show-title= "液晶ディスプレイ"
               .show-list__head
                 .show-image= image_tag "#{get_display(@parts_list.display_id).image}", size: "120x120", alt: "No Image", class: "td-image"
-                .show-image-name= get_display(@parts_list.display_id).name
+                .show-image-name-box
+                  .show-image-name-content= get_display(@parts_list.display_id).name
               .show-list__head
                 .show-key メーカー
                 .show-value= get_display(@parts_list.display_id).brand

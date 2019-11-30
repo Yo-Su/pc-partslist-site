@@ -380,13 +380,15 @@
               text-align: center;
               box-sizing: border-box;
             }
-            .show-image-name{
+            .show-image-name-box{
               padding: 10px;
               height: 140px;
-              line-height: 120px;
               width: 80%;
               border-bottom: 1px solid #000;
               box-sizing: border-box;
+            }
+            .show-image-name-content{
+              line-height: 120px;
               overflow-x: auto;
               white-space: nowrap;
             }
@@ -409,7 +411,7 @@
               height: 60px;
               line-height: 60px;
               overflow-x: scroll;
-              // white-space: nowrap;
+              white-space: nowrap;
             }
           }
         }
