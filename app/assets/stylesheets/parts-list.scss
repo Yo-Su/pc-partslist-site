@@ -398,6 +398,8 @@
               box-sizing: border-box;
               height: 60px;
               line-height: 60px;
+              overflow-x: auto;
+              white-space: nowrap;
             }
             .show-value{
               width: 80%;
@@ -406,6 +408,8 @@
               box-sizing: border-box;
               height: 60px;
               line-height: 60px;
+              overflow-x: scroll;
+              // white-space: nowrap;
             }
           }
         }
