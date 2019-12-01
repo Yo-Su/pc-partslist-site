@@ -31,16 +31,28 @@ $(function(){
         </div>
       </div>
         <div class="show-list__head">
-          <div class="show-key">メーカー</div>
-          <div class="show-value">${partsList.cpu.brand}</div>
+          <div class="show-key-box">
+            <div class="show-key-content">メーカー</div>
+          </div>
+          <div class="show-value-box">
+            <div class="show-value-content">${partsList.cpu.brand}</div>
+          </div>
         </div>
       <div class="show-list__head">
-        <div class="show-key">プロセッサー</div>
-        <div class="show-value">${partsList.cpu.processor}</div>
+        <div class="show-key-box">
+          <div class="show-key-content">プロセッサー</div>
+        </div>
+        <div class="show-value-box">
+          <div class="show-value-content">${partsList.cpu.processor}</div>
+        </div>
       </div>
       <div class="show-list__head">
-        <div class="show-key">ソケット形状</div>
-        <div class="show-value">${partsList.cpu.socket}</div>
+        <div class="show-key-box">
+          <div class="show-key-content">ソケット形状</div>
+        </div>
+        <div class="show-value-box">
+          <div class="show-value-content">${partsList.cpu.socket}</div>
+        </div>
       </div>
     </div>
     `
@@ -60,16 +72,28 @@ $(function(){
         </div>
       </div>
         <div class="show-list__head">
-          <div class="show-key">メーカー</div>
-          <div class="show-value"></div>
+          <div class="show-key-box">
+            <div class="show-key-content">メーカー</div>
+          </div>
+          <div class="show-value-box">
+            <div class="show-value-content"></div>
+          </div>
         </div>
       <div class="show-list__head">
-        <div class="show-key">プロセッサー</div>
-        <div class="show-value"></div>
+        <div class="show-key-box">
+          <div class="show-key-content">プロセッサー</div>
+        </div>
+        <div class="show-value-box">
+          <div class="show-value-content"></div>
+        </div>
       </div>
       <div class="show-list__head">
-        <div class="show-key">ソケット形状</div>
-        <div class="show-value"></div>
+        <div class="show-key-box">
+          <div class="show-key-content">ソケット形状</div>
+        </div>
+        <div class="show-value-box">
+          <div class="show-value-content"></div>
+        </div>
       </div>
     </div>
     `
@@ -89,20 +113,36 @@ $(function(){
           </div>
         </div>
         <div class="show-list__head">
-          <div class="show-key">メーカー</div>
-          <div class="show-value">${partsList.mb.brand}</div>
+          <div class="show-key-box">
+            <div class="show-key-content">メーカー</div>
+          </div>
+          <div class="show-value-box">
+            <div class="show-value-content">${partsList.mb.brand}</div>
+          </div>
         </div>
         <div class="show-list__head">
-          <div class="show-key">チップセット</div>
-          <div class="show-value">${partsList.mb.chipset}</div>
+          <div class="show-key-box">
+            <div class="show-key-content">チップセット</div>
+          </div>
+          <div class="show-value-box">
+            <div class="show-value-content">${partsList.mb.chipset}</div>
+          </div>
         </div>
         <div class="show-list__head">
-          <div class="show-key">フォームファクタ</div>
-          <div class="show-value">${partsList.mb.formfactor}</div>
+          <div class="show-key-box">
+            <div class="show-key-content">フォームファクタ</div>
+          </div>
+          <div class="show-value-box">
+            <div class="show-value-content">${partsList.mb.formfactor}</div>
+          </div>
         </div>
         <div class="show-list__head">
-          <div class="show-key">ソケット形状</div>
-          <div class="show-value">${partsList.mb.socket}</div>
+          <div class="show-key-box">
+            <div class="show-key-content">ソケット形状</div>
+          </div>
+          <div class="show-value-box">
+            <div class="show-value-content">${partsList.mb.socket}</div>
+          </div>
         </div>
       </div>
     `
@@ -122,20 +162,36 @@ $(function(){
           </div>
         </div>
         <div class="show-list__head">
-          <div class="show-key">メーカー</div>
-          <div class="show-value"></div>
+          <div class="show-key-box">
+            <div class="show-key-content"></div>
+          </div>
+          <div class="show-value-box">
+            <div class="show-value-content"></div>
+          </div>
         </div>
         <div class="show-list__head">
-          <div class="show-key">チップセット</div>
-          <div class="show-value"></div>
+          <div class="show-key-box">
+            <div class="show-key-content"></div>
+          </div>
+          <div class="show-value-box">
+            <div class="show-value-content"></div>
+          </div>
         </div>
         <div class="show-list__head">
-          <div class="show-key">フォームファクタ</div>
-          <div class="show-value"></div>
+          <div class="show-key-box">
+            <div class="show-key-content"></div>
+          </div>
+          <div class="show-value-box">
+            <div class="show-value-content"></div>
+          </div>
         </div>
         <div class="show-list__head">
-          <div class="show-key">ソケット形状</div>
-          <div class="show-value"></div>
+          <div class="show-key-box">
+            <div class="show-key-content"></div>
+          </div>
+          <div class="show-value-box">
+            <div class="show-value-content"></div>
+          </div>
         </div>
       </div>
     `
@@ -155,24 +211,44 @@ $(function(){
       </div>
       </div>
       <div class="show-list__head">
-      <div class="show-key">メーカー</div>
-      <div class="show-value">${partsList.memory.brand}</div>
+      <div class="show-key-box">
+      <div class="show-key-content">メーカー</div>
+      </div>
+      <div class="show-value-box">
+      <div class="show-value-content">${partsList.memory.brand}</div>
+      </div>
       </div>
       <div class="show-list__head">
-      <div class="show-key">メモリ容量(1枚あたり)</div>
-      <div class="show-value">${partsList.memory.capacity}</div>
+      <div class="show-key-box">
+      <div class="show-key-content">メモリ容量(1枚あたり)</div>
+      </div>
+      <div class="show-value-box">
+      <div class="show-value-content">${partsList.memory.capacity}</div>
+      </div>
       </div>
       <div class="show-list__head">
-      <div class="show-key">枚数</div>
-      <div class="show-value">${partsList.memory.setnumber}</div>
+      <div class="show-key-box">
+      <div class="show-key-content">枚数</div>
+      </div>
+      <div class="show-value-box">
+      <div class="show-value-content">${partsList.memory.setnumber}</div>
+      </div>
       </div>
       <div class="show-list__head">
-      <div class="show-key">メモリ規格</div>
-      <div class="show-value">${partsList.memory.standard}</div>
+      <div class="show-key-box">
+      <div class="show-key-content">メモリ規格</div>
+      </div>
+      <div class="show-value-box">
+      <div class="show-value-content">${partsList.memory.standard}</div>
+      </div>
       </div>
       <div class="show-list__head">
-      <div class="show-key">メモリインターフェイス</div>
-      <div class="show-value">${partsList.memory.interface}</div>
+      <div class="show-key-box">
+      <div class="show-key-content">メモリインターフェイス</div>
+      </div>
+      <div class="show-value-box">
+      <div class="show-value-content">${partsList.memory.interface}</div>
+      </div>
       </div>
       </div>
     `
@@ -192,24 +268,44 @@ $(function(){
       </div>
       </div>
       <div class="show-list__head">
-      <div class="show-key">メーカー</div>
-      <div class="show-value"></div>
+      <div class="show-key-box">
+      <div class="show-key-content"></div>
+      </div>
+      <div class="show-value-box">
+      <div class="show-value-content"></div>
+      </div>
       </div>
       <div class="show-list__head">
-      <div class="show-key">メモリ容量(1枚あたり)</div>
-      <div class="show-value"></div>
+      <div class="show-key-box">
+      <div class="show-key-content"></div>
+      </div>
+      <div class="show-value-box">
+      <div class="show-value-content"></div>
+      </div>
       </div>
       <div class="show-list__head">
-      <div class="show-key">枚数</div>
-      <div class="show-value"></div>
+      <div class="show-key-box">
+      <div class="show-key-content"></div>
+      </div>
+      <div class="show-value-box">
+      <div class="show-value-content"></div>
+      </div>
       </div>
       <div class="show-list__head">
-      <div class="show-key">メモリ規格</div>
-      <div class="show-value"></div>
+      <div class="show-key-box">
+      <div class="show-key-content"></div>
+      </div>
+      <div class="show-value-box">
+      <div class="show-value-content"></div>
+      </div>
       </div>
       <div class="show-list__head">
-      <div class="show-key">メモリインターフェイス</div>
-      <div class="show-value"></div>
+      <div class="show-key-box">
+      <div class="show-key-content"></div>
+      </div>
+      <div class="show-value-box">
+      <div class="show-value-content"></div>
+      </div>
       </div>
       </div>
     `
@@ -225,36 +321,64 @@ $(function(){
       <div class="show-list__head">
       <div class="show-image"><img alt="No Image" class="td-image" src="${partsList.hdd.image}" width="120" height="120"></div>
       <div class="show-image-name-box">
-        <div class="show-image-name-content">${partsList.hdd.name}</div>
+      <div class="show-image-name-content">${partsList.hdd.name}</div>
       </div>
       </div>
       <div class="show-list__head">
-      <div class="show-key">メーカー</div>
-      <div class="show-value">${partsList.hdd.brand}</div>
+      <div class="show-key-box">
+      <div class="show-key-content">メーカー</div>
+      </div>
+      <div class="show-value-box">
+      <div class="show-value-content">${partsList.hdd.brand}</div>
+      </div>
       </div>
       <div class="show-list__head">
-      <div class="show-key">シリーズ</div>
-      <div class="show-value">${partsList.hdd.series}</div>
+      <div class="show-key-box">
+      <div class="show-key-content">シリーズ</div>
+      </div>
+      <div class="show-value-box">
+      <div class="show-value-content">${partsList.hdd.series}</div>
+      </div>
       </div>
       <div class="show-list__head">
-      <div class="show-key">容量</div>
-      <div class="show-value">${partsList.hdd.capacity}</div>
+      <div class="show-key-box">
+      <div class="show-key-content">容量</div>
+      </div>
+      <div class="show-value-box">
+      <div class="show-value-content">${partsList.hdd.capacity}</div>
+      </div>
       </div>
       <div class="show-list__head">
-      <div class="show-key">回転数</div>
-      <div class="show-value">${partsList.hdd.speed}</div>
+      <div class="show-key-box">
+      <div class="show-key-content">回転数</div>
+      </div>
+      <div class="show-value-box">
+      <div class="show-value-content">${partsList.hdd.speed}</div>
+      </div>
       </div>
       <div class="show-list__head">
-      <div class="show-key">インターフェイス</div>
-      <div class="show-value">${partsList.hdd.interface1}</div>
+      <div class="show-key-box">
+      <div class="show-key-content">インターフェイス</div>
+      </div>
+      <div class="show-value-box">
+      <div class="show-value-content">${partsList.hdd.interface1}</div>
+      </div>
       </div>
       <div class="show-list__head">
-      <div class="show-key">インターフェイス</div>
-      <div class="show-value">${partsList.hdd.interface2}</div>
+      <div class="show-key-box">
+      <div class="show-key-content">インターフェイス</div>
+      </div>
+      <div class="show-value-box">
+      <div class="show-value-content">${partsList.hdd.interface2}</div>
+      </div>
       </div>
       <div class="show-list__head">
-      <div class="show-key">キャッシュ</div>
-      <div class="show-value">${partsList.hdd.cache}</div>
+      <div class="show-key-box">
+      <div class="show-key-content">キャッシュ</div>
+      </div>
+      <div class="show-value-box">
+      <div class="show-value-content">${partsList.hdd.cache}</div>
+      </div>
       </div>
       </div>
     `
@@ -274,32 +398,60 @@ $(function(){
       </div>
       </div>
       <div class="show-list__head">
-      <div class="show-key">メーカー</div>
-      <div class="show-value"></div>
+      <div class="show-key-box">
+      <div class="show-key-content"></div>
+      </div>
+      <div class="show-value-box">
+      <div class="show-value-content"></div>
+      </div>
       </div>
       <div class="show-list__head">
-      <div class="show-key">シリーズ</div>
-      <div class="show-value"></div>
+      <div class="show-key-box">
+      <div class="show-key-content"></div>
+      </div>
+      <div class="show-value-box">
+      <div class="show-value-content"></div>
+      </div>
       </div>
       <div class="show-list__head">
-      <div class="show-key">容量</div>
-      <div class="show-value"></div>
+      <div class="show-key-box">
+      <div class="show-key-content"></div>
+      </div>
+      <div class="show-value-box">
+      <div class="show-value-content"></div>
+      </div>
       </div>
       <div class="show-list__head">
-      <div class="show-key">回転数</div>
-      <div class="show-value"></div>
+      <div class="show-key-box">
+      <div class="show-key-content"></div>
+      </div>
+      <div class="show-value-box">
+      <div class="show-value-content"></div>
+      </div>
       </div>
       <div class="show-list__head">
-      <div class="show-key">インターフェイス</div>
-      <div class="show-value"></div>
+      <div class="show-key-box">
+      <div class="show-key-content"></div>
+      </div>
+      <div class="show-value-box">
+      <div class="show-value-content"></div>
+      </div>
       </div>
       <div class="show-list__head">
-      <div class="show-key">インターフェイス</div>
-      <div class="show-value"></div>
+      <div class="show-key-box">
+      <div class="show-key-content"></div>
+      </div>
+      <div class="show-value-box">
+      <div class="show-value-content"></div>
+      </div>
       </div>
       <div class="show-list__head">
-      <div class="show-key">キャッシュ</div>
-      <div class="show-value"></div>
+      <div class="show-key-box">
+      <div class="show-key-content"></div>
+      </div>
+      <div class="show-value-box">
+      <div class="show-value-content"></div>
+      </div>
       </div>
       </div>
     `
@@ -319,24 +471,44 @@ $(function(){
         </div>
       </div>
       <div class="show-list__head">
-      <div class="show-key">メーカー</div>
-      <div class="show-value">${partsList.ssd.brand}</div>
+      <div class="show-key-box">
+      <div class="show-key-content">メーカー</div>
+      </div>
+      <div class="show-value-box">
+      <div class="show-value-content">${partsList.ssd.brand}</div>
+      </div>
       </div>
       <div class="show-list__head">
-      <div class="show-key">容量</div>
-      <div class="show-value">${partsList.ssd.capacity}</div>
+      <div class="show-key-box">
+      <div class="show-key-content">容量</div>
+      </div>
+      <div class="show-value-box">
+      <div class="show-value-content">${partsList.ssd.capacity}</div>
+      </div>
       </div>
       <div class="show-list__head">
-      <div class="show-key">規格サイズ</div>
-      <div class="show-value">${partsList.ssd.size}</div>
+      <div class="show-key-box">
+      <div class="show-key-content">規格サイズ</div>
+      </div>
+      <div class="show-value-box">
+      <div class="show-value-content">${partsList.ssd.size}</div>
+      </div>
       </div>
       <div class="show-list__head">
-      <div class="show-key">インターフェイス</div>
-      <div class="show-value">${partsList.ssd.interface}</div>
+      <div class="show-key-box">
+      <div class="show-key-content">インターフェイス</div>
+      </div>
+      <div class="show-value-box">
+      <div class="show-value-content">${partsList.ssd.interface}</div>
+      </div>
       </div>
       <div class="show-list__head">
-      <div class="show-key">タイプ</div>
-      <div class="show-value">${partsList.ssd.ssdtype}</div>
+      <div class="show-key-box">
+      <div class="show-key-content">タイプ</div>
+      </div>
+      <div class="show-value-box">
+      <div class="show-value-content">${partsList.ssd.ssdtype}</div>
+      </div>
       </div>
       </div>
     `
@@ -356,24 +528,44 @@ $(function(){
       </div>
       </div>
       <div class="show-list__head">
-      <div class="show-key">メーカー</div>
-      <div class="show-value"></div>
+      <div class="show-key-box">
+      <div class="show-key-content"></div>
+      </div>
+      <div class="show-value-box">
+      <div class="show-value-content"></div>
+      </div>
       </div>
       <div class="show-list__head">
-      <div class="show-key">容量</div>
-      <div class="show-value"></div>
+      <div class="show-key-box">
+      <div class="show-key-content"></div>
+      </div>
+      <div class="show-value-box">
+      <div class="show-value-content"></div>
+      </div>
       </div>
       <div class="show-list__head">
-      <div class="show-key">規格サイズ</div>
-      <div class="show-value"></div>
+      <div class="show-key-box">
+      <div class="show-key-content"></div>
+      </div>
+      <div class="show-value-box">
+      <div class="show-value-content"></div>
+      </div>
       </div>
       <div class="show-list__head">
-      <div class="show-key">インターフェイス</div>
-      <div class="show-value"></div>
+      <div class="show-key-box">
+      <div class="show-key-content"></div>
+      </div>
+      <div class="show-value-box">
+      <div class="show-value-content"></div>
+      </div>
       </div>
       <div class="show-list__head">
-      <div class="show-key">タイプ</div>
-      <div class="show-value"></div>
+      <div class="show-key-box">
+      <div class="show-key-content"></div>
+      </div>
+      <div class="show-value-box">
+      <div class="show-value-content"></div>
+      </div>
       </div>
       </div>
     `
@@ -393,28 +585,52 @@ $(function(){
         </div>
       </div>
       <div class="show-list__head">
-      <div class="show-key">メーカー</div>
-      <div class="show-value">${partsList.videocard.brand}</div>
+      <div class="show-key-box">
+      <div class="show-key-content">メーカー</div>
+      </div>
+      <div class="show-value-box">
+      <div class="show-value-content">${partsList.videocard.brand}</div>
+      </div>
       </div>
       <div class="show-list__head">
-      <div class="show-key">搭載チップ</div>
-      <div class="show-value">${partsList.videocard.chip}</div>
+      <div class="show-key-box">
+      <div class="show-key-content">搭載チップ</div>
+      </div>
+      <div class="show-value-box">
+      <div class="show-value-content">${partsList.videocard.chip}</div>
+      </div>
       </div>
       <div class="show-list__head">
-      <div class="show-key">CUDAコア数</div>
-      <div class="show-value">${partsList.videocard.core}</div>
+      <div class="show-key-box">
+      <div class="show-key-content">CUDAコア数</div>
+      </div>
+      <div class="show-value-box">
+      <div class="show-value-content">${partsList.videocard.core}</div>
+      </div>
       </div>
       <div class="show-list__head">
-      <div class="show-key">メモリ</div>
-      <div class="show-value">${partsList.videocard.memory}</div>
+      <div class="show-key-box">
+      <div class="show-key-content">メモリ</div>
+      </div>
+      <div class="show-value-box">
+      <div class="show-value-content">${partsList.videocard.memory}</div>
+      </div>
       </div>
       <div class="show-list__head">
-      <div class="show-key">メモリクロック</div>
-      <div class="show-value">${partsList.videocard.clock}</div>
+      <div class="show-key-box">
+      <div class="show-key-content">メモリクロック</div>
+      </div>
+      <div class="show-value-box">
+      <div class="show-value-content">${partsList.videocard.clock}</div>
+      </div>
       </div>
       <div class="show-list__head">
-      <div class="show-key">バスインターフェイス</div>
-      <div class="show-value">${partsList.videocard.interface}</div>
+      <div class="show-key-box">
+      <div class="show-key-content">バスインターフェイス</div>
+      </div>
+      <div class="show-value-box">
+      <div class="show-value-content">${partsList.videocard.interface}</div>
+      </div>
       </div>
       </div>
     `
@@ -434,28 +650,52 @@ $(function(){
       </div>
       </div>
       <div class="show-list__head">
-      <div class="show-key">メーカー</div>
-      <div class="show-value"></div>
+      <div class="show-key-box">
+      <div class="show-key-content"></div>
+      </div>
+      <div class="show-value-box">
+      <div class="show-value-content"></div>
+      </div>
       </div>
       <div class="show-list__head">
-      <div class="show-key">搭載チップ</div>
-      <div class="show-value"></div>
+      <div class="show-key-box">
+      <div class="show-key-content"></div>
+      </div>
+      <div class="show-value-box">
+      <div class="show-value-content"></div>
+      </div>
       </div>
       <div class="show-list__head">
-      <div class="show-key">CUDAコア数</div>
-      <div class="show-value"></div>
+      <div class="show-key-box">
+      <div class="show-key-content"></div>
+      </div>
+      <div class="show-value-box">
+      <div class="show-value-content"></div>
+      </div>
       </div>
       <div class="show-list__head">
-      <div class="show-key">メモリ</div>
-      <div class="show-value"></div>
+      <div class="show-key-box">
+      <div class="show-key-content"></div>
+      </div>
+      <div class="show-value-box">
+      <div class="show-value-content"></div>
+      </div>
       </div>
       <div class="show-list__head">
-      <div class="show-key">メモリクロック</div>
-      <div class="show-value"></div>
+      <div class="show-key-box">
+      <div class="show-key-content"></div>
+      </div>
+      <div class="show-value-box">
+      <div class="show-value-content"></div>
+      </div>
       </div>
       <div class="show-list__head">
-      <div class="show-key">バスインターフェイス</div>
-      <div class="show-value"></div>
+      <div class="show-key-box">
+      <div class="show-key-content"></div>
+      </div>
+      <div class="show-value-box">
+      <div class="show-value-content"></div>
+      </div>
       </div>
       </div>
     `
@@ -475,20 +715,36 @@ $(function(){
         </div>
       </div>
       <div class="show-list__head">
-      <div class="show-key">メーカー</div>
-      <div class="show-value">${partsList.power.brand}</div>
+      <div class="show-key-box">
+      <div class="show-key-content">メーカー</div>
+      </div>
+      <div class="show-value-box">
+      <div class="show-value-content">${partsList.power.brand}</div>
+      </div>
       </div>
       <div class="show-list__head">
-      <div class="show-key">対応規格</div>
-      <div class="show-value">${partsList.power.standard}</div>
+      <div class="show-key-box">
+      <div class="show-key-content">対応規格</div>
+      </div>
+      <div class="show-value-box">
+      <div class="show-value-content">${partsList.power.standard}</div>
+      </div>
       </div>
       <div class="show-list__head">
-      <div class="show-key">電源容量</div>
-      <div class="show-value">${partsList.power.capacity}</div>
+      <div class="show-key-box">
+      <div class="show-key-content">電源容量</div>
+      </div>
+      <div class="show-value-box">
+      <div class="show-value-content">${partsList.power.capacity}</div>
+      </div>
       </div>
       <div class="show-list__head">
-      <div class="show-key">80PLUS認証</div>
-      <div class="show-value">${partsList.power.plus}</div>
+      <div class="show-key-box">
+      <div class="show-key-content">80PLUS認証</div>
+      </div>
+      <div class="show-value-box">
+      <div class="show-value-content">${partsList.power.plus}</div>
+      </div>
       </div>
       </div>
     `
@@ -508,20 +764,36 @@ $(function(){
       </div>
       </div>
       <div class="show-list__head">
-      <div class="show-key">メーカー</div>
-      <div class="show-value"></div>
+      <div class="show-key-box">
+      <div class="show-key-content"></div>
+      </div>
+      <div class="show-value-box">
+      <div class="show-value-content"></div>
+      </div>
       </div>
       <div class="show-list__head">
-      <div class="show-key">対応規格</div>
-      <div class="show-value"></div>
+      <div class="show-key-box">
+      <div class="show-key-content"></div>
+      </div>
+      <div class="show-value-box">
+      <div class="show-value-content"></div>
+      </div>
       </div>
       <div class="show-list__head">
-      <div class="show-key">電源容量</div>
-      <div class="show-value"></div>
+      <div class="show-key-box">
+      <div class="show-key-content"></div>
+      </div>
+      <div class="show-value-box">
+      <div class="show-value-content"></div>
+      </div>
       </div>
       <div class="show-list__head">
-      <div class="show-key">80PLUS認証</div>
-      <div class="show-value"></div>
+      <div class="show-key-box">
+      <div class="show-key-content"></div>
+      </div>
+      <div class="show-value-box">
+      <div class="show-value-content"></div>
+      </div>
       </div>
       </div>
     `
@@ -541,20 +813,36 @@ $(function(){
         </div>
       </div>
       <div class="show-list__head">
-      <div class="show-key">メーカー</div>
-      <div class="show-value">${partsList.pccase.brand}</div>
+      <div class="show-key-box">
+      <div class="show-key-content">メーカー</div>
+      </div>
+      <div class="show-value-box">
+      <div class="show-value-content">${partsList.pccase.brand}</div>
+      </div>
       </div>
       <div class="show-list__head">
-      <div class="show-key">対応ファクター</div>
-      <div class="show-value">${partsList.pccase.factor}</div>
+      <div class="show-key-box">
+      <div class="show-key-content">対応ファクター</div>
+      </div>
+      <div class="show-value-box">
+      <div class="show-value-content">${partsList.pccase.factor}</div>
+      </div>
       </div>
       <div class="show-list__head">
-      <div class="show-key">重量</div>
-      <div class="show-value">${partsList.pccase.weight}</div>
+      <div class="show-key-box">
+      <div class="show-key-content">重量</div>
+      </div>
+      <div class="show-value-box">
+      <div class="show-value-content">${partsList.pccase.weight}</div>
+      </div>
       </div>
       <div class="show-list__head">
-      <div class="show-key">幅x高さx奥行</div>
-      <div class="show-value">${partsList.pccase.size_wdh}</div>
+      <div class="show-key-box">
+      <div class="show-key-content">幅x高さx奥行</div>
+      </div>
+      <div class="show-value-box">
+      <div class="show-value-content">${partsList.pccase.size_wdh}</div>
+      </div>
       </div>
       </div>
     `
@@ -574,20 +862,36 @@ $(function(){
       </div>
       </div>
       <div class="show-list__head">
-      <div class="show-key">メーカー</div>
-      <div class="show-value"></div>
+      <div class="show-key-box">
+      <div class="show-key-content"></div>
+      </div>
+      <div class="show-value-box">
+      <div class="show-value-content"></div>
+      </div>
       </div>
       <div class="show-list__head">
-      <div class="show-key">対応ファクター</div>
-      <div class="show-value"></div>
+      <div class="show-key-box">
+      <div class="show-key-content"></div>
+      </div>
+      <div class="show-value-box">
+      <div class="show-value-content"></div>
+      </div>
       </div>
       <div class="show-list__head">
-      <div class="show-key">重量</div>
-      <div class="show-value"></div>
+      <div class="show-key-box">
+      <div class="show-key-content"></div>
+      </div>
+      <div class="show-value-box">
+      <div class="show-value-content"></div>
+      </div>
       </div>
       <div class="show-list__head">
-      <div class="show-key">幅x高さx奥行</div>
-      <div class="show-value"></div>
+      <div class="show-key-box">
+      <div class="show-key-content"></div>
+      </div>
+      <div class="show-value-box">
+      <div class="show-value-content"></div>
+      </div>
       </div>
       </div>
     `
@@ -607,24 +911,44 @@ $(function(){
         </div>
       </div>
       <div class="show-list__head">
-      <div class="show-key">メーカー</div>
-      <div class="show-value">${partsList.cpucooler.brand}</div>
+      <div class="show-key-box">
+      <div class="show-key-content">メーカー</div>
+      </div>
+      <div class="show-value-box">
+      <div class="show-value-content">${partsList.cpucooler.brand}</div>
+      </div>
       </div>
       <div class="show-list__head">
-      <div class="show-key">Intel対応ソケット</div>
-      <div class="show-value">${partsList.cpucooler.intel}</div>
+      <div class="show-key-box">
+      <div class="show-key-content">Intel対応ソケット</div>
+      </div>
+      <div class="show-value-box">
+      <div class="show-value-content">${partsList.cpucooler.intel}</div>
+      </div>
       </div>
       <div class="show-list__head">
-      <div class="show-key">AMD対応ソケット</div>
-      <div class="show-value">${partsList.cpucooler.amd}</div>
+      <div class="show-key-box">
+      <div class="show-key-content">AMD対応ソケット</div>
+      </div>
+      <div class="show-value-box">
+      <div class="show-value-content">${partsList.cpucooler.amd}</div>
+      </div>
       </div>
       <div class="show-list__head">
-      <div class="show-key">タイプ</div>
-      <div class="show-value">${partsList.cpucooler.flowtype}</div>
+      <div class="show-key-box">
+      <div class="show-key-content">タイプ</div>
+      </div>
+      <div class="show-value-box">
+      <div class="show-value-content">${partsList.cpucooler.flowtype}</div>
+      </div>
       </div>
       <div class="show-list__head">
-      <div class="show-key">ノイズレベル</div>
-      <div class="show-value">${partsList.cpucooler.noise}</div>
+      <div class="show-key-box">
+      <div class="show-key-content">ノイズレベル</div>
+      </div>
+      <div class="show-value-box">
+      <div class="show-value-content">${partsList.cpucooler.noise}</div>
+      </div>
       </div>
       </div>
     `
@@ -644,24 +968,44 @@ $(function(){
       </div>
       </div>
       <div class="show-list__head">
-      <div class="show-key">メーカー</div>
-      <div class="show-value"></div>
+      <div class="show-key-box">
+      <div class="show-key-content"></div>
+      </div>
+      <div class="show-value-box">
+      <div class="show-value-content"></div>
+      </div>
       </div>
       <div class="show-list__head">
-      <div class="show-key">Intel対応ソケット</div>
-      <div class="show-value"></div>
+      <div class="show-key-box">
+      <div class="show-key-content"></div>
+      </div>
+      <div class="show-value-box">
+      <div class="show-value-content"></div>
+      </div>
       </div>
       <div class="show-list__head">
-      <div class="show-key">AMD対応ソケット</div>
-      <div class="show-value"></div>
+      <div class="show-key-box">
+      <div class="show-key-content"></div>
+      </div>
+      <div class="show-value-box">
+      <div class="show-value-content"></div>
+      </div>
       </div>
       <div class="show-list__head">
-      <div class="show-key">タイプ</div>
-      <div class="show-value"></div>
+      <div class="show-key-box">
+      <div class="show-key-content"></div>
+      </div>
+      <div class="show-value-box">
+      <div class="show-value-content"></div>
+      </div>
       </div>
       <div class="show-list__head">
-      <div class="show-key">ノイズレベル</div>
-      <div class="show-value"></div>
+      <div class="show-key-box">
+      <div class="show-key-content"></div>
+      </div>
+      <div class="show-value-box">
+      <div class="show-value-content"></div>
+      </div>
       </div>
       </div>
     `
@@ -681,24 +1025,44 @@ $(function(){
         </div>
       </div>
       <div class="show-list__head">
-      <div class="show-key">メーカー</div>
-      <div class="show-value">${partsList.display.brand}</div>
+      <div class="show-key-box">
+      <div class="show-key-content">メーカー</div>
+      </div>
+      <div class="show-value-box">
+      <div class="show-value-content">${partsList.display.brand}</div>
+      </div>
       </div>
       <div class="show-list__head">
-      <div class="show-key">モニタサイズ</div>
-      <div class="show-value">${partsList.display.size}</div>
+      <div class="show-key-box">
+      <div class="show-key-content">モニタサイズ</div>
+      </div>
+      <div class="show-value-box">
+      <div class="show-value-content">${partsList.display.size}</div>
+      </div>
       </div>
       <div class="show-list__head">
-      <div class="show-key">モニタタイプ</div>
-      <div class="show-value">${partsList.display.monitortype}</div>
+      <div class="show-key-box">
+      <div class="show-key-content">モニタタイプ</div>
+      </div>
+      <div class="show-value-box">
+      <div class="show-value-content">${partsList.display.monitortype}</div>
+      </div>
       </div>
       <div class="show-list__head">
-      <div class="show-key">表示領域</div>
-      <div class="show-value">${partsList.display.area}</div>
+      <div class="show-key-box">
+      <div class="show-key-content">表示領域</div>
+      </div>
+      <div class="show-value-box">
+      <div class="show-value-content">${partsList.display.area}</div>
+      </div>
       </div>
       <div class="show-list__head">
-      <div class="show-key">コントラスト比</div>
-      <div class="show-value">${partsList.display.contrast}/div>
+      <div class="show-key-box">
+      <div class="show-key-content">コントラスト比</div>
+      </div>
+      <div class="show-value-box">
+      <div class="show-value-content">${partsList.display.contrast}/div>
+      </div>
       </div>
       </div>
     `
@@ -718,24 +1082,44 @@ $(function(){
       </div>
       </div>
       <div class="show-list__head">
-      <div class="show-key">メーカー</div>
-      <div class="show-value"></div>
+      <div class="show-key-box">
+      <div class="show-key-content"></div>
+      </div>
+      <div class="show-value-box">
+      <div class="show-value-content"></div>
+      </div>
       </div>
       <div class="show-list__head">
-      <div class="show-key">モニタサイズ</div>
-      <div class="show-value">partsList.display.size}</div>
+      <div class="show-key-box">
+      <div class="show-key-content"></div>
+      </div>
+      <div class="show-value-box">
+      <div class="show-value-content"></div>
+      </div>
       </div>
       <div class="show-list__head">
-      <div class="show-key">モニタタイプ</div>
-      <div class="show-value"></div>
+      <div class="show-key-box">
+      <div class="show-key-content"></div>
+      </div>
+      <div class="show-value-box">
+      <div class="show-value-content"></div>
+      </div>
       </div>
       <div class="show-list__head">
-      <div class="show-key">表示領域</div>
-      <div class="show-value"></div>
+      <div class="show-key-box">
+      <div class="show-key-content"></div>
+      </div>
+      <div class="show-value-box">
+      <div class="show-value-content"></div>
+      </div>
       </div>
       <div class="show-list__head">
-      <div class="show-key">コントラスト比</div>
-      <div class="show-value">/div>
+      <div class="show-key-box">
+      <div class="show-key-content"></div>
+      </div>
+      <div class="show-value-box">
+      <div class="show-value-content"></div>
+      </div>
       </div>
       </div>
     `
