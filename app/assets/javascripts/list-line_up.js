@@ -55,7 +55,9 @@ $(function(){
       </div>
       <div class="show-list__head">
         <div class="show-image"><img alt="No Image" class="td-image" src="https://placehold.jp/150x150.png" width="120" height="120"></div>
-        <div class="show-image-name"></div>
+        <div class="show-image-name-box">
+          <div class="show-image-name-content"></div>
+        </div>
       </div>
         <div class="show-list__head">
           <div class="show-key">メーカー</div>
@@ -115,7 +117,9 @@ $(function(){
         </div>
         <div class="show-list__head">
           <div class="show-image"><img alt="No Image" class="td-image" src="https://placehold.jp/150x150.png" width="120" height="120"></div>
-          <div class="show-image-name"></div>
+          <div class="show-image-name-box">
+            <div class="show-image-name-content"></div>
+          </div>
         </div>
         <div class="show-list__head">
           <div class="show-key">メーカー</div>
@@ -183,7 +187,9 @@ $(function(){
       </div>
       <div class="show-list__head">
       <div class="show-image"><img alt="No Image" class="td-image" src="https://placehold.jp/150x150.png" width="120" height="120"></div>
-      <div class="show-image-name"></div>
+      <div class="show-image-name-box">
+        <div class="show-image-name-content"></div>
+      </div>
       </div>
       <div class="show-list__head">
       <div class="show-key">メーカー</div>
@@ -263,7 +269,9 @@ $(function(){
       </div>
       <div class="show-list__head">
       <div class="show-image"><img alt="No Image" class="td-image" src="https://placehold.jp/150x150.png" width="120" height="120"></div>
-      <div class="show-image-name"></div>
+      <div class="show-image-name-box">
+        <div class="show-image-name-content"></div>
+      </div>
       </div>
       <div class="show-list__head">
       <div class="show-key">メーカー</div>
@@ -343,7 +351,9 @@ $(function(){
       </div>
       <div class="show-list__head">
       <div class="show-image"><img alt="No Image" class="td-image" src="https://placehold.jp/150x150.png" width="120" height="120"></div>
-      <div class="show-image-name"></div>
+      <div class="show-image-name-box">
+        <div class="show-image-name-content"></div>
+      </div>
       </div>
       <div class="show-list__head">
       <div class="show-key">メーカー</div>
@@ -419,7 +429,9 @@ $(function(){
       </div>
       <div class="show-list__head">
       <div class="show-image"><img alt="No Image" class="td-image" src="https://placehold.jp/150x150.png" width="120" height="120"></div>
-      <div class="show-image-name"></div>
+      <div class="show-image-name-box">
+        <div class="show-image-name-content"></div>
+      </div>
       </div>
       <div class="show-list__head">
       <div class="show-key">メーカー</div>
@@ -491,7 +503,9 @@ $(function(){
       </div>
       <div class="show-list__head">
       <div class="show-image"><img alt="No Image" class="td-image" src="https://placehold.jp/150x150.png" width="120" height="120"></div>
-      <div class="show-image-name"></div>
+      <div class="show-image-name-box">
+        <div class="show-image-name-content"></div>
+      </div>
       </div>
       <div class="show-list__head">
       <div class="show-key">メーカー</div>
@@ -555,7 +569,9 @@ $(function(){
       </div>
       <div class="show-list__head">
       <div class="show-image"><img alt="No Image" class="td-image" src="https://placehold.jp/150x150.png" width="120" height="120"></div>
-      <div class="show-image-name"></div>
+      <div class="show-image-name-box">
+        <div class="show-image-name-content"></div>
+      </div>
       </div>
       <div class="show-list__head">
       <div class="show-key">メーカー</div>
@@ -623,7 +639,9 @@ $(function(){
       </div>
       <div class="show-list__head">
       <div class="show-image"><img alt="No Image" class="td-image" src="https://placehold.jp/150x150.png" width="120" height="120"></div>
-      <div class="show-image-name"></div>
+      <div class="show-image-name-box">
+        <div class="show-image-name-content"></div>
+      </div>
       </div>
       <div class="show-list__head">
       <div class="show-key">メーカー</div>
@@ -695,7 +713,9 @@ $(function(){
       </div>
       <div class="show-list__head">
       <div class="show-image"><img alt="No Image" class="td-image" src="https://placehold.jp/150x150.png" width="120" height="120"></div>
-      <div class="show-image-name"></div>
+      <div class="show-image-name-box">
+        <div class="show-image-name-content"></div>
+      </div>
       </div>
       <div class="show-list__head">
       <div class="show-key">メーカー</div>
