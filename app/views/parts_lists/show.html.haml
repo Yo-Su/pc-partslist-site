@@ -36,14 +36,20 @@
                 .show-image-name-box
                   .show-image-name-content= get_cpu(@parts_list.cpu_id).name
               .show-list__head
-                .show-key メーカー
-                .show-value= get_cpu(@parts_list.cpu_id).brand
+                .show-key-box
+                  .show-key-content メーカー
+                .show-value-box
+                  .show-value-content= get_cpu(@parts_list.cpu_id).brand
               .show-list__head
-                .show-key プロセッサー
-                .show-value= get_cpu(@parts_list.cpu_id).processor
+                .show-key-box
+                  .show-key-content プロセッサー
+                .show-value-box
+                  .show-value-content= get_cpu(@parts_list.cpu_id).processor
               .show-list__head
-                .show-key ソケット形状
-                .show-value= get_cpu(@parts_list.cpu_id).socket
+                .show-key-box
+                  .show-key-content ソケット形状
+                .show-value-box
+                  .show-value-content= get_cpu(@parts_list.cpu_id).socket
 
           - if get_motherboard(@parts_list.mb_id)
             .show-list
@@ -54,17 +60,25 @@
                 .show-image-name-box
                   .show-image-name-content= get_motherboard(@parts_list.mb_id).name
               .show-list__head
-                .show-key メーカー
-                .show-value= get_motherboard(@parts_list.mb_id).brand
+                .show-key-box
+                  .show-key-content メーカー
+                .show-value-box
+                  .show-value-content= get_motherboard(@parts_list.mb_id).brand
               .show-list__head
-                .show-key チップセット
-                .show-value= get_motherboard(@parts_list.mb_id).chipset
+                .show-key-box
+                  .show-key-content チップセット
+                .show-value-box
+                  .show-value-content= get_motherboard(@parts_list.mb_id).chipset
               .show-list__head
-                .show-key フォームファクタ
-                .show-value= get_motherboard(@parts_list.mb_id).formfactor
+                .show-key-box
+                  .show-key-content フォームファクタ
+                .show-value-box
+                  .show-value-content= get_motherboard(@parts_list.mb_id).formfactor
               .show-list__head
-                .show-key ソケット形状
-                .show-value= get_motherboard(@parts_list.mb_id).socket
+                .show-key-box
+                  .show-key-content ソケット形状
+                .show-value-box
+                  .show-value-content= get_motherboard(@parts_list.mb_id).socket
 
           - if get_memory(@parts_list.memory_id)
             .show-list
@@ -75,20 +89,30 @@
                 .show-image-name-box
                   .show-image-name-content= get_memory(@parts_list.memory_id).name
               .show-list__head
-                .show-key メーカー
-                .show-value= get_memory(@parts_list.memory_id).brand
+                .show-key-box
+                  .show-key-content メーカー
+                .show-value-box
+                  .show-value-content= get_memory(@parts_list.memory_id).brand
               .show-list__head
-                .show-key メモリ容量(1枚あたり)
-                .show-value= get_memory(@parts_list.memory_id).capacity
+                .show-key-box
+                  .show-key-content メモリ容量(1枚あたり)
+                .show-value-box
+                  .show-value-content= get_memory(@parts_list.memory_id).capacity
               .show-list__head
-                .show-key 枚数
-                .show-value= get_memory(@parts_list.memory_id).setnumber
+                .show-key-box
+                  .show-key-content 枚数
+                .show-value-box
+                  .show-value-content= get_memory(@parts_list.memory_id).setnumber
               .show-list__head
-                .show-key メモリ規格
-                .show-value= get_memory(@parts_list.memory_id).standard
+                .show-key-box
+                  .show-key-content メモリ規格
+                .show-value-box
+                  .show-value-content= get_memory(@parts_list.memory_id).standard
               .show-list__head
-                .show-key メモリインターフェイス
-                .show-value= get_memory(@parts_list.memory_id).interface
+                .show-key-box
+                  .show-key-content メモリインターフェイス
+                .show-value-box
+                  .show-value-content= get_memory(@parts_list.memory_id).interface
 
           - if get_hdd(@parts_list.hdd_id)
             .show-list
@@ -99,26 +123,40 @@
                 .show-image-name-box
                   .show-image-name-content= get_hdd(@parts_list.hdd_id).name
               .show-list__head
-                .show-key メーカー
-                .show-value= get_hdd(@parts_list.hdd_id).brand
+                .show-key-box
+                  .show-key-content メーカー
+                .show-value-box
+                  .show-value-content= get_hdd(@parts_list.hdd_id).brand
               .show-list__head
-                .show-key シリーズ
-                .show-value= get_hdd(@parts_list.hdd_id).series
+                .show-key-box
+                  .show-key-content シリーズ
+                .show-value-box
+                  .show-value-content= get_hdd(@parts_list.hdd_id).series
               .show-list__head
-                .show-key 容量
-                .show-value= get_hdd(@parts_list.hdd_id).capacity
+                .show-key-box
+                  .show-key-content 容量
+                .show-value-box
+                  .show-value-content= get_hdd(@parts_list.hdd_id).capacity
               .show-list__head
-                .show-key 回転数
-                .show-value= get_hdd(@parts_list.hdd_id).speed
+                .show-key-box
+                  .show-key-content 回転数
+                .show-value-box
+                  .show-value-content= get_hdd(@parts_list.hdd_id).speed
               .show-list__head
-                .show-key インターフェイス
-                .show-value= get_hdd(@parts_list.hdd_id).interface1
+                .show-key-box
+                  .show-key-content インターフェイス
+                .show-value-box
+                  .show-value-content= get_hdd(@parts_list.hdd_id).interface1
               .show-list__head
-                .show-key インターフェイス
-                .show-value= get_hdd(@parts_list.hdd_id).interface2
+                .show-key-box
+                  .show-key-content インターフェイス
+                .show-value-box
+                  .show-value-content= get_hdd(@parts_list.hdd_id).interface2
               .show-list__head
-                .show-key キャッシュ
-                .show-value= get_hdd(@parts_list.hdd_id).cache
+                .show-key-box
+                  .show-key-content キャッシュ
+                .show-value-box
+                  .show-value-content= get_hdd(@parts_list.hdd_id).cache
 
           - if get_ssd(@parts_list.ssd_id)
             .show-list
@@ -129,21 +167,30 @@
                 .show-image-name-box
                   .show-image-name-content= get_ssd(@parts_list.ssd_id).name
               .show-list__head
-                .show-key メーカー
-                .show-value= get_ssd(@parts_list.ssd_id).brand
+                .show-key-box
+                  .show-key-content メーカー
+                .show-value-box
+                  .show-value-content= get_ssd(@parts_list.ssd_id).brand
               .show-list__head
-                .show-key 容量
-                .show-value= get_ssd(@parts_list.ssd_id).capacity
+                .show-key-box
+                  .show-key-content 容量
+                .show-value-box
+                  .show-value-content= get_ssd(@parts_list.ssd_id).capacity
               .show-list__head
-                .show-key 規格サイズ
-                .show-value= get_ssd(@parts_list.ssd_id).size
+                .show-key-box
+                  .show-key-content 規格サイズ
+                .show-value-box
+                  .show-value-content= get_ssd(@parts_list.ssd_id).size
               .show-list__head
-                .show-key インターフェイス
-                .show-value= get_ssd(@parts_list.ssd_id).interface
+                .show-key-box
+                  .show-key-content インターフェイス
+                .show-value-box
+                  .show-value-content= get_ssd(@parts_list.ssd_id).interface
               .show-list__head
-                .show-key タイプ
-                .show-value= get_ssd(@parts_list.ssd_id).ssdtype
-
+                .show-key-box
+                  .show-key-content タイプ
+                .show-value-box
+                  .show-value-content= get_ssd(@parts_list.ssd_id).ssdtype
 
           - if get_videocard(@parts_list.videocard_id)
             .show-list
@@ -154,23 +201,35 @@
                 .show-image-name-box
                   .show-image-name-content= get_videocard(@parts_list.videocard_id).name
               .show-list__head
-                .show-key メーカー
-                .show-value= get_videocard(@parts_list.videocard_id).brand
+                .show-key-box
+                  .show-key-content メーカー
+                .show-value-box
+                  .show-value-content= get_videocard(@parts_list.videocard_id).brand
               .show-list__head
-                .show-key 搭載チップ
-                .show-value= get_videocard(@parts_list.videocard_id).chip
+                .show-key-box
+                  .show-key-content 搭載チップ
+                .show-value-box
+                  .show-value-content= get_videocard(@parts_list.videocard_id).chip
               .show-list__head
-                .show-key CUDAコア数
-                .show-value= get_videocard(@parts_list.videocard_id).core
+                .show-key-box
+                  .show-key-content CUDAコア数
+                .show-value-box
+                  .show-value-content= get_videocard(@parts_list.videocard_id).core
               .show-list__head
-                .show-key メモリ
-                .show-value= get_videocard(@parts_list.videocard_id).memory
+                .show-key-box
+                  .show-key-content メモリ
+                .show-value-box
+                  .show-value-content= get_videocard(@parts_list.videocard_id).memory
               .show-list__head
-                .show-key メモリクロック
-                .show-value= get_videocard(@parts_list.videocard_id).clock
+                .show-key-box
+                  .show-key-content メモリクロック
+                .show-value-box
+                  .show-value-content= get_videocard(@parts_list.videocard_id).clock
               .show-list__head
-                .show-key バスインターフェイス
-                .show-value= get_videocard(@parts_list.videocard_id).interface
+                .show-key-box
+                  .show-key-content バスインターフェイス
+                .show-value-box
+                  .show-value-content= get_videocard(@parts_list.videocard_id).interface
 
           - if get_powersupply(@parts_list.power_id)
             .show-list
@@ -181,17 +240,25 @@
                 .show-image-name-box
                   .show-image-name-content= get_powersupply(@parts_list.power_id).name
               .show-list__head
-                .show-key メーカー
-                .show-value= get_powersupply(@parts_list.power_id).brand
+                .show-key-box
+                  .show-key-content メーカー
+                .show-value-box
+                  .show-value-content= get_powersupply(@parts_list.power_id).brand
               .show-list__head
-                .show-key 対応規格
-                .show-value= get_powersupply(@parts_list.power_id).standard
+                .show-key-box
+                  .show-key-content 対応規格
+                .show-value-box
+                  .show-value-content= get_powersupply(@parts_list.power_id).standard
               .show-list__head
-                .show-key 電源容量
-                .show-value= get_powersupply(@parts_list.power_id).capacity
+                .show-key-box
+                  .show-key-content 電源容量
+                .show-value-box
+                  .show-value-content= get_powersupply(@parts_list.power_id).capacity
               .show-list__head
-                .show-key 80PLUS認証
-                .show-value= get_powersupply(@parts_list.power_id).plus
+                .show-key-box
+                  .show-key-content 80PLUS認証
+                .show-value-box
+                  .show-value-content= get_powersupply(@parts_list.power_id).plus
 
           - if get_pccase(@parts_list.pccase_id)
             .show-list
@@ -202,17 +269,25 @@
                 .show-image-name-box
                   .show-image-name-content= get_pccase(@parts_list.pccase_id).name
               .show-list__head
-                .show-key メーカー
-                .show-value= get_pccase(@parts_list.pccase_id).brand
+                .show-key-box
+                  .show-key-content メーカー
+                .show-value-box
+                  .show-value-content= get_pccase(@parts_list.pccase_id).brand
               .show-list__head
-                .show-key 対応ファクター
-                .show-value= get_pccase(@parts_list.pccase_id).factor
+                .show-key-box
+                  .show-key-content 対応ファクター
+                .show-value-box
+                  .show-value-content= get_pccase(@parts_list.pccase_id).factor
               .show-list__head
-                .show-key 重量
-                .show-value= get_pccase(@parts_list.pccase_id).weight
+                .show-key-box
+                  .show-key-content 重量
+                .show-value-box
+                  .show-value-content= get_pccase(@parts_list.pccase_id).weight
               .show-list__head
-                .show-key 幅x高さx奥行
-                .show-value= get_pccase(@parts_list.pccase_id).size_wdh
+                .show-key-box
+                  .show-key-content 幅x高さx奥行
+                .show-value-box
+                  .show-value-content= get_pccase(@parts_list.pccase_id).size_wdh
 
           - if get_cpucooler(@parts_list.cpucooler_id)
             .show-list
@@ -223,20 +298,30 @@
                 .show-image-name-box
                   .show-image-name-content= get_cpucooler(@parts_list.cpucooler_id).name
               .show-list__head
-                .show-key メーカー
-                .show-value= get_cpucooler(@parts_list.cpucooler_id).brand
+                .show-key-box
+                  .show-key-content メーカー
+                .show-value-box
+                  .show-value-content= get_cpucooler(@parts_list.cpucooler_id).brand
               .show-list__head
-                .show-key Intel対応ソケット
-                .show-value= get_cpucooler(@parts_list.cpucooler_id).intel
+                .show-key-box
+                  .show-key-content Intel対応ソケット
+                .show-value-box
+                  .show-value-content= get_cpucooler(@parts_list.cpucooler_id).intel
               .show-list__head
-                .show-key AMD対応ソケット
-                .show-value= get_cpucooler(@parts_list.cpucooler_id).amd
+                .show-key-box
+                  .show-key-content AMD対応ソケット
+                .show-value-box
+                  .show-value-content= get_cpucooler(@parts_list.cpucooler_id).amd
               .show-list__head
-                .show-key タイプ
-                .show-value= get_cpucooler(@parts_list.cpucooler_id).flowtype
+                .show-key-box
+                  .show-key-content タイプ
+                .show-value-box
+                  .show-value-content= get_cpucooler(@parts_list.cpucooler_id).flowtype
               .show-list__head
-                .show-key ノイズレベル
-                .show-value= get_cpucooler(@parts_list.cpucooler_id).noise
+                .show-key-box
+                  .show-key-content ノイズレベル
+                .show-value-box
+                  .show-value-content= get_cpucooler(@parts_list.cpucooler_id).noise
 
           - if get_display(@parts_list.display_id)
             .show-list
@@ -247,18 +332,28 @@
                 .show-image-name-box
                   .show-image-name-content= get_display(@parts_list.display_id).name
               .show-list__head
-                .show-key メーカー
-                .show-value= get_display(@parts_list.display_id).brand
+                .show-key-box
+                  .show-key-content メーカー
+                .show-value-box
+                  .show-value-content= get_display(@parts_list.display_id).brand
               .show-list__head
-                .show-key モニタサイズ
-                .show-value= get_display(@parts_list.display_id).size
+                .show-key-box
+                  .show-key-content モニタサイズ
+                .show-value-box
+                  .show-value-content= get_display(@parts_list.display_id).size
               .show-list__head
-                .show-key モニタタイプ
-                .show-value= get_display(@parts_list.display_id).monitortype
+                .show-key-box
+                  .show-key-content モニタタイプ
+                .show-value-box
+                  .show-value-content= get_display(@parts_list.display_id).monitortype
               .show-list__head
-                .show-key 表示領域
-                .show-value= get_display(@parts_list.display_id).area
+                .show-key-box
+                  .show-key-content 表示領域
+                .show-value-box
+                  .show-value-content= get_display(@parts_list.display_id).area
               .show-list__head
-                .show-key コントラスト比
-                .show-value= get_display(@parts_list.display_id).contrast
+                .show-key-box
+                  .show-key-content コントラスト比
+                .show-value-box
+                  .show-value-content= get_display(@parts_list.display_id).contrast
           .show-space

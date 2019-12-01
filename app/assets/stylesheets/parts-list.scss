@@ -392,23 +392,27 @@
               overflow-x: auto;
               white-space: nowrap;
             }
-            .show-key{
+            .show-key-box{
               width: 20%;
               border-right: 1px solid #000;
               border-bottom: 1px solid #000;
               text-align: center;
               box-sizing: border-box;
               height: 60px;
+            }
+            .show-key-content{
               line-height: 60px;
               overflow-x: auto;
               white-space: nowrap;
             }
-            .show-value{
+            .show-value-box{
               width: 80%;
               border-bottom: 1px solid #000;
               padding-left: 10px;
               box-sizing: border-box;
               height: 60px;
+            }
+            .show-value-content{
               line-height: 60px;
               overflow-x: scroll;
               white-space: nowrap;
