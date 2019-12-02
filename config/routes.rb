@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   root to:  'pcparts#index'
-  get '/kakaku', to: 'kakakus#index'
+  # get '/kakaku', to: 'kakakus#index'
   devise_for :users
   resources :pcparts, only: [:index, :show] do
     resources :cpus, only: [:index, :create]

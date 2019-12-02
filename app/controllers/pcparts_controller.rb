@@ -1,5 +1,6 @@
 class PcpartsController < ApplicationController
   def index
+    @parts_lists = PartsList.includes(:user)
   end
 
   def show
