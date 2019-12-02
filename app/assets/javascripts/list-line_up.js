@@ -19,13 +19,14 @@ $(function(){
   }
 
   function BuildPartsListCpu(partsList){
+    const imageUrl = partsList.cpu.image == "no_image.jpg" ? image_path(partsList.cpu.image) : partsList.cpu.image
     var html = `
     <div class="show-list">
       <div class="show-list__head">
         <div class="show-title">CPU</div>
       </div>
       <div class="show-list__head">
-        <div class="show-image"><img alt="No Image" class="td-image" src="${image_path(partsList.cpu.image)}" width="120" height="120"></div>
+        <div class="show-image"><img alt="No Image" class="td-image" src="${imageUrl}" width="120" height="120"></div>
         <div class="show-image-name-box">
           <div class="show-image-name-content">${partsList.cpu.name}</div>
         </div>
@@ -101,13 +102,14 @@ $(function(){
   }
 
   function buildPartsListMb(partsList){
+    const imageUrl = partsList.mb.image == "no_image.jpg" ? image_path(partsList.mb.image) : partsList.mb.image
     var html = `
       <div class="show-list">
         <div class="show-list__head">
         <div class="show-title">マザーボード</div>
         </div>
         <div class="show-list__head">
-          <div class="show-image"><img alt="No Image" class="td-image" src="${image_path(partsList.mb.image)}" width="120" height="120"></div>
+          <div class="show-image"><img alt="No Image" class="td-image" src="${imageUrl}" width="120" height="120"></div>
           <div class="show-image-name-box">
             <div class="show-image-name-content">${partsList.mb.name}</div>
           </div>
@@ -199,13 +201,14 @@ $(function(){
   }
 
   function buildPartsListMemory(partsList){
+    const imageUrl = partsList.memory.image == "no_image.jpg" ? image_path(partsList.memory.image) : partsList.memory.image
     var html = `
       <div class="show-list">
       <div class="show-list__head">
       <div class="show-title">メモリー</div>
       </div>
       <div class="show-list__head">
-      <div class="show-image"><img alt="No Image" class="td-image" src="${image_path(partsList.memory.image)}" width="120" height="120"></div>
+      <div class="show-image"><img alt="No Image" class="td-image" src="${imageUrl}" width="120" height="120"></div>
       <div class="show-image-name-box">
         <div class="show-image-name-content">${partsList.memory.name}</div>
       </div>
@@ -313,13 +316,14 @@ $(function(){
   }
 
   function buildPartsListHdd(partsList){
+    const imageUrl = partsList.hdd.image == "no_image.jpg" ? image_path(partsList.hdd.image) : partsList.hdd.image
     var html = `
       <div class="show-list">
       <div class="show-list__head">
       <div class="show-title">HDD</div>
       </div>
       <div class="show-list__head">
-      <div class="show-image"><img alt="No Image" class="td-image" src="${image_path(partsList.hdd.image)}" width="120" height="120"></div>
+      <div class="show-image"><img alt="No Image" class="td-image" src="${imageUrl}" width="120" height="120"></div>
       <div class="show-image-name-box">
       <div class="show-image-name-content">${partsList.hdd.name}</div>
       </div>
@@ -459,13 +463,14 @@ $(function(){
   }
 
   function buildPartsListSsd(partsList){
+    const imageUrl = partsList.ssd.image == "no_image.jpg" ? image_path(partsList.ssd.image) : partsList.ssd.image
     var html = `
       <div class="show-list">
       <div class="show-list__head">
       <div class="show-title">SSD</div>
       </div>
       <div class="show-list__head">
-      <div class="show-image"><img alt="No Image" class="td-image" src="${image_path(partsList.ssd.image)}" width="120" height="120"></div>
+      <div class="show-image"><img alt="No Image" class="td-image" src="${imageUrl}" width="120" height="120"></div>
         <div class="show-image-name-box">
           <div class="show-image-name-content">${partsList.ssd.name}</div>
         </div>
@@ -573,13 +578,14 @@ $(function(){
   }
 
   function buildPartsListVideocard(partsList){
+    const imageUrl = partsList.videocard.image == "no_image.jpg" ? image_path(partsList.videocard.image) : partsList.videocard.image
     var html = `
       <div class="show-list">
       <div class="show-list__head">
       <div class="show-title">グラフィックボード</div>
       </div>
       <div class="show-list__head">
-      <div class="show-image"><img alt="No Image" class="td-image" src="${image_path(partsList.videocard.image)}" width="120" height="120"></div>
+      <div class="show-image"><img alt="No Image" class="td-image" src="${imageUrl}" width="120" height="120"></div>
         <div class="show-image-name-box">
           <div class="show-image-name-content">${partsList.videocard.name}</div>
         </div>
@@ -703,13 +709,14 @@ $(function(){
   }
 
   function buildPartsListPower(partsList){
+    const imageUrl = partsList.power.image == "no_image.jpg" ? image_path(partsList.power.image) : partsList.power.image
     var html = `
       <div class="show-list">
       <div class="show-list__head">
       <div class="show-title">電源ユニット</div>
       </div>
       <div class="show-list__head">
-      <div class="show-image"><img alt="No Image" class="td-image" src="${image_path(partsList.power.image)}" width="120" height="120"></div>
+      <div class="show-image"><img alt="No Image" class="td-image" src="${imageUrl}" width="120" height="120"></div>
         <div class="show-image-name-box">
           <div class="show-image-name-content">${partsList.power.name}</div>
         </div>
@@ -801,13 +808,14 @@ $(function(){
   }
 
   function buildPartsListPccase(partsList){
+    const imageUrl = partsList.pccase.image == "no_image.jpg" ? image_path(partsList.pccase.image) : partsList.pccase.image
     var html = `
       <div class="show-list">
       <div class="show-list__head">
       <div class="show-title">PCケース</div>
       </div>
       <div class="show-list__head">
-      <div class="show-image"><img alt="No Image" class="td-image" src="${image_path(partsList.pccase.image)}" width="120" height="120"></div>
+      <div class="show-image"><img alt="No Image" class="td-image" src="${imageUrl}" width="120" height="120"></div>
         <div class="show-image-name-box">
           <div class="show-image-name-content">${partsList.pccase.name}</div>
         </div>
@@ -899,13 +907,14 @@ $(function(){
   }
 
   function buildPartsListCpucooler(partsList){
+    const imageUrl = partsList.cpucooler.image == "no_image.jpg" ? image_path(partsList.cpucooler.image) : partsList.cpucooler.image
     var html = `
       <div class="show-list">
       <div class="show-list__head">
       <div class="show-title">CPUクーラー</div>
       </div>
       <div class="show-list__head">
-      <div class="show-image"><img alt="No Image" class="td-image" src="${image_path(partsList.cpucooler.image)}" width="120" height="120"></div>
+      <div class="show-image"><img alt="No Image" class="td-image" src="${imageUrl}" width="120" height="120"></div>
         <div class="show-image-name-box">
           <div class="show-image-name-content">${partsList.cpucooler.name}</div>
         </div>
@@ -1013,13 +1022,14 @@ $(function(){
   }
 
   function buildPartsListDisplay(partsList){
+    const imageUrl = partsList.display.image == "no_image.jpg" ? image_path(partsList.display.image) : partsList.display.image
     var html = `
       <div class="show-list">
       <div class="show-list__head">
       <div class="show-title">液晶ディスプレイ</div>
       </div>
       <div class="show-list__head">
-      <div class="show-image"><img alt="No Image" class="td-image" src="${image_path(partsList.display.image)}" width="120" height="120"></div>
+      <div class="show-image"><img alt="No Image" class="td-image" src="${imageUrl}" width="120" height="120"></div>
         <div class="show-image-name-box">
           <div class="show-image-name-content">${partsList.display.name}</div>
         </div>
