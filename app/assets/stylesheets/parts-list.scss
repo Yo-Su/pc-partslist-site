@@ -44,6 +44,8 @@
   .notifications {
     color: white;
     text-align: center;
+    z-index: 10;
+    float: center;
     .notice {
       height: 60px;
       line-height: 60px;

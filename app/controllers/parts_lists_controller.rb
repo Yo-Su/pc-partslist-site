@@ -58,6 +58,7 @@ class PartsListsController < ApplicationController
 
   private
     def parts_list_params
+      params[:public_private] = PartsList.find(params[:id]).public_private unless params[:public_private]
       params.permit(:name, :cpu_id, :mb_id, :memory_id, :hdd_id, :ssd_id, :videocard_id, :power_id, :pccase_id, :cpucooler_id, :display_id).merge(public_private: params[:public_private]).merge(user_id: current_user.id)
     end
 
