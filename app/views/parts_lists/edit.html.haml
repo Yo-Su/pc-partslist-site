@@ -7,8 +7,11 @@
         リストを編集
       .devise-form
         = form_with url: user_parts_list_path, method: :put, list_id: params[:id] do |f|
-          = f.text_field :name, autofocus: true, autocomplete: "name", class: "devise-form__box__text"
+          = f.label :name, "リスト名"
+          = f.text_field :name, autofocus: true, autocomplete: "name", class: "devise-form__box__text", value: @parts_list.name
           = hidden_field_tag :list_id, params[:id]
+          %label{for: "public_private"} リストを公開する
+          = f.check_box :public_private, class: "devise-form__box__checkbox", id: "public_private", checked: @parts_list.public_private
           = f.submit "変更を保存", class: "devise-btn"
       .devise-link
         = link_to user_parts_lists_path(current_user.id) do

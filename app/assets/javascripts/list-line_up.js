@@ -25,7 +25,7 @@ $(function(){
         <div class="show-title">CPU</div>
       </div>
       <div class="show-list__head">
-        <div class="show-image"><img alt="No Image" class="td-image" src="${partsList.cpu.image}" width="120" height="120"></div>
+        <div class="show-image"><img alt="No Image" class="td-image" src="${image_path(partsList.cpu.image)}" width="120" height="120"></div>
         <div class="show-image-name-box">
           <div class="show-image-name-content">${partsList.cpu.name}</div>
         </div>
@@ -107,7 +107,7 @@ $(function(){
         <div class="show-title">マザーボード</div>
         </div>
         <div class="show-list__head">
-          <div class="show-image"><img alt="No Image" class="td-image" src="${partsList.mb.image}" width="120" height="120"></div>
+          <div class="show-image"><img alt="No Image" class="td-image" src="${image_path(partsList.mb.image)}" width="120" height="120"></div>
           <div class="show-image-name-box">
             <div class="show-image-name-content">${partsList.mb.name}</div>
           </div>
@@ -205,7 +205,7 @@ $(function(){
       <div class="show-title">メモリー</div>
       </div>
       <div class="show-list__head">
-      <div class="show-image"><img alt="No Image" class="td-image" src="${partsList.memory.image}" width="120" height="120"></div>
+      <div class="show-image"><img alt="No Image" class="td-image" src="${image_path(partsList.memory.image)}" width="120" height="120"></div>
       <div class="show-image-name-box">
         <div class="show-image-name-content">${partsList.memory.name}</div>
       </div>
@@ -319,7 +319,7 @@ $(function(){
       <div class="show-title">HDD</div>
       </div>
       <div class="show-list__head">
-      <div class="show-image"><img alt="No Image" class="td-image" src="${partsList.hdd.image}" width="120" height="120"></div>
+      <div class="show-image"><img alt="No Image" class="td-image" src="${image_path(partsList.hdd.image)}" width="120" height="120"></div>
       <div class="show-image-name-box">
       <div class="show-image-name-content">${partsList.hdd.name}</div>
       </div>
@@ -465,7 +465,7 @@ $(function(){
       <div class="show-title">SSD</div>
       </div>
       <div class="show-list__head">
-      <div class="show-image"><img alt="No Image" class="td-image" src="${partsList.ssd.image}" width="120" height="120"></div>
+      <div class="show-image"><img alt="No Image" class="td-image" src="${image_path(partsList.ssd.image)}" width="120" height="120"></div>
         <div class="show-image-name-box">
           <div class="show-image-name-content">${partsList.ssd.name}</div>
         </div>
@@ -579,7 +579,7 @@ $(function(){
       <div class="show-title">グラフィックボード</div>
       </div>
       <div class="show-list__head">
-      <div class="show-image"><img alt="No Image" class="td-image" src="${partsList.videocard.image}" width="120" height="120"></div>
+      <div class="show-image"><img alt="No Image" class="td-image" src="${image_path(partsList.videocard.image)}" width="120" height="120"></div>
         <div class="show-image-name-box">
           <div class="show-image-name-content">${partsList.videocard.name}</div>
         </div>
@@ -709,7 +709,7 @@ $(function(){
       <div class="show-title">電源ユニット</div>
       </div>
       <div class="show-list__head">
-      <div class="show-image"><img alt="No Image" class="td-image" src="${partsList.power.image}" width="120" height="120"></div>
+      <div class="show-image"><img alt="No Image" class="td-image" src="${image_path(partsList.power.image)}" width="120" height="120"></div>
         <div class="show-image-name-box">
           <div class="show-image-name-content">${partsList.power.name}</div>
         </div>
@@ -807,7 +807,7 @@ $(function(){
       <div class="show-title">PCケース</div>
       </div>
       <div class="show-list__head">
-      <div class="show-image"><img alt="No Image" class="td-image" src="${partsList.pccase.image}" width="120" height="120"></div>
+      <div class="show-image"><img alt="No Image" class="td-image" src="${image_path(partsList.pccase.image)}" width="120" height="120"></div>
         <div class="show-image-name-box">
           <div class="show-image-name-content">${partsList.pccase.name}</div>
         </div>
@@ -905,7 +905,7 @@ $(function(){
       <div class="show-title">CPUクーラー</div>
       </div>
       <div class="show-list__head">
-      <div class="show-image"><img alt="No Image" class="td-image" src="${partsList.cpucooler.image}" width="120" height="120"></div>
+      <div class="show-image"><img alt="No Image" class="td-image" src="${image_path(partsList.cpucooler.image)}" width="120" height="120"></div>
         <div class="show-image-name-box">
           <div class="show-image-name-content">${partsList.cpucooler.name}</div>
         </div>
@@ -1019,7 +1019,7 @@ $(function(){
       <div class="show-title">液晶ディスプレイ</div>
       </div>
       <div class="show-list__head">
-      <div class="show-image"><img alt="No Image" class="td-image" src="${partsList.display.image}" width="120" height="120"></div>
+      <div class="show-image"><img alt="No Image" class="td-image" src="${image_path(partsList.display.image)}" width="120" height="120"></div>
         <div class="show-image-name-box">
           <div class="show-image-name-content">${partsList.display.name}</div>
         </div>
@@ -1061,7 +1061,7 @@ $(function(){
       <div class="show-key-content">コントラスト比</div>
       </div>
       <div class="show-value-box">
-      <div class="show-value-content">${partsList.display.contrast}/div>
+      <div class="show-value-content">${partsList.display.contrast}</div>
       </div>
       </div>
       </div>
@@ -1149,6 +1149,7 @@ $(function(){
     e.preventDefault();
     var path = location.pathname.match(new RegExp(/\/users\/\d+\/parts_lists\//))
     var url = `${path + listval}`
+
 
     // リスト追加時に既存のリストを消すためのdata取得
     var listUpId1 = $('.show').attr("data-list-up-id");

@@ -1,7 +1,54 @@
 .wrapper
   .header
     = render "parts_lists/header"
+  = render 'layouts/notifications'
   .main
     .side-bar
       = render "sidebar"
     .contents
+      .contents-top
+        .contents-top__name
+          みんなのパーツリスト
+      .contents-main
+        - @parts_lists.each do |list|
+          .partslists__content
+            .partslists__content__title
+              .partslists__content__title__list-name
+                = list.name
+              .partslists__content__title__user
+                = "作成者：#{list.user.name}"
+            %table.parts__table
+              %tr.parts__table__head__tr
+                %td.td-list= "CPU"
+                %td.td-list= "マザーボード"
+              %tr.parts__table__body__tr
+                %th= get_cpu_name(list.cpu_id)
+                %th= get_motherboard_name(list.mb_id)
+
+              %tr.parts__table__head__tr
+                %td.td-list= "メモリー"
+                %td.td-list= "HDD"
+              %tr.parts__table__body__tr
+                %th= get_memory_name(list.memory_id)
+                %th= get_hdd_name(list.hdd_id)
+
+              %tr.parts__table__head__tr
+                %td.td-list= "SSD"
+                %td.td-list= "グラフィックボード"
+              %tr.parts__table__body__tr
+                %th= get_ssd_name(list.ssd_id)
+                %th= get_videocard_name(list.videocard_id)
+
+              %tr.parts__table__head__tr
+                %td.td-list= "電源ユニット"
+                %td.td-list= "PCケース"
+              %tr.parts__table__body__tr
+                %th= get_powersupply_name(list.power_id)
+                %th= get_pccase_name(list.pccase_id)
+
+              %tr.parts__table__head__tr
+                %td.td-list= "CPUクーラー"
+                %td.td-list= "液晶ディスプレイ"
+              %tr.parts__table__body__tr
+                %th= get_cpucooler_name(list.cpucooler_id)
+                %th= get_display_name(list.display_id)

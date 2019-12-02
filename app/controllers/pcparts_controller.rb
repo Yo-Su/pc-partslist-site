@@ -1,5 +1,6 @@
 class PcpartsController < ApplicationController
   def index
+    @parts_lists = PartsList.includes(:user).where(public_private: "1")
   end
 
   def show
