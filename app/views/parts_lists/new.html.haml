@@ -8,6 +8,8 @@
       .devise-form
         = form_with url: user_parts_lists_path do |f|
           = f.text_field :name, autofocus: true, autocomplete: "name", class: "devise-form__box__text"
+          %label{for: "public_private"} リストを公開する
+          = f.check_box :public_private, class: "devise-form__box__checkbox", id: "public_private", checked: "0"
           = f.submit "新規作成", class: "devise-btn"
       .devise-link
         = link_to root_path do

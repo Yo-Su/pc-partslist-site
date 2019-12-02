@@ -1155,11 +1155,22 @@ $(function(){
     listval = $(this).val();
   }).change();
 
+  // ページ読み込み時、リストが1つの時、何もないテーブルを隠す
+  $(document).ready(function(){
+    $('.show-image-name-content').each(function(index, element){
+      var divdiv = $(this).parents('.show-list')
+      if ($(element).text() == ""){
+        $(divdiv).css({
+          'display': 'none'
+        })
+      };
+    })
+  });
+
   $('#line-up-button').on('click', function(e){
     e.preventDefault();
     var path = location.pathname.match(new RegExp(/\/users\/\d+\/parts_lists\//))
     var url = `${path + listval}`
-
 
     // リスト追加時に既存のリストを消すためのdata取得
     var listUpId1 = $('.show').attr("data-list-up-id");
@@ -1167,6 +1178,10 @@ $(function(){
     count += 1
     var chooseId = $('#choose_list').prop("checked")
     // ----------------------------------------
+
+    // 
+
+
     $.ajax({
       url: url,
       type: 'get',
