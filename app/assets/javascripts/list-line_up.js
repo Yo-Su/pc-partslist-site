@@ -1,8 +1,8 @@
 $(function(){
 
-  function buildPartsListShowHead(partsList){
+  function buildPartsListShowHead(partsList, count){
     var html = `
-      <div class="show">
+      <div class="show" data-list-up-id=${count}>
         <div class="partslists__show">
           <div class="partslists__show__box">
             <div class="partslists__content__title__list-name">
@@ -1139,6 +1139,7 @@ $(function(){
 
 
   var listval = ""
+  var count = 0
 
   $('select').on('change select', function(){
     listval = $(this).val();
@@ -1147,13 +1148,19 @@ $(function(){
 
   $('#line-up-button').on('click', function(e){
     e.preventDefault();
-    // var formData = new FormData($('#line-up-select').get(0));
-    // var select_id = formData
-
     var path = location.pathname.match(new RegExp(/\/users\/\d+\/parts_lists\//))
     var url = `${path + listval}`
-    // var url = location.pathname
-    // console.log(url)
+    var listUpId1 = $('.show').attr("data-list-up-id");
+    var listUpId2 = $('.show:last').attr("data-list-up-id");
+    var listUpId = $($('.shows').children()).attr("data-list-up-id");
+    count += 1
+    console.log(listUpId1);
+    console.log(listUpId2);
+    console.log(count);
+    if (listUpId1 != listUpId2){
+      console.log("OK")
+      $('.show:first').remove()
+    }
     $.ajax({
       url: url,
       type: 'get',
@@ -1161,7 +1168,7 @@ $(function(){
       data: {id: listval}
     })
     .done(function(partsList){
-      let html = buildPartsListShowHead(partsList);
+      let html = buildPartsListShowHead(partsList, count);
       html += partsList.cpu ? BuildPartsListCpu(partsList) : HiddenCpu();
       html += partsList.mb ? buildPartsListMb(partsList) : HiddenMb();
       html += partsList.memory ? buildPartsListMemory(partsList) : HiddenMemory();
