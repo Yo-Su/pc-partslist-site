@@ -1,8 +1,8 @@
 $(function(){
 
-  function buildPartsListShowHead(partsList){
+  function buildPartsListShowHead(partsList, count){
     var html = `
-      <div class="show">
+      <div class="show" data-list-up-id=${count}>
         <div class="partslists__show">
           <div class="partslists__show__box">
             <div class="partslists__content__title__list-name">
@@ -1139,21 +1139,23 @@ $(function(){
 
 
   var listval = ""
+  var count = 0
 
   $('select').on('change select', function(){
     listval = $(this).val();
-    // console.log(listval);
   }).change();
 
   $('#line-up-button').on('click', function(e){
     e.preventDefault();
-    // var formData = new FormData($('#line-up-select').get(0));
-    // var select_id = formData
-
     var path = location.pathname.match(new RegExp(/\/users\/\d+\/parts_lists\//))
     var url = `${path + listval}`
-    // var url = location.pathname
-    // console.log(url)
+
+    // リスト追加時に既存のリストを消すためのdata取得
+    var listUpId1 = $('.show').attr("data-list-up-id");
+    var listUpId2 = $('.show:last').attr("data-list-up-id");
+    count += 1
+    var chooseId = $('#choose_list').prop("checked")
+    // ----------------------------------------
     $.ajax({
       url: url,
       type: 'get',
@@ -1161,7 +1163,7 @@ $(function(){
       data: {id: listval}
     })
     .done(function(partsList){
-      let html = buildPartsListShowHead(partsList);
+      let html = buildPartsListShowHead(partsList, count);
       html += partsList.cpu ? BuildPartsListCpu(partsList) : HiddenCpu();
       html += partsList.mb ? buildPartsListMb(partsList) : HiddenMb();
       html += partsList.memory ? buildPartsListMemory(partsList) : HiddenMemory();
@@ -1173,11 +1175,18 @@ $(function(){
       html += partsList.cpucooler ? buildPartsListCpucooler(partsList) : HiddenCpucooler();
       html += partsList.display ? buildPartsListDisplay(partsList) : HiddenDisplay();
       html += buildPartsListShowFoot();
-      $('.shows').append(html);
 
+      // リスト削除
+      if (listUpId1 != listUpId2){
+        chooseId ? $('.show:last').remove() : $('.show:first').remove()
+      }
+      // リスト追加
+      chooseId ? $('.shows').append(html) : $('.shows').prepend(html);
+      // 幅50%
       $('.show').css({
         'width': '50%'
       });
+
     })
     .fail(function(){
       console.log("NG");

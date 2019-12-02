@@ -17,9 +17,14 @@
               = f.select :list_id, @lists.map { |parts_list| [parts_list.name, parts_list.id] }, selected: params[:list_id], id: "line-up-select"
               = f.submit id: "line-up-button",class: "show-line-up__add-btn", value: "パーツリストを追加", "data-disable-with":"パーツリストを追加"
         .show-line-up__btn
-
+          %p.show-line-up__btn__name 入れ替えるリスト
+          #switchArea
+            %input#choose_list{name: "choose_list", type: "checkbox", checked: "checked"}
+            %label{:for => "choose_list"}
+              %span
+            #swImg
       .shows
-        .show
+        .show{ data: {list_up_id: 0}}
           .partslists__show
             .partslists__show__box
               .partslists__content__title__list-name
