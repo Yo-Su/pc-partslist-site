@@ -1151,11 +1151,12 @@ $(function(){
   var listval = ""
   var count = 0
 
+  // パーツリスト切替セレクトボックスの初期値を取得
   $('select').on('change select', function(){
     listval = $(this).val();
   }).change();
 
-  // ページ読み込み時、リストが1つの時、何もないテーブルを隠す
+  // ページ読み込み時(リストが1つの時)、空のテーブルを隠す
   $(document).ready(function(){
     $('.show-image-name-content').each(function(index, element){
       var divdiv = $(this).parents('.show-list')
@@ -1167,6 +1168,7 @@ $(function(){
     })
   });
 
+  // 「パーツリストを追加」ボタンを押したら発火してリストを並べる
   $('#line-up-button').on('click', function(e){
     e.preventDefault();
     var path = location.pathname.match(new RegExp(/\/users\/\d+\/parts_lists\//))
@@ -1178,9 +1180,6 @@ $(function(){
     count += 1
     var chooseId = $('#choose_list').prop("checked")
     // ----------------------------------------
-
-    // 
-
 
     $.ajax({
       url: url,
@@ -1201,6 +1200,19 @@ $(function(){
       html += partsList.cpucooler ? buildPartsListCpucooler(partsList) : HiddenCpucooler();
       html += partsList.display ? buildPartsListDisplay(partsList) : HiddenDisplay();
       html += buildPartsListShowFoot();
+
+      // 隠しているリストのCSSを変更
+      if (listUpId1 == listUpId2){
+        $('.show-image-name-content').each(function(index, element){
+          var divdiv = $(this).parents('.show-list')
+          if ($(element).text() == ""){
+            $(divdiv).css({
+              'display': '',
+              'visibility': 'hidden'
+            })
+          };
+        })
+      }
 
       // リスト削除
       if (listUpId1 != listUpId2){

@@ -33,7 +33,7 @@
                 = link_to "リストを編集", edit_user_parts_list_path(current_user.id, @parts_list.id), class: "partslists__content__title__box__edit"
                 = link_to "リストを削除", user_parts_list_path(current_user.id, @parts_list.id), method: :delete, class: "partslists__content__title__box__delete"
           - if get_cpu(@parts_list.cpu_id) || true
-            .show-list#cpu-list
+            .show-list
               .show-list__head
                 .show-title= "CPU"
               .show-list__head
