@@ -1143,21 +1143,19 @@ $(function(){
 
   $('select').on('change select', function(){
     listval = $(this).val();
-    // console.log(listval);
   }).change();
 
   $('#line-up-button').on('click', function(e){
     e.preventDefault();
     var path = location.pathname.match(new RegExp(/\/users\/\d+\/parts_lists\//))
     var url = `${path + listval}`
+
+    // リスト追加時に既存のリストを消すためのdata取得
     var listUpId1 = $('.show').attr("data-list-up-id");
     var listUpId2 = $('.show:last').attr("data-list-up-id");
     count += 1
     var chooseId = $('#choose_list').prop("checked")
-    console.log(chooseId)
-    if (listUpId1 != listUpId2){
-      chooseId ? $('.show:first').remove() : $('.show:last').remove()
-    }
+    // ----------------------------------------
     $.ajax({
       url: url,
       type: 'get',
@@ -1177,11 +1175,18 @@ $(function(){
       html += partsList.cpucooler ? buildPartsListCpucooler(partsList) : HiddenCpucooler();
       html += partsList.display ? buildPartsListDisplay(partsList) : HiddenDisplay();
       html += buildPartsListShowFoot();
-      $('.shows').append(html);
 
+      // リスト削除
+      if (listUpId1 != listUpId2){
+        chooseId ? $('.show:last').remove() : $('.show:first').remove()
+      }
+      // リスト追加
+      chooseId ? $('.shows').append(html) : $('.shows').prepend(html);
+      // 幅50%
       $('.show').css({
         'width': '50%'
       });
+
     })
     .fail(function(){
       console.log("NG");
