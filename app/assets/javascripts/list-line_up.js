@@ -1152,14 +1152,11 @@ $(function(){
     var url = `${path + listval}`
     var listUpId1 = $('.show').attr("data-list-up-id");
     var listUpId2 = $('.show:last').attr("data-list-up-id");
-    var listUpId = $($('.shows').children()).attr("data-list-up-id");
     count += 1
-    console.log(listUpId1);
-    console.log(listUpId2);
-    console.log(count);
+    var chooseId = $('#choose_list').prop("checked")
+    console.log(chooseId)
     if (listUpId1 != listUpId2){
-      console.log("OK")
-      $('.show:first').remove()
+      chooseId ? $('.show:first').remove() : $('.show:last').remove()
     }
     $.ajax({
       url: url,
