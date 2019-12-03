@@ -12,15 +12,15 @@
 
     %tr.parts__table__body__tr
       %td{:rowspan => "3"}= image_tag "#{cpucooler.image}", size: "120x120", alt: "No Image", class: "td-image"
-      %td= cpucooler.brand
-      %td= cpucooler.intel
-      %td= cpucooler.amd
+      %td.td-box= cpucooler.brand
+      %td.td-box= cpucooler.intel
+      %td.td-box= cpucooler.amd
 
     %tr.parts__table__head__tr
       %th.th-5th タイプ
       %th.th-5th ノイズレベル
 
     %tr.parts__table__body__tr
-      %td= cpucooler.flowtype
-      %td= cpucooler.noise
+      %td.td-box= cpucooler.flowtype
+      %td.td-box= cpucooler.noise
 

@@ -47,6 +47,12 @@
     .td-image{
       padding-top: 10px;
     }
+    .td-box{
+      overflow-x: auto;
+      white-space: nowrap;
+      max-width: 0;
+      padding: 0 5px;
+    }
   }
 
   .content-top{
