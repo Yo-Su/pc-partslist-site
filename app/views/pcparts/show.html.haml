@@ -8,8 +8,7 @@
       = form_with(model: @parts_list,
         local: true,
         method: :patch,
-        url: user_signed_in? ? user_parts_list_path(current_user.id) : nil,
-        class: "contents__top__list__select") do |f|
+        url: user_signed_in? ? user_parts_list_path(current_user.id) : nil) do |f|
         .contents__top
           .contents__top__name-area
             .contents__top__name-area__name
@@ -17,6 +16,8 @@
             .contents__top__name-area__db-update
               - if user_signed_in?
                 = render "updatedb"
+          .contents__top__category-area
+            = icon 'fas', 'bars', class: 'contents__top__category-area__icon'
           - if user_signed_in?
             .contents__top__list
               .select-list

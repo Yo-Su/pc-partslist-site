@@ -8,12 +8,13 @@
 
   @media screen and (max-width:1024px) {
     width: 100%;
-    height: 200px;
+    height: auto;
   }
 
   &__list {
     @media screen and (max-width:1024px) {
       display: flex;
+      justify-content: center;
       flex-wrap: wrap;
     }
 
@@ -36,7 +37,7 @@
       }
 
       @media screen and (max-width:1024px) {
-        width: 240px;
+        width: 220px;
         margin-right: 5px;
       }
     }

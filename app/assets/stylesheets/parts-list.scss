@@ -156,10 +156,29 @@
             // background-color: #0e75ff;
             // color: #fff;
           }
+        }
 
-          &__db-update {
-            font-size: 20px;
+        &__category-area {
+          display: none;
+          color: #fff;
+          background-color: #0e75ff;
+          text-align: center;
+          border-radius: 30px;
+
+          &__icon {
+            line-height: 60px;
+            height: 60px;
+            width: 60px;
+            font-size: 30px;
           }
+
+          @media screen and (max-width:1024px) {
+            display: block;
+          }
+        }
+
+        &__db-update {
+          font-size: 20px;
         }
 
 

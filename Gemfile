@@ -73,3 +73,5 @@ gem 'nokogiri'
 gem 'anemone'
 
 gem 'jquery-rails'
+
+gem "font-awesome-sass"
