@@ -3,8 +3,7 @@
     = render "parts_lists/header"
   .main
     .side-bar
-      .parts-list
-        = render "sidebar"
+      = render "side-bar"
     .contents
       = form_with(model: @parts_list,
         local: true,
@@ -12,10 +11,12 @@
         url: user_signed_in? ? user_parts_list_path(current_user.id) : nil,
         class: "contents__top__list__select") do |f|
         .contents__top
-          .contents__top__name
-            = @category.category
-            - if user_signed_in?
-              = render "updatedb"
+          .contents__top__name-area
+            .contents__top__name-area__name
+              = @category.category
+            .contents__top__name-area__db-update
+              - if user_signed_in?
+                = render "updatedb"
           - if user_signed_in?
             .contents__top__list
               .select-list
