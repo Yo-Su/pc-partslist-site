@@ -3,8 +3,8 @@
   color: $content-color;
   background-color: $content-bgc;
   width: 100%;
-  height: 300px;
-  padding: 20px;
+  min-height: 300px;
+  padding: 10px;
   margin-bottom: 20px;
 
   .parts__table{
@@ -35,10 +35,15 @@
         font-size: 24px;
         height: 40px;
         width: 200px;
-        overflow: hidden;
-        text-overflow: ellipsis;
+        // スクロール形式
+        overflow-x: auto;
         white-space: nowrap;
         max-width: 0;
+        // 省略形式 ...
+        // overflow: hidden;
+        // text-overflow: ellipsis;
+        // white-space: nowrap;
+        // max-width: 0;
       }
     }
     th{
@@ -61,10 +66,10 @@
       box-sizing: border-box;
       color: #FFF;
       background: #fd9535;
-      height: 60px;
-      width: 200px;
+      height: 50px;
+      width: 160px;
       margin-bottom: 5px;
-      font-size: 24px;
+      font-size: 20px;
       font-weight: bold;
       border-radius: 4px;
       border: solid 2px #d27d00;
