@@ -5,8 +5,6 @@
     .content-clearbox
   .show-list
     .show-list__head
-      .show-title= "CPU"
-    .show-list__head
       .show-image= image_tag "#{cpu.try(:image)}", size: "120x120", alt: "No Image", class: "td-image"
       .show-image-name-box
         .show-image-name-content= cpu.try(:name)
