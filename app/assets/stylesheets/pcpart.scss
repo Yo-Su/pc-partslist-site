@@ -7,6 +7,90 @@
   padding: 10px;
   margin-bottom: 20px;
 
+
+  .show-list {
+    background-color: #efe;
+    width: calc(100% - 40px);
+    margin: 10px 20px;
+    border-left: 1px solid #000;
+    border-top: 1px solid #000;
+    border-right: 1px solid #000;
+    box-sizing: border-box;
+
+    &__head {
+      // border: 1px solid #000;
+      width: 100%;
+      font-size: 24px;
+      display: flex;
+      box-sizing: border-box;
+
+      .show-title {
+        width: 100%;
+        height: 50px;
+        line-height: 50px;
+        font-size: 28px;
+        font-weight: bold;
+        text-align: center;
+        border-bottom: 1px solid #000;
+      }
+
+      .show-image {
+        height: 140px;
+        padding: 10px;
+        width: 20%;
+        border-right: 1px solid #000;
+        border-bottom: 1px solid #000;
+        text-align: center;
+        box-sizing: border-box;
+      }
+
+      .show-image-name-box {
+        padding: 10px;
+        height: 140px;
+        width: 80%;
+        border-bottom: 1px solid #000;
+        box-sizing: border-box;
+      }
+
+      .show-image-name-content {
+        line-height: 120px;
+        overflow-x: auto;
+        white-space: nowrap;
+      }
+
+      .show-key-box {
+        width: 20%;
+        border-right: 1px solid #000;
+        border-bottom: 1px solid #000;
+        text-align: center;
+        box-sizing: border-box;
+        height: 60px;
+        padding: 0 5px;
+      }
+
+      .show-key-content {
+        line-height: 60px;
+        overflow-x: auto;
+        white-space: nowrap;
+      }
+
+      .show-value-box {
+        width: 80%;
+        border-bottom: 1px solid #000;
+        padding-left: 10px;
+        box-sizing: border-box;
+        height: 60px;
+      }
+
+      .show-value-content {
+        line-height: 60px;
+        overflow-x: scroll;
+        white-space: nowrap;
+      }
+    }
+  }
+
+
   .parts__table{
     font-size: 20px;
     padding: 10px;

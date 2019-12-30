@@ -3,25 +3,67 @@
     - if user_signed_in?
       = f.submit name: videocard.id, class: "add-btn", value: "リストに追加", "data-disable-with":"リストに追加"
     .content-clearbox
-  %table.parts__table
-    %tr.parts__table__head__tr
-      %th.th-5th.th-name= videocard.name
-      %th.th-5th メーカー
-      %th.th-5th 搭載チップ
-      %th.th-5th CUDAコア数
 
-    %tr.parts__table__body__tr
-      %td{:rowspan => "3"}= image_tag "#{videocard.image}", size: "120x120", alt: "No Image", class: "td-image"
-      %td= videocard.brand
-      %td= videocard.chip
-      %td= videocard.core
+  .show-list
+    .show-list__head
+      .show-image= image_tag "#{videocard.try(:image)}", size: "120x120", alt: "No Image", class: "td-image"
+      .show-image-name-box
+        .show-image-name-content= videocard.try(:name)
+    .show-list__head
+      .show-key-box
+        .show-key-content メーカー
+      .show-value-box
+        .show-value-content= videocard.try(:brand)
+    .show-list__head
+      .show-key-box
+        .show-key-content 搭載チップ
+      .show-value-box
+        .show-value-content= videocard.try(:chip)
+    .show-list__head
+      .show-key-box
+        .show-key-content CUDAコア数
+      .show-value-box
+        .show-value-content= videocard.try(:core)
+    .show-list__head
+      .show-key-box
+        .show-key-content メモリ
+      .show-value-box
+        .show-value-content= videocard.try(:memory)
+    .show-list__head
+      .show-key-box
+        .show-key-content メモリクロック
+      .show-value-box
+        .show-value-content= videocard.try(:clock)
+    .show-list__head
+      .show-key-box
+        .show-key-content バスインターフェイス
+      .show-value-box
+        .show-value-content= videocard.try(:interface)
 
-    %tr.parts__table__head__tr
-      %th.th-5th メモリ
-      %th.th-5th メモリクロック
-      %th.th-5th バスインターフェイス
 
-    %tr.parts__table__body__tr
-      %td= videocard.memory
-      %td= videocard.clock
-      %td= videocard.interface
+  -# %table.parts__table
+  -#   %tr.parts__table__head__tr
+  -#     %td{rowspan: "3"}= image_tag "#{videocard.image}", size: "120x120", alt: "No Image", class: "td-image"
+  -#     %td{rowspan: "3", class: "th-5th th-name"}= videocard.name
+
+    -# %tr.parts__table__head__tr
+    -#   %th.th-5th.th-name= videocard.name
+    -#   %th.th-5th メーカー
+    -#   %th.th-5th 搭載チップ
+    -#   %th.th-5th CUDAコア数
+
+    -# %tr.parts__table__body__tr
+    -#   %td{:rowspan => "3"}= image_tag "#{videocard.image}", size: "120x120", alt: "No Image", class: "td-image"
+    -#   %td= videocard.brand
+    -#   %td= videocard.chip
+    -#   %td= videocard.core
+  -# %table.parts__table
+  -#   %tr.parts__table__head__tr
+  -#     %th.th-5th メモリ
+  -#     %th.th-5th メモリクロック
+  -#     %th.th-5th バスインターフェイス
+
+  -#   %tr.parts__table__body__tr
+  -#     %td= videocard.memory
+  -#     %td= videocard.clock
+  -#     %td= videocard.interface
