@@ -3,21 +3,48 @@
     - if user_signed_in?
       = f.submit name: power.id, class: "add-btn", value: "リストに追加", "data-disable-with":"リストに追加"
     .content-clearbox
-  %table.parts__table
-    %tr.parts__table__head__tr
-      %th.th-4th.th-name= power.name
-      %th.th-4th メーカー
-      %th.th-4th 対応規格
+  .show-list
+    .show-list__head
+      .show-image= image_tag "#{power.try(:image)}", size: "120x120", alt: "No Image", class: "td-image"
+      .show-image-name-box
+        .show-image-name-content= power.try(:name)
+    .show-list__head
+      .show-key-box
+        .show-key-content メーカー
+      .show-value-box
+        .show-value-content= power.try(:brand)
+    .show-list__head
+      .show-key-box
+        .show-key-content 対応規格
+      .show-value-box
+        .show-value-content= power.try(:standard)
+    .show-list__head
+      .show-key-box
+        .show-key-content 電源容量
+      .show-value-box
+        .show-value-content= power.try(:capacity)
+    .show-list__head
+      .show-key-box
+        .show-key-content 80PLUS認証
+      .show-value-box
+        .show-value-content= power.try(:plus)
 
-    %tr.parts__table__body__tr
-      %td{:rowspan => "3"}= image_tag "#{power.image}", size: "120x120", alt: "No Image", class: "td-image"
-      %td= power.brand
-      %td= power.standard
+  -# 旧テーブル
+  -# %table.parts__table
+  -#   %tr.parts__table__head__tr
+  -#     %th.th-4th.th-name= power.name
+  -#     %th.th-4th メーカー
+  -#     %th.th-4th 対応規格
 
-    %tr.parts__table__head__tr
-      %th.th-4th 電源容量
-      %th.th-4th 80PLUS認証
+  -#   %tr.parts__table__body__tr
+  -#     %td{:rowspan => "3"}= image_tag "#{power.image}", size: "120x120", alt: "No Image", class: "td-image"
+  -#     %td= power.brand
+  -#     %td= power.standard
 
-    %tr.parts__table__body__tr
-      %td= power.capacity
-      %td= power.plus
+  -#   %tr.parts__table__head__tr
+  -#     %th.th-4th 電源容量
+  -#     %th.th-4th 80PLUS認証
+
+  -#   %tr.parts__table__body__tr
+  -#     %td= power.capacity
+  -#     %td= power.plus

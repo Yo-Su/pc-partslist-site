@@ -1,0 +1,45 @@
+.side-bar {
+  box-sizing: border-box;
+  color: $side-bar_color;
+  background-color: $side-bar-bgc;
+  height: 100%;
+  width: 300px;
+  padding: 5px;
+
+  @media screen and (max-width:1024px) {
+    width: 100%;
+    height: auto;
+  }
+
+  &__list {
+    @media screen and (max-width:1024px) {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    &__category {
+      box-sizing: border-box;
+      display: block;
+      color: $parts-list__category-color;
+      background-color: $parts-list__category-bgc;
+      display: block;
+      font-size: 20px;
+      padding: 1px;
+      margin-bottom: 5px;
+      text-align: center;
+      height: 60px;
+      line-height: 60px;
+
+      &:hover {
+        border: 3px solid #40b1ff;
+        background-color: #0e75ff;
+      }
+
+      @media screen and (max-width:1024px) {
+        width: 220px;
+        margin-right: 5px;
+      }
+    }
+  }
+}

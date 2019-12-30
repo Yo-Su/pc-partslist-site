@@ -3,22 +3,49 @@
     - if user_signed_in?
       = f.submit name: pccase.id, class: "add-btn", value: "リストに追加", "data-disable-with":"リストに追加"
     .content-clearbox
-  %table.parts__table
-    %tr.parts__table__head__tr
-      %th.th-5th.th-name= pccase.name
-      %th.th-5th メーカー
-      %th.th-5th 対応ファクター
+  .show-list
+    .show-list__head
+      .show-image= image_tag "#{pccase.try(:image)}", size: "120x120", alt: "No Image", class: "td-image"
+      .show-image-name-box
+        .show-image-name-content= pccase.try(:name)
+    .show-list__head
+      .show-key-box
+        .show-key-content メーカー
+      .show-value-box
+        .show-value-content= pccase.try(:brand)
+    .show-list__head
+      .show-key-box
+        .show-key-content 対応ファクター
+      .show-value-box
+        .show-value-content= pccase.try(:factor)
+    .show-list__head
+      .show-key-box
+        .show-key-content 重量
+      .show-value-box
+        .show-value-content= pccase.try(:weight)
+    .show-list__head
+      .show-key-box
+        .show-key-content 幅x高さx奥行
+      .show-value-box
+        .show-value-content= pccase.try(:size_wdh)
 
-    %tr.parts__table__body__tr
-      %td{:rowspan => "3"}= image_tag "#{pccase.image}", size: "120x120", alt: "No Image", class: "td-image"
-      %td= pccase.brand
-      %td= pccase.factor
+  -# 旧テーブル
+  -# %table.parts__table
+  -#   %tr.parts__table__head__tr
+  -#     %th.th-5th.th-name= pccase.name
+  -#     %th.th-5th メーカー
+  -#     %th.th-5th 対応ファクター
+
+  -#   %tr.parts__table__body__tr
+  -#     %td{:rowspan => "3"}= image_tag "#{pccase.image}", size: "120x120", alt: "No Image", class: "td-image"
+  -#     %td= pccase.brand
+  -#     %td= pccase.factor
 
 
-    %tr.parts__table__head__tr
-      %th.th-5th 重量
-      %th.th-5th 幅x高さx奥行
+  -#   %tr.parts__table__head__tr
+  -#     %th.th-5th 重量
+  -#     %th.th-5th 幅x高さx奥行
 
-    %tr.parts__table__body__tr
-      %td= pccase.weight
-      %td= pccase.size_wdh
+  -#   %tr.parts__table__body__tr
+  -#     %td= pccase.weight
+  -#     %td= pccase.size_wdh

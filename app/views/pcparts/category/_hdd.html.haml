@@ -3,27 +3,69 @@
     - if user_signed_in?
       = f.submit name: hdd.id, class: "add-btn", value: "リストに追加", "data-disable-with":"リストに追加"
     .content-clearbox
-  %table.parts__table
-    %tr.parts__table__head__tr
-      %th.th-6th.th-name= hdd.name
-      %th.th-6th メーカー
-      %th.th-6th シリーズ
-      %th.th-6th 容量
-      %th.th-6th 回転数
+  .show-list
+    .show-list__head
+      .show-image= image_tag "#{hdd.try(:image)}", size: "120x120", alt: "No Image", class: "td-image"
+      .show-image-name-box
+        .show-image-name-content= hdd.try(:name)
+    .show-list__head
+      .show-key-box
+        .show-key-content メーカー
+      .show-value-box
+        .show-value-content= hdd.try(:brand)
+    .show-list__head
+      .show-key-box
+        .show-key-content シリーズ
+      .show-value-box
+        .show-value-content= hdd.try(:series)
+    .show-list__head
+      .show-key-box
+        .show-key-content 容量
+      .show-value-box
+        .show-value-content= hdd.try(:capacity)
+    .show-list__head
+      .show-key-box
+        .show-key-content 回転数
+      .show-value-box
+        .show-value-content= hdd.try(:speed)
+    .show-list__head
+      .show-key-box
+        .show-key-content インターフェイス
+      .show-value-box
+        .show-value-content= hdd.try(:interface1)
+    .show-list__head
+      .show-key-box
+        .show-key-content インターフェイス
+      .show-value-box
+        .show-value-content= hdd.try(:interface2)
+    .show-list__head
+      .show-key-box
+        .show-key-content キャッシュ
+      .show-value-box
+        .show-value-content= hdd.try(:cache)
 
-    %tr.parts__table__body__tr
-      %td{:rowspan => "3"}= image_tag "#{hdd.image}", size: "120x120", alt: "No Image", class: "td-image"
-      %td= hdd.brand
-      %td= hdd.series
-      %td= hdd.capacity
-      %td= hdd.speed
+  -# 旧テーブル
+  -# %table.parts__table
+  -#   %tr.parts__table__head__tr
+  -#     %th.th-6th.th-name= hdd.name
+  -#     %th.th-6th メーカー
+  -#     %th.th-6th シリーズ
+  -#     %th.th-6th 容量
+  -#     %th.th-6th 回転数
 
-    %tr.parts__table__head__tr
-      %th.th-6th インターフェイス
-      %th.th-6th インターフェイス
-      %th.th-6th キャッシュ
+  -#   %tr.parts__table__body__tr
+  -#     %td{:rowspan => "3"}= image_tag "#{hdd.image}", size: "120x120", alt: "No Image", class: "td-image"
+  -#     %td= hdd.brand
+  -#     %td= hdd.series
+  -#     %td= hdd.capacity
+  -#     %td= hdd.speed
 
-    %tr.parts__table__body__tr
-      %td= hdd.interface1
-      %td= hdd.interface2
-      %td= hdd.cache
+  -#   %tr.parts__table__head__tr
+  -#     %th.th-6th インターフェイス
+  -#     %th.th-6th インターフェイス
+  -#     %th.th-6th キャッシュ
+
+  -#   %tr.parts__table__body__tr
+  -#     %td= hdd.interface1
+  -#     %td= hdd.interface2
+  -#     %td= hdd.cache

@@ -3,24 +3,56 @@
     - if user_signed_in?
       = f.submit name: memory.id, class: "add-btn", value: "リストに追加", "data-disable-with":"リストに追加"
     .content-clearbox
-  %table.parts__table
-    %tr.parts__table__head__tr
-      %th.th-5th.th-name= memory.name
-      %th.th-5th メーカー
-      %th.th-5th メモリ容量(1枚あたり)
-      %th.th-5th 枚数
+  .show-list
+    .show-list__head
+      .show-image= image_tag "#{memory.try(:image)}", size: "120x120", alt: "No Image", class: "td-image"
+      .show-image-name-box
+        .show-image-name-content= memory.try(:name)
+    .show-list__head
+      .show-key-box
+        .show-key-content メーカー
+      .show-value-box
+        .show-value-content= memory.try(:brand)
+    .show-list__head
+      .show-key-box
+        .show-key-content メモリ容量(1枚あたり)
+      .show-value-box
+        .show-value-content= memory.try(:capacity)
+    .show-list__head
+      .show-key-box
+        .show-key-content 枚数
+      .show-value-box
+        .show-value-content= memory.try(:setnumber)
+    .show-list__head
+      .show-key-box
+        .show-key-content メモリ規格
+      .show-value-box
+        .show-value-content= memory.try(:standard)
+    .show-list__head
+      .show-key-box
+        .show-key-content メモリインターフェイス
+      .show-value-box
+        .show-value-content= memory.try(:interface)
 
-    %tr.parts__table__body__tr
-      %td{:rowspan => "3"}= image_tag "#{memory.image}", size: "120x120", alt: "No Image", class: "td-image"
-      %td= memory.brand
-      %td= memory.capacity
-      %td= memory.setnumber
+  -# 旧テーブル
+  -# %table.parts__table
+  -#   %tr.parts__table__head__tr
+  -#     %th.th-5th.th-name= memory.name
+  -#     %th.th-5th メーカー
+  -#     %th.th-5th メモリ容量(1枚あたり)
+  -#     %th.th-5th 枚数
 
-    %tr.parts__table__head__tr
-      %th.th-5th メモリ規格
-      %th.th-5th メモリインターフェイス
+  -#   %tr.parts__table__body__tr
+  -#     %td{:rowspan => "3"}= image_tag "#{memory.image}", size: "120x120", alt: "No Image", class: "td-image"
+  -#     %td= memory.brand
+  -#     %td= memory.capacity
+  -#     %td= memory.setnumber
 
-    %tr.parts__table__body__tr
-      %td= memory.standard
-      %td= memory.interface
+  -#   %tr.parts__table__head__tr
+  -#     %th.th-5th メモリ規格
+  -#     %th.th-5th メモリインターフェイス
+
+  -#   %tr.parts__table__body__tr
+  -#     %td= memory.standard
+  -#     %td= memory.interface
 

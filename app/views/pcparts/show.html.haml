@@ -3,22 +3,23 @@
     = render "parts_lists/header"
   .main
     .side-bar
-      .parts-list
-        = render "sidebar"
+      = render "side-bar"
     .contents
       = form_with(model: @parts_list,
         local: true,
         method: :patch,
-        url: user_signed_in? ? user_parts_list_path(current_user.id) : nil,
-        class: "contents-top__list__select") do |f|
-        .contents-top
-          .contents-top__name
-            = "カテゴリー：#{@category.category}"
-            - if user_signed_in?
-              = render "updatedb"
+        url: user_signed_in? ? user_parts_list_path(current_user.id) : nil) do |f|
+        .contents__top
+          .contents__top__name-area
+            .contents__top__name-area__name
+              = @category.category
+            .contents__top__name-area__db-update
+              - if user_signed_in?
+                = render "updatedb"
+          .contents__top__category-area
+            = icon 'fas', 'bars', class: 'contents__top__category-area__icon'
           - if user_signed_in?
-            .contents-top__list
-              %p.list-title パーツリスト
+            .contents__top__list
               .select-list
                 = f.select :list_id, @parts_lists.map { |parts_list| [parts_list.name, parts_list.id] }, selected: params[:list_id]
         .contents-main
