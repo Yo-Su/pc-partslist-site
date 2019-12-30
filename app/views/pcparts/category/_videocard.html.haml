@@ -3,7 +3,6 @@
     - if user_signed_in?
       = f.submit name: videocard.id, class: "add-btn", value: "リストに追加", "data-disable-with":"リストに追加"
     .content-clearbox
-
   .show-list
     .show-list__head
       .show-image= image_tag "#{videocard.try(:image)}", size: "120x120", alt: "No Image", class: "td-image"
@@ -40,7 +39,7 @@
       .show-value-box
         .show-value-content= videocard.try(:interface)
 
-
+  -# 旧テーブル
   -# %table.parts__table
   -#   %tr.parts__table__head__tr
   -#     %td{rowspan: "3"}= image_tag "#{videocard.image}", size: "120x120", alt: "No Image", class: "td-image"
