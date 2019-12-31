@@ -19,9 +19,19 @@
     &__logo {
       color: $header-logo-color;
       // background-color: $header-logo-bgc;
-      line-height: 60px;
-      font-size: 40px;
-      padding: 0 20px;
+      padding: 0 10px;
+      display: flex;
+
+      &__icon {
+        width: 60px;
+        height: 60px;
+        padding-right: 10px;
+      }
+
+      &__title {
+        line-height: 60px;
+        font-size: 40px;
+      }
     }
     &__lists {
       // background-color: $header-logo-bgc;
