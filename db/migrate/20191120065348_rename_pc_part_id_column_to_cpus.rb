@@ -1,5 +1,5 @@
 class RenamePcPartIdColumnToCpus < ActiveRecord::Migration[5.2]
   def change
-    rename_column :cpus, :pc_part_id, :pcpart_id
+    add_column :cpus, :pcpart_id, :integer
   end
 end
