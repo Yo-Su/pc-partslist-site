@@ -94,7 +94,7 @@ class CpucoolersController < ApplicationController
           amd:        parts_list[3],
           flowtype:   parts_list[4],
           noise:      parts_list[5],
-          pcpart_id:  9,
+          pcpart_id:  get_cpucooler_id,
           image:      parts_list[6],
           item_value: parts_list[7]
         )

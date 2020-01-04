@@ -100,7 +100,7 @@ class MemoriesController < ApplicationController
           setnumber:  parts_list[3],
           standard:   parts_list[4],
           interface:  parts_list[5],
-          pcpart_id:  3,
+          pcpart_id:  get_memory_id,
           image:      parts_list[6],
           item_value: parts_list[7]
         )

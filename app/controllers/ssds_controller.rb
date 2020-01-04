@@ -91,8 +91,8 @@ class SsdsController < ApplicationController
           capacity:   parts_list[2],
           size:       parts_list[3],
           interface:  parts_list[4],
-          ssdtype:       parts_list[5],
-          pcpart_id:  5,
+          ssdtype:    parts_list[5],
+          pcpart_id:  get_ssd_id,
           image:      parts_list[6],
           item_value: parts_list[7]
         )

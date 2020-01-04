@@ -102,7 +102,7 @@ class MbsController < ApplicationController
           chipset: parts_list[2],
           formfactor: parts_list[3],
           socket: parts_list[4],
-          pcpart_id: 2,
+          pcpart_id: get_motherboard_id,
           image: parts_list[5],
           item_value: parts_list[6]
         )

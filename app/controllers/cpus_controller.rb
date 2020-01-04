@@ -99,7 +99,7 @@ class CpusController < ApplicationController
           name: parts_list[1],
           processor: parts_list[2],
           socket: parts_list[3],
-          pcpart_id: 1,
+          pcpart_id: get_cpu_id,
           image: parts_list[4],
           item_value: parts_list[5]
         )

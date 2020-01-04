@@ -105,7 +105,7 @@ class HddsController < ApplicationController
           interface1: parts_list[5],
           interface2: parts_list[6],
           cache:      parts_list[7],
-          pcpart_id:  4,
+          pcpart_id:  get_hdd_id,
           image:      parts_list[8],
           item_value: parts_list[9]
         )

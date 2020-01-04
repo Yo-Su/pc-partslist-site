@@ -92,7 +92,7 @@ class PowersController < ApplicationController
           standard:   parts_list[2],
           capacity:   parts_list[3],
           plus:       parts_list[4],
-          pcpart_id:  7,
+          pcpart_id:  get_powersupply_id,
           image:      parts_list[5],
           item_value: parts_list[6]
         )

@@ -98,7 +98,7 @@ class VideocardsController < ApplicationController
           memory:     parts_list[4],
           clock:      parts_list[5],
           interface:  parts_list[6],
-          pcpart_id:  6,
+          pcpart_id:  get_videocard_id,
           image:      parts_list[7],
           item_value: parts_list[8]
         )

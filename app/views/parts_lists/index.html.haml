@@ -24,52 +24,52 @@
             .show
               .show-list
                 .show-list__head
-                  = link_to pcpart_path(Pcpart.find_by(category: "CPU").id, list_id: list.id), class: "show-key-box" do
+                  = link_to pcpart_path(get_cpu_id, list_id: list.id), class: "show-key-box" do
                     .show-key-content= "CPU"
                   .show-value-box
                     .show-value-content= get_cpu_name(list.cpu_id)
                 .show-list__head
-                  = link_to pcpart_path(Pcpart.find_by(category: "マザーボード").id, list_id: list.id), class: "show-key-box" do
+                  = link_to pcpart_path(get_motherboard_id, list_id: list.id), class: "show-key-box" do
                     .show-key-content= "マザーボード"
                   .show-value-box
                     .show-value-content= get_motherboard_name(list.mb_id)
                 .show-list__head
-                  = link_to pcpart_path(Pcpart.find_by(category: "メモリー").id, list_id: list.id), class: "show-key-box" do
+                  = link_to pcpart_path(get_memory_id, list_id: list.id), class: "show-key-box" do
                     .show-key-content= "メモリー"
                   .show-value-box
                     .show-value-content= get_memory_name(list.memory_id)
                 .show-list__head
-                  = link_to pcpart_path(Pcpart.find_by(category: "HDD").id, list_id: list.id), class: "show-key-box" do
+                  = link_to pcpart_path(get_hdd_id, list_id: list.id), class: "show-key-box" do
                     .show-key-content= "HDD"
                   .show-value-box
                     .show-value-content= get_hdd_name(list.hdd_id)
                 .show-list__head
-                  = link_to pcpart_path(Pcpart.find_by(category: "SSD").id, list_id: list.id), class: "show-key-box" do
+                  = link_to pcpart_path(get_ssd_id, list_id: list.id), class: "show-key-box" do
                     .show-key-content= "SSD"
                   .show-value-box
                     .show-value-content= get_ssd_name(list.ssd_id)
                 .show-list__head
-                  = link_to pcpart_path(Pcpart.find_by(category: "グラフィックボード").id, list_id: list.id), class: "show-key-box" do
+                  = link_to pcpart_path(get_videocard_id, list_id: list.id), class: "show-key-box" do
                     .show-key-content= "グラフィックボード"
                   .show-value-box
                     .show-value-content= get_videocard_name(list.videocard_id)
                 .show-list__head
-                  = link_to pcpart_path(Pcpart.find_by(category: "電源ユニット").id, list_id: list.id), class: "show-key-box" do
+                  = link_to pcpart_path(get_powersupply_id, list_id: list.id), class: "show-key-box" do
                     .show-key-content= "電源ユニット"
                   .show-value-box
                     .show-value-content= get_powersupply_name(list.power_id)
                 .show-list__head
-                  = link_to pcpart_path(Pcpart.find_by(category: "PCケース").id, list_id: list.id), class: "show-key-box" do
+                  = link_to pcpart_path(get_pccase_id, list_id: list.id), class: "show-key-box" do
                     .show-key-content= "PCケース"
                   .show-value-box
                     .show-value-content= get_pccase_name(list.pccase_id)
                 .show-list__head
-                  = link_to pcpart_path(Pcpart.find_by(category: "CPUクーラー").id, list_id: list.id), class: "show-key-box" do
+                  = link_to pcpart_path(get_cpucooler_id, list_id: list.id), class: "show-key-box" do
                     .show-key-content= "CPUクーラー"
                   .show-value-box
                     .show-value-content= get_cpucooler_name(list.cpucooler_id)
                 .show-list__head
-                  = link_to pcpart_path(Pcpart.find_by(category: "液晶ディスプレイ").id, list_id: list.id), class: "show-key-box" do
+                  = link_to pcpart_path(get_display_id, list_id: list.id), class: "show-key-box" do
                     .show-key-content= "液晶ディスプレイ"
                   .show-value-box
                     .show-value-content= get_display_name(list.display_id)
