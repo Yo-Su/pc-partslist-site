@@ -352,7 +352,7 @@
 
         &__add-btn {
           @include button(#FFF, #fd9535, #d27d00);
-          width: 300px;
+          width: 200px;
         }
 
         &__btn {
@@ -470,6 +470,7 @@
               height: 140px;
               padding: 10px;
               width: 20%;
+              min-width: 140px;
               border-right: 1px solid #000;
               border-bottom: 1px solid #000;
               text-align: center;
@@ -492,6 +493,7 @@
 
             .show-key-box {
               width: 20%;
+              min-width: 140px;
               border-right: 1px solid #000;
               border-bottom: 1px solid #000;
               text-align: center;
