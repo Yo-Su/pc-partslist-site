@@ -1,21 +1,21 @@
-- case params[:id]
-- when "1"
+- case @category.category
+- when "CPU"
   = link_to "DB更新", "/pcparts/1/cpus", method: :post
-- when "2"
+- when "マザーボード"
   = link_to "DB更新", "/pcparts/2/mbs", method: :post
-- when "3"
+- when "メモリー"
   = link_to "DB更新", "/pcparts/3/memories", method: :post
-- when "4"
+- when "HDD"
   = link_to "DB更新", "/pcparts/4/hdds", method: :post
-- when "5"
+- when "SSD"
   = link_to "DB更新", "/pcparts/5/ssds", method: :post
-- when "6"
+- when "グラフィックボード"
   = link_to "DB更新", "/pcparts/6/videocards", method: :post
-- when "7"
+- when "電源ユニット"
   = link_to "DB更新", "/pcparts/7/powers", method: :post
-- when "8"
+- when "PCケース"
   = link_to "DB更新", "/pcparts/8/pccases", method: :post
-- when "9"
+- when "CPUクーラー"
   = link_to "DB更新", "/pcparts/9/cpucoolers", method: :post
-- when "10"
+- when "液晶ディスプレイ"
   = link_to "DB更新", "/pcparts/9/displays", method: :post
