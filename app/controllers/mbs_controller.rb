@@ -4,7 +4,7 @@ class MbsController < ApplicationController
     @parts_lists = []
     get_motherboard
     save_motherboard
-    redirect_to pcpart_path(2)
+    redirect_to pcpart_path(Pcpart.find_by(category: "マザーボード").id)
   end
 
   private

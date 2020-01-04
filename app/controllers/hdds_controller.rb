@@ -3,7 +3,7 @@ class HddsController < ApplicationController
     @parts_lists = []
     get_hdd
     save_hdd
-    redirect_to pcpart_path(4)
+    redirect_to pcpart_path(Pcpart.find_by(category: "HDD").id)
   end
 
   private

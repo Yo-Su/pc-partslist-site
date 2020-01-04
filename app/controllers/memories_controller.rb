@@ -3,7 +3,7 @@ class MemoriesController < ApplicationController
     @parts_lists = []
     get_memory
     save_memory
-    redirect_to pcpart_path(3)
+    redirect_to pcpart_path(Pcpart.find_by(category: "メモリー").id)
   end
 
   private

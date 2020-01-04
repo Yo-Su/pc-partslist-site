@@ -3,7 +3,7 @@ class VideocardsController < ApplicationController
     @parts_lists = []
     get_videocard
     save_videocard
-    redirect_to pcpart_path(6)
+    redirect_to pcpart_path(Pcpart.find_by(category: "グラフィックボード").id)
   end
 
   private

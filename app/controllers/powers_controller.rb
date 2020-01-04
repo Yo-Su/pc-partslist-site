@@ -3,7 +3,7 @@ class PowersController < ApplicationController
     @parts_lists = []
     get_power
     save_power
-    redirect_to pcpart_path(7)
+    redirect_to pcpart_path(Pcpart.find_by(category: "電源ユニット").id)
   end
 
   private

@@ -3,7 +3,7 @@ class CpucoolersController < ApplicationController
     @parts_lists = []
     get_cpucooler
     save_cpucooler
-    redirect_to pcpart_path(9)
+    redirect_to pcpart_path(Pcpart.find_by(category: "CPUクーラー").id)
   end
 
   private

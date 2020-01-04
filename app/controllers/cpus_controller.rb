@@ -4,7 +4,7 @@ class CpusController < ApplicationController
     @parts_lists = []
     get_cpu
     save_cpu
-    redirect_to pcpart_path(1)
+    redirect_to pcpart_path(Pcpart.find_by(category: "CPU").id)
   end
 
   private

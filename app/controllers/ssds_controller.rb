@@ -3,7 +3,7 @@ class SsdsController < ApplicationController
     @parts_lists = []
     get_ssd
     save_ssd
-    redirect_to pcpart_path(5)
+    redirect_to pcpart_path(Pcpart.find_by(category: "SSD").id)
   end
 
   private
