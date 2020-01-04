@@ -94,6 +94,46 @@ module ApplicationHelper
     Display.find_by_id(id)
   end
 
+# ==================================================================================
+  # 本番環境でリンクを飛ぶ際の各パーツのリンク先
+  def link_cpu
+    pcpart_path(Pcpart.find_by(category: "CPU").id)
+  end
 
+  def link_motherboard
+    pcpart_path(Pcpart.find_by(category: "マザーボード").id)
+  end
+
+  def link_memory
+    pcpart_path(Pcpart.find_by(category: "メモリー").id)
+  end
+
+  def link_hdd
+    pcpart_path(Pcpart.find_by(category: "HDD").id)
+  end
+
+  def link_ssd
+    pcpart_path(Pcpart.find_by(category: "SSD").id)
+  end
+
+  def link_videocard
+    pcpart_path(Pcpart.find_by(category: "グラフィックボード").id)
+  end
+
+  def link_powersupply
+    pcpart_path(Pcpart.find_by(category: "電源ユニット").id)
+  end
+
+  def link_pccase
+    pcpart_path(Pcpart.find_by(category: "PCケース").id)
+  end
+
+  def link_cpucooler
+    pcpart_path(Pcpart.find_by(category: "CPUクーラー").id)
+  end
+
+  def link_display
+    pcpart_path(Pcpart.find_by(category: "液晶ディスプレイ").id)
+  end
 
 end
