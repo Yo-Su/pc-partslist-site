@@ -25,22 +25,22 @@
         .contents-main
           - case @category.category
           - when "CPU"
-            = render partial: "pcparts/category/cpu", collection: @cpus, locals: {:f => f}
+            = render partial: "pcparts/category/cpu", collection: @cpus, locals: {f: f}
           - when "マザーボード"
-            = render partial: "pcparts/category/mb", collection: @mbs, locals: {:f => f}
+            = render partial: "pcparts/category/mb", collection: @mbs, locals: {f: f}
           - when "メモリー"
-            = render partial: "pcparts/category/memory", collection: @memories, locals: {:f => f}
+            = render partial: "pcparts/category/memory", collection: @memories, locals: {f: f}
           - when "HDD"
-            = render partial: "pcparts/category/hdd", collection: @hdds, locals: {:f => f}
+            = render partial: "pcparts/category/hdd", collection: @hdds, locals: {f: f}
           - when "SSD"
-            = render partial: "pcparts/category/ssd", collection: @ssds, locals: {:f => f}
+            = render partial: "pcparts/category/ssd", collection: @ssds, locals: {f: f}
           - when "グラフィックボード"
-            = render partial: "pcparts/category/videocard", collection: @videocards, locals: {:f => f}
+            = render partial: "pcparts/category/videocard", collection: @videocards, locals: {f: f}
           - when "電源ユニット"
-            = render partial: "pcparts/category/power", collection: @powers, locals: {:f => f}
+            = render partial: "pcparts/category/power", collection: @powers, locals: {f: f}
           - when "PCケース"
-            = render partial: "pcparts/category/pccase", collection: @pccases, locals: {:f => f}
+            = render partial: "pcparts/category/pccase", collection: @pccases, locals: {f: f}
           - when "CPUクーラー"
-            = render partial: "pcparts/category/cpucooler", collection: @cpucoolers, locals: {:f => f}
+            = render partial: "pcparts/category/cpucooler", collection: @cpucoolers, locals: {f: f}
           - when "液晶ディスプレイ"
-            = render partial: "pcparts/category/display", collection: @displays, locals: {:f => f}
+            = render partial: "pcparts/category/display", collection: @displays, locals: {f: f}
