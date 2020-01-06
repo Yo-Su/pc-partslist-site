@@ -1,5 +1,5 @@
 class PartsList < ApplicationRecord
-  validates :name, presence: true
+  validates :name, presence: true, length: { minimum: 4 }
 
   belongs_to :cpu
   belongs_to :mb
