@@ -29,5 +29,16 @@ class PcpartsController < ApplicationController
     when "液晶ディスプレイ"
       @displays = @category.displays
     end
+
+    gon.cpu_id       = Pcpart.find_by(category: "CPU").id
+    gon.mb_id        = Pcpart.find_by(category: "マザーボード").id
+    gon.memory_id    = Pcpart.find_by(category: "メモリー").id
+    gon.hdd_id       = Pcpart.find_by(category: "HDD").id
+    gon.ssd_id       = Pcpart.find_by(category: "SSD").id
+    gon.videocard_id = Pcpart.find_by(category: "グラフィックボード").id
+    gon.power_id     = Pcpart.find_by(category: "電源ユニット").id
+    gon.pccase_id    = Pcpart.find_by(category: "PCケース").id
+    gon.cpucooler_id = Pcpart.find_by(category: "CPUクーラー").id
+    gon.display_id   = Pcpart.find_by(category: "液晶ディスプレイ").id
   end
 end

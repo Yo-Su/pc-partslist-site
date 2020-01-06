@@ -75,3 +75,5 @@ gem 'anemone'
 gem 'jquery-rails'
 
 gem "font-awesome-sass"
+
+gem 'gon'
