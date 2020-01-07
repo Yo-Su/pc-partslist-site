@@ -1,6 +1,6 @@
 <img src="https://user-images.githubusercontent.com/57243991/71813359-bcef3680-30bc-11ea-8b8c-dbeed9411a26.png" width=900px>
 
-<h1 align="center">PC Parts Site</h1>
+<h1 align="center">PC Partslist Site</h1>
 
 <p align="center">
 <a href="https://www.ruby-lang.org/ja/"><img src="https://user-images.githubusercontent.com/39142850/71774533-1ddf1780-2fb4-11ea-8560-753bed352838.png" width="70px;" /></a>　
