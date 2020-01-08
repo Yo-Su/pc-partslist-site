@@ -297,6 +297,11 @@
               box-sizing: border-box;
 
               &__compare {
+                @include button(#FFF, #fd9535, #d27d00);
+                margin-right: 20px;
+              }
+
+              &__edit {
                 @include button(#1436f7, #b0cef5, #8ebfff);
                 margin-right: 20px;
               }
