@@ -247,9 +247,46 @@
               font-size: 40px;
               font-weight: bold;
               padding-left: 5px;
+              position: relative;
+
               a {
                 text-decoration: none;
                 color: #000;
+              }
+
+              &__fukidashi {
+                opacity: 0;
+                width: 390px;
+                font-size: 16px;
+                line-height: 20px;
+                position: absolute;
+                top: -55px;
+                left: 0;
+                padding: 16px;
+                border-radius: 5px;
+                background: #33cc99;
+                color: #fff;
+                font-weight: bold;
+
+                &:after {
+                  position: absolute;
+                  width: 0;
+                  height: 0;
+                  left: 0;
+                  bottom: -19px;
+                  margin-left: 15px;
+                  border: solid transparent;
+                  border-color: rgba(51, 204, 153, 0);
+                  border-top-color: #33cc99;
+                  border-width: 10px;
+                  pointer-events: none;
+                  content: " ";
+                }
+              }
+
+              a:hover + p {
+                opacity: 1;
+                transition-duration:.3s;
               }
             }
 
@@ -258,6 +295,11 @@
               display: flex;
               justify-content: space-between;
               box-sizing: border-box;
+
+              &__compare {
+                @include button(#FFF, #fd9535, #d27d00);
+                margin-right: 20px;
+              }
 
               &__edit {
                 @include button(#1436f7, #b0cef5, #8ebfff);
