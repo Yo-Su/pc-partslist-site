@@ -1,6 +1,6 @@
 <img src="https://user-images.githubusercontent.com/57243991/71813359-bcef3680-30bc-11ea-8b8c-dbeed9411a26.png" width=900px>
 
-<h1 align="center">PC Parts Site</h1>
+<h1 align="center">PC Partslist Site</h1>
 
 <p align="center">
 <a href="https://www.ruby-lang.org/ja/"><img src="https://user-images.githubusercontent.com/39142850/71774533-1ddf1780-2fb4-11ea-8560-753bed352838.png" width="70px;" /></a>　
@@ -25,6 +25,11 @@
 - 作成したパーツリストを並べて比較できます
 <br>
 
+# 📜 制作背景
+自作パソコンの構成を考える際、「自作するパソコンはどの位のスペックにするか」「どのメーカーのパーツを使うか」等を考慮して複数の構成を考える事があると思います。  
+そうして考えた構成(=パーツリスト)を簡単に作成して、比較できたら便利ではないかと思い、パーツリストの作成＆比較サイトである「PC Partslist Site」を制作しました。
+<br>
+
 # 📕 機能紹介
 ## ・ユーザー登録
 <img src="https://user-images.githubusercontent.com/57243991/71866024-354f0980-3148-11ea-9500-82c8ccc722ac.gif" width=900px>
@@ -40,7 +45,7 @@
 
 ## ・パーツリスト比較
 <img src="https://user-images.githubusercontent.com/57243991/71866028-35e7a000-3148-11ea-8b9e-ea20d49b012c.gif" width=900px>
-
+<br>
 
 
 # 📊 PC Partslist Siteデータベース設計
