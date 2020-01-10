@@ -50,6 +50,9 @@
 
 
 # 📊 PC Partslist Siteデータベース設計
+
+<img src="https://user-images.githubusercontent.com/57243991/72076445-e0beb080-3338-11ea-9bb5-2227022220d8.png" width=900px>
+
 ## pcpartsテーブル(PCパーツカテゴリー)
 |Column|Type|Options|supplement|
 |------|----|-------|----------|
@@ -286,5 +289,3 @@
 ### Association
 - belongs_to :pcpart
 - has_many :parts_lists
-
-<img src="https://user-images.githubusercontent.com/57243991/72076445-e0beb080-3338-11ea-9bb5-2227022220d8.png" width=900px>
