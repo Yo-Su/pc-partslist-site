@@ -1,6 +1,10 @@
 @import "config/reset";
+@import "font-awesome-sprockets";
+@import "font-awesome";
+@import "config/mixin";
 @import "config/color-palette";
 @import "config/table";
+@import "module/side-bar";
 @import "./parts-list";
 @import "./pcpart";
 @import "./devise";

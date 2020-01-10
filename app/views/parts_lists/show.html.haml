@@ -8,19 +8,19 @@
     .contents
       .show-line-up
         .show-line-up__box
-          %p.list-title パーツリスト
+          %p.list-title 追加するリスト
           .select-list
             = form_with(model: @parts_list,
               local: true,
               url: user_parts_list_path(current_user.id),
               class: "contents-top__list__select") do |f|
               = f.select :list_id, @lists.map { |parts_list| [parts_list.name, parts_list.id] }, selected: params[:list_id], id: "line-up-select", class: "checkbox"
-              = f.submit id: "line-up-button",class: "show-line-up__add-btn", value: "パーツリストを追加", "data-disable-with":"パーツリストを追加"
+              = f.submit id: "line-up-button",class: "show-line-up__add-btn", value: "リスト追加", "data-disable-with":"リスト追加"
         .show-line-up__btn
           %p.show-line-up__btn__name 入れ替えるリスト
           #switchArea
             %input#choose_list{name: "choose_list", type: "checkbox", checked: "checked"}
-            %label{:for => "choose_list"}
+            %label{for: "choose_list"}
               %span
             #swImg
       .shows

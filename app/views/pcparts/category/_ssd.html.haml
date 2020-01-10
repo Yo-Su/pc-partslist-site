@@ -3,24 +3,56 @@
     - if user_signed_in?
       = f.submit name: ssd.id, class: "add-btn", value: "リストに追加", "data-disable-with":"リストに追加"
     .content-clearbox
-  %table.parts__table
-    %tr.parts__table__head__tr
-      %th.th-5th.th-name= ssd.name
-      %th.th-5th メーカー
-      %th.th-5th 容量
-      %th.th-5th 規格サイズ
+  .show-list
+    .show-list__head
+      .show-image= image_tag "#{ssd.try(:image)}", size: "120x120", alt: "No Image", class: "td-image"
+      .show-image-name-box
+        .show-image-name-content= ssd.try(:name)
+    .show-list__head
+      .show-key-box
+        .show-key-content メーカー
+      .show-value-box
+        .show-value-content= ssd.try(:brand)
+    .show-list__head
+      .show-key-box
+        .show-key-content 容量
+      .show-value-box
+        .show-value-content= ssd.try(:capacity)
+    .show-list__head
+      .show-key-box
+        .show-key-content 規格サイズ
+      .show-value-box
+        .show-value-content= ssd.try(:size)
+    .show-list__head
+      .show-key-box
+        .show-key-content インターフェイス
+      .show-value-box
+        .show-value-content= ssd.try(:interface)
+    .show-list__head
+      .show-key-box
+        .show-key-content タイプ
+      .show-value-box
+        .show-value-content= ssd.try(:ssdtype)
 
-    %tr.parts__table__body__tr
-      %td{:rowspan => "3"}= image_tag "#{ssd.image}", size: "120x120", alt: "No Image", class: "td-image"
-      %td= ssd.brand
-      %td= ssd.capacity
-      %td= ssd.size
+  -# 旧テーブル
+  -# %table.parts__table
+  -#   %tr.parts__table__head__tr
+  -#     %th.th-5th.th-name= ssd.name
+  -#     %th.th-5th メーカー
+  -#     %th.th-5th 容量
+  -#     %th.th-5th 規格サイズ
 
-    %tr.parts__table__head__tr
-      %th.th-5th インターフェイス
-      %th.th-5th タイプ
+  -#   %tr.parts__table__body__tr
+  -#     %td{:rowspan => "3"}= image_tag "#{ssd.image}", size: "120x120", alt: "No Image", class: "td-image"
+  -#     %td= ssd.brand
+  -#     %td= ssd.capacity
+  -#     %td= ssd.size
 
-    %tr.parts__table__body__tr
-      %td= ssd.interface
-      %td= ssd.ssdtype
+  -#   %tr.parts__table__head__tr
+  -#     %th.th-5th インターフェイス
+  -#     %th.th-5th タイプ
+
+  -#   %tr.parts__table__body__tr
+  -#     %td= ssd.interface
+  -#     %td= ssd.ssdtype
 

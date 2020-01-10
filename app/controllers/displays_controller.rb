@@ -3,7 +3,7 @@ class DisplaysController < ApplicationController
     @parts_lists = []
     get_display
     save_display
-    redirect_to pcpart_path(10)
+    redirect_to pcpart_path(Pcpart.find_by(category: "液晶ディスプレイ").id)
   end
 
   private
@@ -94,7 +94,7 @@ class DisplaysController < ApplicationController
           monitortype: parts_list[3],
           area:        parts_list[4],
           contrast:    parts_list[5],
-          pcpart_id:   10,
+          pcpart_id:   get_display_id,
           image:       parts_list[6],
           item_value:  parts_list[7]
         )

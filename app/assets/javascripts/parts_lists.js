@@ -4,16 +4,16 @@ $(function(){
   const category = location.href.match(/pcparts\/(\d+)/) ;
   if (category){
     switch (category[1].toString()){
-      case "1"  : category_id = "cpu_id"; break;
-      case "2"  : category_id = "mb_id"; break;
-      case "3"  : category_id = "memory_id"; break;
-      case "4"  : category_id = "hdd_id"; break;
-      case "5"  : category_id = "ssd_id"; break;
-      case "6"  : category_id = "videocard_id"; break;
-      case "7"  : category_id = "power_id"; break;
-      case "8"  : category_id = "pccase_id"; break;
-      case "9"  : category_id = "cpucooler_id"; break;
-      case "10" : category_id = "display_id"; break;
+      case `${gon.cpu_id}`       : category_id = "cpu_id"; break;
+      case `${gon.mb_id}`        : category_id = "mb_id"; break;
+      case `${gon.memory_id}`    : category_id = "memory_id"; break;
+      case `${gon.hdd_id}`       : category_id = "hdd_id"; break;
+      case `${gon.ssd_id}`       : category_id = "ssd_id"; break;
+      case `${gon.videocard_id}` : category_id = "videocard_id"; break;
+      case `${gon.power_id}`     : category_id = "power_id"; break;
+      case `${gon.pccase_id}`    : category_id = "pccase_id"; break;
+      case `${gon.cpucooler_id}` : category_id = "cpucooler_id"; break;
+      case `${gon.display_id}`   : category_id = "display_id"; break;
     }
   }
 

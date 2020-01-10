@@ -3,7 +3,7 @@ class HddsController < ApplicationController
     @parts_lists = []
     get_hdd
     save_hdd
-    redirect_to pcpart_path(4)
+    redirect_to pcpart_path(Pcpart.find_by(category: "HDD").id)
   end
 
   private
@@ -105,7 +105,7 @@ class HddsController < ApplicationController
           interface1: parts_list[5],
           interface2: parts_list[6],
           cache:      parts_list[7],
-          pcpart_id:  4,
+          pcpart_id:  get_hdd_id,
           image:      parts_list[8],
           item_value: parts_list[9]
         )

@@ -3,24 +3,51 @@
     - if user_signed_in?
       = f.submit name: mb.id, class: "add-btn", value: "リストに追加", "data-disable-with":"リストに追加"
     .content-clearbox
-  %table.parts__table
-    %tr.parts__table__head__tr
-      %th.th-5th.th-name= mb.name
-      %th.th-5th メーカー
-      %th.th-5th チップセット
+  .show-list
+    .show-list__head
+      .show-image= image_tag "#{mb.try(:image)}", size: "120x120", alt: "No Image", class: "td-image"
+      .show-image-name-box
+        .show-image-name-content= mb.try(:name)
+    .show-list__head
+      .show-key-box
+        .show-key-content メーカー
+      .show-value-box
+        .show-value-content= mb.try(:brand)
+    .show-list__head
+      .show-key-box
+        .show-key-content チップセット
+      .show-value-box
+        .show-value-content= mb.try(:chipset)
+    .show-list__head
+      .show-key-box
+        .show-key-content フォームファクタ
+      .show-value-box
+        .show-value-content= mb.try(:formfactor)
+    .show-list__head
+      .show-key-box
+        .show-key-content ソケット形状
+      .show-value-box
+        .show-value-content= mb.try(:socket)
 
-    %tr.parts__table__body__tr
-      %td{:rowspan => "3"}= image_tag "#{mb.image}", size: "120x120", alt: "No Image", class: "td-image"
-      %td= mb.brand
-      %td= mb.chipset
+  -# 旧テーブル
+  -# %table.parts__table
+  -#   %tr.parts__table__head__tr
+  -#     %th.th-5th.th-name= mb.name
+  -#     %th.th-5th メーカー
+  -#     %th.th-5th チップセット
+
+  -#   %tr.parts__table__body__tr
+  -#     %td{:rowspan => "3"}= image_tag "#{mb.image}", size: "120x120", alt: "No Image", class: "td-image"
+  -#     %td= mb.brand
+  -#     %td= mb.chipset
 
 
-    %tr.parts__table__head__tr
-      %th.th-5th フォームファクタ
-      %th.th-5th ソケット形状
+  -#   %tr.parts__table__head__tr
+  -#     %th.th-5th フォームファクタ
+  -#     %th.th-5th ソケット形状
 
-    %tr.parts__table__body__tr
-      %td= mb.formfactor
-      %td= mb.socket
+  -#   %tr.parts__table__body__tr
+  -#     %td= mb.formfactor
+  -#     %td= mb.socket
 
 

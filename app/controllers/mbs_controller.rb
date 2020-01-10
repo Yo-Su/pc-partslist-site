@@ -4,7 +4,7 @@ class MbsController < ApplicationController
     @parts_lists = []
     get_motherboard
     save_motherboard
-    redirect_to pcpart_path(2)
+    redirect_to pcpart_path(Pcpart.find_by(category: "マザーボード").id)
   end
 
   private
@@ -102,7 +102,7 @@ class MbsController < ApplicationController
           chipset: parts_list[2],
           formfactor: parts_list[3],
           socket: parts_list[4],
-          pcpart_id: 2,
+          pcpart_id: get_motherboard_id,
           image: parts_list[5],
           item_value: parts_list[6]
         )

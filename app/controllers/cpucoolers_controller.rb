@@ -3,7 +3,7 @@ class CpucoolersController < ApplicationController
     @parts_lists = []
     get_cpucooler
     save_cpucooler
-    redirect_to pcpart_path(9)
+    redirect_to pcpart_path(Pcpart.find_by(category: "CPUクーラー").id)
   end
 
   private
@@ -94,7 +94,7 @@ class CpucoolersController < ApplicationController
           amd:        parts_list[3],
           flowtype:   parts_list[4],
           noise:      parts_list[5],
-          pcpart_id:  9,
+          pcpart_id:  get_cpucooler_id,
           image:      parts_list[6],
           item_value: parts_list[7]
         )

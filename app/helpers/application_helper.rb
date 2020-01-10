@@ -94,6 +94,88 @@ module ApplicationHelper
     Display.find_by_id(id)
   end
 
+# ==================================================================================
+  # 本番環境でリンクを飛ぶ際の各パーツのリンク先
+  def link_cpu
+    pcpart_path(Pcpart.find_by(category: "CPU").id)
+  end
+
+  def link_motherboard
+    pcpart_path(Pcpart.find_by(category: "マザーボード").id)
+  end
+
+  def link_memory
+    pcpart_path(Pcpart.find_by(category: "メモリー").id)
+  end
+
+  def link_hdd
+    pcpart_path(Pcpart.find_by(category: "HDD").id)
+  end
+
+  def link_ssd
+    pcpart_path(Pcpart.find_by(category: "SSD").id)
+  end
+
+  def link_videocard
+    pcpart_path(Pcpart.find_by(category: "グラフィックボード").id)
+  end
+
+  def link_powersupply
+    pcpart_path(Pcpart.find_by(category: "電源ユニット").id)
+  end
+
+  def link_pccase
+    pcpart_path(Pcpart.find_by(category: "PCケース").id)
+  end
+
+  def link_cpucooler
+    pcpart_path(Pcpart.find_by(category: "CPUクーラー").id)
+  end
+
+  def link_display
+    pcpart_path(Pcpart.find_by(category: "液晶ディスプレイ").id)
+  end
 
 
+  # ==================================================================================
+  # 本番環境でリンクを飛ぶ際の各パーツのリンク先
+  def get_cpu_id
+    Pcpart.find_by(category: "CPU").id
+  end
+
+  def get_motherboard_id
+    Pcpart.find_by(category: "マザーボード").id
+  end
+
+  def get_memory_id
+    Pcpart.find_by(category: "メモリー").id
+  end
+
+  def get_hdd_id
+    Pcpart.find_by(category: "HDD").id
+  end
+
+  def get_ssd_id
+    Pcpart.find_by(category: "SSD").id
+  end
+
+  def get_videocard_id
+    Pcpart.find_by(category: "グラフィックボード").id
+  end
+
+  def get_powersupply_id
+    Pcpart.find_by(category: "電源ユニット").id
+  end
+
+  def get_pccase_id
+    Pcpart.find_by(category: "PCケース").id
+  end
+
+  def get_cpucooler_id
+    Pcpart.find_by(category: "CPUクーラー").id
+  end
+
+  def get_display_id
+    Pcpart.find_by(category: "液晶ディスプレイ").id
+  end
 end

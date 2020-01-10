@@ -3,21 +3,43 @@
     - if user_signed_in?
       = f.submit name: cpu.id, class: "add-btn", value: "リストに追加", "data-disable-with":"リストに追加"
     .content-clearbox
-  %table.parts__table
-    %tr.parts__table__head__tr
-      %th.th-4th.th-name= cpu.name
-      %th.th-4th メーカー
-      %th.th-4th プロセッサー
+  .show-list
+    .show-list__head
+      .show-image= image_tag "#{cpu.try(:image)}", size: "120x120", alt: "No Image", class: "td-image"
+      .show-image-name-box
+        .show-image-name-content= cpu.try(:name)
+    .show-list__head
+      .show-key-box
+        .show-key-content メーカー
+      .show-value-box
+        .show-value-content= cpu.try(:brand)
+    .show-list__head
+      .show-key-box
+        .show-key-content プロセッサー
+      .show-value-box
+        .show-value-content= cpu.try(:processor)
+    .show-list__head
+      .show-key-box
+        .show-key-content ソケット形状
+      .show-value-box
+        .show-value-content= cpu.try(:socket)
 
-    %tr.parts__table__body__tr
-      %td{:rowspan => "3"}= image_tag "#{cpu.image}", size: "120x120", alt: "No Image", class: "td-image"
-      %td= cpu.brand
-      %td= cpu.processor
+  -# 旧テーブル
+  -# %table.parts__table
+  -#   %tr.parts__table__head__tr
+  -#     %th.th-4th.th-name= cpu.name
+  -#     %th.th-4th メーカー
+  -#     %th.th-4th プロセッサー
 
-    %tr.parts__table__head__tr
-      %th.th-4th ソケット形状
+  -#   %tr.parts__table__body__tr
+  -#     %td{:rowspan => "3"}= image_tag "#{cpu.image}", size: "120x120", alt: "No Image", class: "td-image"
+  -#     %td= cpu.brand
+  -#     %td= cpu.processor
 
-    %tr.parts__table__body__tr
-      %td= cpu.socket
+  -#   %tr.parts__table__head__tr
+  -#     %th.th-4th ソケット形状
+
+  -#   %tr.parts__table__body__tr
+  -#     %td= cpu.socket
 
 

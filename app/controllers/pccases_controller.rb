@@ -3,7 +3,7 @@ class PccasesController < ApplicationController
     @parts_lists = []
     get_pccase
     save_pccase
-    redirect_to pcpart_path(8)
+    redirect_to pcpart_path(Pcpart.find_by(category: "PCケース").id)
   end
 
   private
@@ -93,7 +93,7 @@ class PccasesController < ApplicationController
           factor:     parts_list[2],
           weight:     parts_list[3],
           size_wdh:   parts_list[4],
-          pcpart_id:  8,
+          pcpart_id:  get_pccase_id,
           image:      parts_list[5],
           item_value: parts_list[6]
         )

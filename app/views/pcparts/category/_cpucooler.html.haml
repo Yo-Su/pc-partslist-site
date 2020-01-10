@@ -3,24 +3,56 @@
     - if user_signed_in?
       = f.submit name: cpucooler.id, class: "add-btn", value: "リストに追加", "data-disable-with":"リストに追加"
     .content-clearbox
-  %table.parts__table
-    %tr.parts__table__head__tr
-      %th.th-5th.th-name= cpucooler.name
-      %th.th-5th メーカー
-      %th.th-5th Intel対応ソケット
-      %th.th-5th AMD対応ソケット
+  .show-list
+    .show-list__head
+      .show-image= image_tag "#{cpucooler.try(:image)}", size: "120x120", alt: "No Image", class: "td-image"
+      .show-image-name-box
+        .show-image-name-content= cpucooler.try(:name)
+    .show-list__head
+      .show-key-box
+        .show-key-content メーカー
+      .show-value-box
+        .show-value-content= cpucooler.try(:brand)
+    .show-list__head
+      .show-key-box
+        .show-key-content Intel対応ソケット
+      .show-value-box
+        .show-value-content= cpucooler.try(:intel)
+    .show-list__head
+      .show-key-box
+        .show-key-content AMD対応ソケット
+      .show-value-box
+        .show-value-content= cpucooler.try(:amd)
+    .show-list__head
+      .show-key-box
+        .show-key-content タイプ
+      .show-value-box
+        .show-value-content= cpucooler.try(:flowtype)
+    .show-list__head
+      .show-key-box
+        .show-key-content ノイズレベル
+      .show-value-box
+        .show-value-content= cpucooler.try(:noise)
 
-    %tr.parts__table__body__tr
-      %td{:rowspan => "3"}= image_tag "#{cpucooler.image}", size: "120x120", alt: "No Image", class: "td-image"
-      %td= cpucooler.brand
-      %td= cpucooler.intel
-      %td= cpucooler.amd
+  -# 旧テーブル
+  -# %table.parts__table
+  -#   %tr.parts__table__head__tr
+  -#     %th.th-5th.th-name= cpucooler.name
+  -#     %th.th-5th メーカー
+  -#     %th.th-5th Intel対応ソケット
+  -#     %th.th-5th AMD対応ソケット
 
-    %tr.parts__table__head__tr
-      %th.th-5th タイプ
-      %th.th-5th ノイズレベル
+  -#   %tr.parts__table__body__tr
+  -#     %td{:rowspan => "3"}= image_tag "#{cpucooler.image}", size: "120x120", alt: "No Image", class: "td-image"
+  -#     %td.td-box= cpucooler.brand
+  -#     %td.td-box= cpucooler.intel
+  -#     %td.td-box= cpucooler.amd
 
-    %tr.parts__table__body__tr
-      %td= cpucooler.flowtype
-      %td= cpucooler.noise
+  -#   %tr.parts__table__head__tr
+  -#     %th.th-5th タイプ
+  -#     %th.th-5th ノイズレベル
+
+  -#   %tr.parts__table__body__tr
+  -#     %td.td-box= cpucooler.flowtype
+  -#     %td.td-box= cpucooler.noise
 
