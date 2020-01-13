@@ -1,16 +1,25 @@
 .wrapper
   .header
     = render "header"
-  .devise-wrapper
-    .devise-area
-      .devise-title
-        リスト新規作成
-      .devise-form
-        = form_with url: user_parts_lists_path do |f|
-          = f.text_field :name, autofocus: true, autocomplete: "name", class: "devise-form__box__text"
-          %label{for: "public_private"} リストを公開する
-          = f.check_box :public_private, class: "devise-form__box__checkbox", id: "public_private", checked: "0"
-          = f.submit "新規作成", class: "devise-btn"
-      .devise-link
-        = link_to root_path do
-          トップページに戻る
+  .partslist-edit
+    .partslist-edit__title-area
+      .partslist-edit__title-area__title
+        リストを新規作成
+    .partslist-edit__form-area
+      = form_with url: user_parts_lists_path do |f|
+        .partslist-edit__form-area__title
+          = f.label :name, "リスト名"
+        .partslist-edit__form-area__textarea
+          = f.text_field :name, autofocus: true, autocomplete: "name", class: "partslist-edit__form-area__textarea__text"
+        .partslist-edit__form-area__public-private
+          #switchArea
+            %input{name: "public_private", type: "hidden", value: "0"}
+            %input#public_private{name: "public_private", type: "checkbox"}
+            %label{for: "public_private"}
+              %span
+            #swImg
+        .partslist-edit__form-area__button-area
+          = f.submit "新規作成", class: "partslist-edit__form-area__button-area__btn"
+      .partslist-edit__link-area
+        = link_to user_parts_lists_path(current_user.id), class: "partslist-edit__link-area__btn" do
+          一覧に戻る

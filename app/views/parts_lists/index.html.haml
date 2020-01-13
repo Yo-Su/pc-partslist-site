@@ -1,14 +1,12 @@
 .wrapper
   .header
     = render "header"
-
   = render 'layouts/notifications'
 
   .main
     .contents
       .partslists__controller
         .partslists__controller__box
-
           = link_to "リストを新規作成", new_user_parts_list_path(current_user.id), class: "partslists__controller__box__btn"
 
       - @lists.each do |list|
@@ -17,6 +15,9 @@
             .partslists__content__title__list-name
               = link_to list.name, edit_user_parts_list_path(current_user.id, list.id), class: "partslists__content__title__list-name__name"
               %p.partslists__content__title__list-name__fukidashi リスト名をクリックするとリストの編集に移動します
+              .partslists__content__title__list-name__public-private
+                - if list.public_private
+                  .partslists__content__title__list-name__public-private__public= "リスト公開中"
             .partslists__content__title__box
               = link_to "リストを比較", user_parts_list_path(current_user.id, list.id), class: "partslists__content__title__box__compare"
               = link_to "リストを削除", user_parts_list_path(current_user.id, list.id), method: :delete, class: "partslists__content__title__box__delete"
