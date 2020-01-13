@@ -28,24 +28,3 @@
         .show-key-content 幅x高さx奥行
       .show-value-box
         .show-value-content= pccase.try(:size_wdh)
-
-  -# 旧テーブル
-  -# %table.parts__table
-  -#   %tr.parts__table__head__tr
-  -#     %th.th-5th.th-name= pccase.name
-  -#     %th.th-5th メーカー
-  -#     %th.th-5th 対応ファクター
-
-  -#   %tr.parts__table__body__tr
-  -#     %td{:rowspan => "3"}= image_tag "#{pccase.image}", size: "120x120", alt: "No Image", class: "td-image"
-  -#     %td= pccase.brand
-  -#     %td= pccase.factor
-
-
-  -#   %tr.parts__table__head__tr
-  -#     %th.th-5th 重量
-  -#     %th.th-5th 幅x高さx奥行
-
-  -#   %tr.parts__table__body__tr
-  -#     %td= pccase.weight
-  -#     %td= pccase.size_wdh

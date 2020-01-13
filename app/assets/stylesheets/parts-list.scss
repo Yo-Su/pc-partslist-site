@@ -254,6 +254,7 @@
               font-weight: bold;
               padding-left: 5px;
               position: relative;
+              display: flex;
 
               a {
                 text-decoration: none;
@@ -293,6 +294,13 @@
               a:hover + p {
                 opacity: 1;
                 transition-duration:.3s;
+              }
+
+              &__public-private {
+                font-size: 20px;
+                line-height: 50px;
+                padding-left: 10px;
+                color: blue;
               }
             }
 

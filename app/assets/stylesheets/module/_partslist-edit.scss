@@ -1,0 +1,115 @@
+
+.partslist-edit {
+  box-sizing: border-box;
+  background-color: #fff;
+  width: 460px;
+  margin: 10px auto 0;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #ddd;
+
+  &__title-area {
+    font-size: 32px;
+    padding: 10px 0 20px;
+  }
+
+  &__form-area {
+    font-size: 24px;
+    padding: 10px 0;
+
+    &__title {
+      padding-bottom: 10px;
+    }
+
+    &__textarea {
+      padding-bottom: 20px;
+      padding-left: 5px;
+
+      &__text {
+        font-size: 24px;
+        width: 320px;
+        box-shadow: 0 0 3px #ddd;
+        padding: 3px;
+
+      }
+    }
+
+    &__public-private {
+      padding-bottom: 20px;
+
+      /* === ボタンを表示するエリア ============================== */
+      #switchArea {
+        line-height: 32px; /* 1行の高さ          */
+        letter-spacing: 0; /* 文字間             */
+        text-align: center; /* 文字位置は中央     */
+        font-size: 13px; /* 文字サイズ         */
+        border-radius: 12px;
+
+        position: relative; /* 親要素が基点       */
+        width: 160px; /* ボタンの横幅       */
+        background: #fff; /* デフォルト背景色   */
+
+        /* === チェックボックス ==================================== */
+        input[type="checkbox"] {
+          display: none; /* チェックボックス非表示 */
+        }
+        /* === チェックボックスのラベル（標準） ==================== */
+        label {
+          display: block; /* ボックス要素に変更 */
+          box-sizing: border-box; /* 枠線を含んだサイズ */
+          height: 32px; /* ボタンの高さ       */
+          border: 2px solid rgba(142, 191, 255, 1); /* 未選択タブのの枠線 */
+          border-radius: 16px; /* 角丸               */
+        }
+        /* === チェックボックスのラベル（ONのとき） ================ */
+        input[type="checkbox"]:checked + label {
+          border-color: rgba(58, 255, 58, 1); /* 選択タブの枠線     */
+        }
+        /* === 表示する文字（標準） ================================ */
+        label span:after {
+          content: "リストを非公開"; /* 表示する文字       */
+          padding: 0 0 0 10px; /* 表示する位置       */
+          color: rgb(56, 135, 238); /* 文字色             */
+        }
+        /* === 表示する文字（ONのとき） ============================ */
+        input[type="checkbox"]:checked + label span:after {
+          content: "リストを公開　"; /* 表示する文字       */
+          padding: 0 0 0 10px; /* 表示する位置       */
+          color: rgb(47, 192, 47); /* 文字色             */
+        }
+        /* === 丸部分のSTYLE（標準） =============================== */
+        #swImg {
+          position: absolute; /* 親要素からの相対位置*/
+          width: 24px; /* 丸の横幅           */
+          height: 24px; /* 丸の高さ           */
+          background: rgba(142, 191, 255, 1); /* カーソルタブの背景 */
+          top: 4px; /* 親要素からの位置   */
+          left: 4px; /* 親要素からの位置   */
+          border-radius: 12px; /* 角丸               */
+          transition: 0.2s; /* 滑らか変化         */
+        }
+        /* === 丸部分のSTYLE（ONのとき） =========================== */
+        input[type="checkbox"]:checked ~ #swImg {
+          transform: translateX(128px); /* 丸も右へ移動       */
+          background: rgba(58, 255, 58, 1); /* カーソルタブの背景 */
+        }
+      }
+
+    }
+
+    &__button-area {
+      padding-bottom: 10px;
+
+      &__btn {
+        @include button(#1436f7, #b0cef5, #8ebfff);
+      }
+    }
+  }
+
+  &__link-area {
+    &__btn {
+      display: block;
+      @include button(#ff3a3f, #fbacff, #f9b5ff);
+    }
+  }
+}
