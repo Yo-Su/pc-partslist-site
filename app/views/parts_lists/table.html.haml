@@ -1,0 +1,315 @@
+-# parts_lists/index.html.haml
+%table.parts__table
+  %tr.parts__table__head__tr
+    %td.td-list=link_to "CPU", pcpart_path(1, list_id: list.id)
+    %td.td-list=link_to "マザーボード", pcpart_path(2, list_id: list.id)
+  %tr.parts__table__body__tr
+    %th= get_cpu_name(list.cpu_id)
+    %th= get_motherboard_name(list.mb_id)
+
+  %tr.parts__table__head__tr
+    %td.td-list=link_to "メモリー", pcpart_path(3, list_id: list.id)
+    %td.td-list=link_to "HDD", pcpart_path(4, list_id: list.id)
+  %tr.parts__table__body__tr
+    %th= get_memory_name(list.memory_id)
+    %th= get_hdd_name(list.hdd_id)
+
+  %tr.parts__table__head__tr
+    %td.td-list=link_to "SSD", pcpart_path(5, list_id: list.id)
+    %td.td-list=link_to "グラフィックボード", pcpart_path(6, list_id: list.id)
+  %tr.parts__table__body__tr
+    %th= get_ssd_name(list.ssd_id)
+    %th= get_videocard_name(list.videocard_id)
+
+  %tr.parts__table__head__tr
+    %td.td-list=link_to "電源ユニット", pcpart_path(7, list_id: list.id)
+    %td.td-list=link_to "PCケース", pcpart_path(8, list_id: list.id)
+  %tr.parts__table__body__tr
+    %th= get_powersupply_name(list.power_id)
+    %th= get_pccase_name(list.pccase_id)
+
+  %tr.parts__table__head__tr
+    %td.td-list=link_to "CPUクーラー", pcpart_path(9, list_id: list.id)
+    %td.td-list=link_to "液晶ディスプレイ", pcpart_path(10, list_id: list.id)
+  %tr.parts__table__body__tr
+    %th= get_cpucooler_name(list.cpucooler_id)
+    %th= get_display_name(list.display_id)
+
+-# pcparts/index.html.haml
+.partslists__content
+  .partslists__content__title
+    .partslists__content__title__list-name
+      = list.name
+    .partslists__content__title__user
+      = "作成者：#{list.user.name}"
+  %table.parts__table
+    %tr.parts__table__head__tr
+      %td.td-list= "CPU"
+      %td.td-list= "マザーボード"
+    %tr.parts__table__body__tr
+      %th= get_cpu_name(list.cpu_id)
+      %th= get_motherboard_name(list.mb_id)
+
+    %tr.parts__table__head__tr
+      %td.td-list= "メモリー"
+      %td.td-list= "HDD"
+    %tr.parts__table__body__tr
+      %th= get_memory_name(list.memory_id)
+      %th= get_hdd_name(list.hdd_id)
+
+    %tr.parts__table__head__tr
+      %td.td-list= "SSD"
+      %td.td-list= "グラフィックボード"
+    %tr.parts__table__body__tr
+      %th= get_ssd_name(list.ssd_id)
+      %th= get_videocard_name(list.videocard_id)
+
+    %tr.parts__table__head__tr
+      %td.td-list= "電源ユニット"
+      %td.td-list= "PCケース"
+    %tr.parts__table__body__tr
+      %th= get_powersupply_name(list.power_id)
+      %th= get_pccase_name(list.pccase_id)
+
+    %tr.parts__table__head__tr
+      %td.td-list= "CPUクーラー"
+      %td.td-list= "液晶ディスプレイ"
+    %tr.parts__table__body__tr
+      %th= get_cpucooler_name(list.cpucooler_id)
+      %th= get_display_name(list.display_id)
+
+-# category各パーツのテーブル
+
+  -# 旧テーブル
+  -# %table.parts__table
+  -#   %tr.parts__table__head__tr
+  -#     %th.th-4th.th-name= cpu.name
+  -#     %th.th-4th メーカー
+  -#     %th.th-4th プロセッサー
+
+  -#   %tr.parts__table__body__tr
+  -#     %td{:rowspan => "3"}= image_tag "#{cpu.image}", size: "120x120", alt: "No Image", class: "td-image"
+  -#     %td= cpu.brand
+  -#     %td= cpu.processor
+
+  -#   %tr.parts__table__head__tr
+  -#     %th.th-4th ソケット形状
+
+  -#   %tr.parts__table__body__tr
+  -#     %td= cpu.socket
+
+
+  -# 旧テーブル
+  -# %table.parts__table
+  -#   %tr.parts__table__head__tr
+  -#     %th.th-5th.th-name= mb.name
+  -#     %th.th-5th メーカー
+  -#     %th.th-5th チップセット
+
+  -#   %tr.parts__table__body__tr
+  -#     %td{:rowspan => "3"}= image_tag "#{mb.image}", size: "120x120", alt: "No Image", class: "td-image"
+  -#     %td= mb.brand
+  -#     %td= mb.chipset
+
+
+  -#   %tr.parts__table__head__tr
+  -#     %th.th-5th フォームファクタ
+  -#     %th.th-5th ソケット形状
+
+  -#   %tr.parts__table__body__tr
+  -#     %td= mb.formfactor
+  -#     %td= mb.socket
+
+
+  -# 旧テーブル
+  -# %table.parts__table
+  -#   %tr.parts__table__head__tr
+  -#     %th.th-5th.th-name= memory.name
+  -#     %th.th-5th メーカー
+  -#     %th.th-5th メモリ容量(1枚あたり)
+  -#     %th.th-5th 枚数
+
+  -#   %tr.parts__table__body__tr
+  -#     %td{:rowspan => "3"}= image_tag "#{memory.image}", size: "120x120", alt: "No Image", class: "td-image"
+  -#     %td= memory.brand
+  -#     %td= memory.capacity
+  -#     %td= memory.setnumber
+
+  -#   %tr.parts__table__head__tr
+  -#     %th.th-5th メモリ規格
+  -#     %th.th-5th メモリインターフェイス
+
+  -#   %tr.parts__table__body__tr
+  -#     %td= memory.standard
+  -#     %td= memory.interface
+
+
+  -# 旧テーブル
+  -# %table.parts__table
+  -#   %tr.parts__table__head__tr
+  -#     %th.th-6th.th-name= hdd.name
+  -#     %th.th-6th メーカー
+  -#     %th.th-6th シリーズ
+  -#     %th.th-6th 容量
+  -#     %th.th-6th 回転数
+
+  -#   %tr.parts__table__body__tr
+  -#     %td{:rowspan => "3"}= image_tag "#{hdd.image}", size: "120x120", alt: "No Image", class: "td-image"
+  -#     %td= hdd.brand
+  -#     %td= hdd.series
+  -#     %td= hdd.capacity
+  -#     %td= hdd.speed
+
+  -#   %tr.parts__table__head__tr
+  -#     %th.th-6th インターフェイス
+  -#     %th.th-6th インターフェイス
+  -#     %th.th-6th キャッシュ
+
+  -#   %tr.parts__table__body__tr
+  -#     %td= hdd.interface1
+  -#     %td= hdd.interface2
+  -#     %td= hdd.cache
+
+
+  -# 旧テーブル
+  -# %table.parts__table
+  -#   %tr.parts__table__head__tr
+  -#     %th.th-5th.th-name= ssd.name
+  -#     %th.th-5th メーカー
+  -#     %th.th-5th 容量
+  -#     %th.th-5th 規格サイズ
+
+  -#   %tr.parts__table__body__tr
+  -#     %td{:rowspan => "3"}= image_tag "#{ssd.image}", size: "120x120", alt: "No Image", class: "td-image"
+  -#     %td= ssd.brand
+  -#     %td= ssd.capacity
+  -#     %td= ssd.size
+
+  -#   %tr.parts__table__head__tr
+  -#     %th.th-5th インターフェイス
+  -#     %th.th-5th タイプ
+
+  -#   %tr.parts__table__body__tr
+  -#     %td= ssd.interface
+  -#     %td= ssd.ssdtype
+
+
+  -# 旧テーブル
+  -# %table.parts__table
+  -#   %tr.parts__table__head__tr
+  -#     %td{rowspan: "3"}= image_tag "#{videocard.image}", size: "120x120", alt: "No Image", class: "td-image"
+  -#     %td{rowspan: "3", class: "th-5th th-name"}= videocard.name
+
+    -# %tr.parts__table__head__tr
+    -#   %th.th-5th.th-name= videocard.name
+    -#   %th.th-5th メーカー
+    -#   %th.th-5th 搭載チップ
+    -#   %th.th-5th CUDAコア数
+
+    -# %tr.parts__table__body__tr
+    -#   %td{:rowspan => "3"}= image_tag "#{videocard.image}", size: "120x120", alt: "No Image", class: "td-image"
+    -#   %td= videocard.brand
+    -#   %td= videocard.chip
+    -#   %td= videocard.core
+  -# %table.parts__table
+  -#   %tr.parts__table__head__tr
+  -#     %th.th-5th メモリ
+  -#     %th.th-5th メモリクロック
+  -#     %th.th-5th バスインターフェイス
+
+  -#   %tr.parts__table__body__tr
+  -#     %td= videocard.memory
+  -#     %td= videocard.clock
+  -#     %td= videocard.interface
+
+
+  -# 旧テーブル
+  -# %table.parts__table
+  -#   %tr.parts__table__head__tr
+  -#     %th.th-4th.th-name= power.name
+  -#     %th.th-4th メーカー
+  -#     %th.th-4th 対応規格
+
+  -#   %tr.parts__table__body__tr
+  -#     %td{:rowspan => "3"}= image_tag "#{power.image}", size: "120x120", alt: "No Image", class: "td-image"
+  -#     %td= power.brand
+  -#     %td= power.standard
+
+  -#   %tr.parts__table__head__tr
+  -#     %th.th-4th 電源容量
+  -#     %th.th-4th 80PLUS認証
+
+  -#   %tr.parts__table__body__tr
+  -#     %td= power.capacity
+  -#     %td= power.plus
+
+
+  -# 旧テーブル
+  -# %table.parts__table
+  -#   %tr.parts__table__head__tr
+  -#     %th.th-5th.th-name= pccase.name
+  -#     %th.th-5th メーカー
+  -#     %th.th-5th 対応ファクター
+
+  -#   %tr.parts__table__body__tr
+  -#     %td{:rowspan => "3"}= image_tag "#{pccase.image}", size: "120x120", alt: "No Image", class: "td-image"
+  -#     %td= pccase.brand
+  -#     %td= pccase.factor
+
+
+  -#   %tr.parts__table__head__tr
+  -#     %th.th-5th 重量
+  -#     %th.th-5th 幅x高さx奥行
+
+  -#   %tr.parts__table__body__tr
+  -#     %td= pccase.weight
+  -#     %td= pccase.size_wdh
+
+
+  -# 旧テーブル
+  -# %table.parts__table
+  -#   %tr.parts__table__head__tr
+  -#     %th.th-5th.th-name= cpucooler.name
+  -#     %th.th-5th メーカー
+  -#     %th.th-5th Intel対応ソケット
+  -#     %th.th-5th AMD対応ソケット
+
+  -#   %tr.parts__table__body__tr
+  -#     %td{:rowspan => "3"}= image_tag "#{cpucooler.image}", size: "120x120", alt: "No Image", class: "td-image"
+  -#     %td.td-box= cpucooler.brand
+  -#     %td.td-box= cpucooler.intel
+  -#     %td.td-box= cpucooler.amd
+
+  -#   %tr.parts__table__head__tr
+  -#     %th.th-5th タイプ
+  -#     %th.th-5th ノイズレベル
+
+  -#   %tr.parts__table__body__tr
+  -#     %td.td-box= cpucooler.flowtype
+  -#     %td.td-box= cpucooler.noise
+
+
+  -# 旧テーブル
+  -# %table.parts__table
+  -#   %tr.parts__table__head__tr
+  -#     %th.th-5th.th-name= display.name
+  -#     %th.th-5th メーカー
+  -#     %th.th-5th モニタサイズ
+  -#     %th.th-5th モニタタイプ
+
+  -#   %tr.parts__table__body__tr
+  -#     %td{:rowspan => "3"}= image_tag "#{display.image}", size: "120x120", alt: "No Image", class: "td-image"
+  -#     %td= display.brand
+  -#     %td= display.size
+  -#     %td= display.monitortype
+
+  -#   %tr.parts__table__head__tr
+  -#     %th.th-5th 表示領域
+  -#     %th.th-5th コントラスト比
+
+  -#   %tr.parts__table__body__tr
+  -#     %td= display.area
+  -#     %td= display.contrast
+
+
+
