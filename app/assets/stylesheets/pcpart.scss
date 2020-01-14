@@ -1,4 +1,4 @@
-.content{
+.content {
   box-sizing: border-box;
   color: $content-color;
   background-color: $content-bgc;
@@ -6,7 +6,6 @@
   min-height: 300px;
   padding: 10px;
   margin-bottom: 20px;
-
 
   .show-list {
     background-color: #efe;
@@ -90,68 +89,15 @@
     }
   }
 
-  // テーブル形式CSS
-  .parts__table{
-    font-size: 20px;
-    padding: 10px;
-    width: 100%;
-
-    table, tr, td, th { border: 3px #808080 solid; vertical-align: middle;}
-    // table{
-    //   table-layout: fixed;
-    //   width: 100%;
-    // }
-    tr{
-      height: 40px;
-      line-height: 40px;
-      vertical-align: middle;
-      text-align: center;
-      th.th-4th{
-        width: 30%;
-      }
-      th.th-5th{
-        width: 25%;
-      }
-      th.th-6th{
-        width: 20%;
-      }
-      th.th-name{
-        font-size: 24px;
-        height: 40px;
-        width: 200px;
-        // スクロール形式
-        overflow-x: auto;
-        white-space: nowrap;
-        max-width: 0;
-        // 省略形式 ...
-        // overflow: hidden;
-        // text-overflow: ellipsis;
-        // white-space: nowrap;
-        // max-width: 0;
-      }
-    }
-    th{
-      background-color: #eaffff;
-    }
-    .td-image{
-      padding-top: 10px;
-    }
-    .td-box{
-      overflow-x: auto;
-      white-space: nowrap;
-      max-width: 0;
-      padding: 0 5px;
-    }
-  }
-
-  .content-top{
+  .content-top {
     display: flex;
-    .add-btn{
-      @include button(#FFF, #fd9535, #d27d00);
+
+    .add-btn {
+      @include button(#fff, #fd9535, #d27d00);
     }
-    .content-clearbox{
+
+    .content-clearbox {
       height: 60px;
     }
   }
-
 }

@@ -6,13 +6,13 @@
   width: 300px;
   padding: 5px;
 
-  @media screen and (max-width:1024px) {
+  @media screen and (max-width: 1024px) {
     width: 100%;
     height: auto;
   }
 
   &__list {
-    @media screen and (max-width:1024px) {
+    @media screen and (max-width: 1024px) {
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
@@ -36,7 +36,7 @@
         background-color: #0e75ff;
       }
 
-      @media screen and (max-width:1024px) {
+      @media screen and (max-width: 1024px) {
         width: 220px;
         margin-right: 5px;
       }
