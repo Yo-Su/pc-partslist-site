@@ -1,33 +1,68 @@
 .wrapper
-  .devise-wrapper
-    .devise-area
-      .devise-title
-        新規登録
-      .devise-form
-        = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-          .devise-form__errors
-            = render "devise/shared/error_messages", resource: resource
-          .field.devise-form__box
-            = f.label :name, value: "名前"
-            %br/
-            = f.text_field :name, autofocus: true, autocomplete: "name", class: "devise-form__box__text"
-          .field.devise-form__box
-            = f.label :email, value: "メールアドレス"
-            %br/
-            = f.email_field :email, autofocus: true, autocomplete: "email", class: "devise-form__box__text"
-          .field.devise-form__box
-            = f.label :password, value: "パスワード"
-            - if @minimum_password_length
-              (#{@minimum_password_length} 文字以上)
-            %br/
-            = f.password_field :password, autocomplete: "new-password", class: "devise-form__box__text"
-          .field.devise-form__box
-            = f.label :password_confirmation, value: "パスワード(再確認)"
-            %br/
-            = f.password_field :password_confirmation, autocomplete: "new-password", class: "devise-form__box__text"
-          .actions
-            = f.submit "新規登録", class: "devise-btn"
-      .devise-link
-        = render "devise/shared/links"
-        = link_to root_path do
-          トップページに戻る
+  .devise-header
+    = render "header"
+  .devise-area
+    .devise-area__title
+      新規登録
+    .devise-area__form
+      = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+        .devise-area__form__errors
+          = render "devise/shared/error_messages", resource: resource
+        .devise-area__form__box
+          = f.label :name, value: "名前"
+          %br/
+          = f.text_field :name, autofocus: true, autocomplete: "name", class: "devise-area__form__box__text"
+        .devise-area__form__box
+          = f.label :email, value: "メールアドレス"
+          = f.email_field :email, autofocus: true, autocomplete: "email", class: "devise-area__form__box__text"
+        .devise-area__form__box
+          = f.label :password, value: "パスワード(6文字以上)"
+          = f.password_field :password, autocomplete: "new-password", class: "devise-area__form__box__text"
+        .devise-area__form__box
+          = f.label :password_confirmation, value: "パスワード(再確認)"
+          %br/
+          = f.password_field :password_confirmation, autocomplete: "new-password", class: "devise-area__form__box__text"
+        .devise-area__form__button
+          = f.submit "新規登録", class: "devise-area__form__button__btn"
+    .devise-area__link
+      = link_to new_user_session_path, class: "devise-area__link__btn" do
+        ログイン画面
+      = link_to root_path, class: "devise-area__link__btn" do
+        トップページ
+
+
+
+
+
+  -# .devise-wrapper
+  -#   .devise-area
+  -#     .devise-title
+  -#       新規登録
+  -#     .devise-form
+  -#       = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+  -#         .devise-form__errors
+  -#           = render "devise/shared/error_messages", resource: resource
+  -#         .field.devise-form__box
+  -#           = f.label :name, value: "名前"
+  -#           %br/
+  -#           = f.text_field :name, autofocus: true, autocomplete: "name", class: "devise-form__box__text"
+  -#         .field.devise-form__box
+  -#           = f.label :email, value: "メールアドレス"
+  -#           %br/
+  -#           = f.email_field :email, autofocus: true, autocomplete: "email", class: "devise-form__box__text"
+  -#         .field.devise-form__box
+  -#           = f.label :password, value: "パスワード"
+  -#           - if @minimum_password_length
+  -#             (#{@minimum_password_length} 文字以上)
+  -#           %br/
+  -#           = f.password_field :password, autocomplete: "new-password", class: "devise-form__box__text"
+  -#         .field.devise-form__box
+  -#           = f.label :password_confirmation, value: "パスワード(再確認)"
+  -#           %br/
+  -#           = f.password_field :password_confirmation, autocomplete: "new-password", class: "devise-form__box__text"
+  -#         .actions
+  -#           = f.submit "新規登録", class: "devise-btn"
+  -#     .devise-link
+  -#       = render "devise/shared/links"
+  -#       = link_to root_path do
+  -#         トップページに戻る

@@ -1,25 +1,34 @@
 .wrapper
-  .devise-wrapper
-    .devise-area
-      .devise-title
-        ログイン
-      .devise-form
-        = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-          .field.devise-form__box
-            = f.label :email, value: "メールアドレス"
-            %br/
-            = f.email_field :email, autofocus: true, autocomplete: "email", class: "devise-form__box__text"
-          .field.devise-form__box
-            = f.label :password, value: "パスワード"
-            %br/
-            = f.password_field :password, autocomplete: "current-password", class: "devise-form__box__text"
-          - if devise_mapping.rememberable?
-            .field
-              = f.check_box :remember_me
-              = f.label :remember_me, class: "remember-password"
-          .actions
-            = f.submit "Log in", class: "devise-btn"
-      .devise-link
-        = render "devise/shared/links"
-        = link_to root_path do
-          トップページに戻る
+  .devise-header
+    = render "devise/registrations/header"
+  .devise-area
+    .devise-area__title
+      ログイン
+    .devise-area__form
+      = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+        .devise-area__form__errors
+          - if alert
+            = alert
+        .devise-area__form__box
+          = f.label :email, value: "メールアドレス"
+          %br/
+          = f.email_field :email, autofocus: true, autocomplete: "email", class: "devise-area__form__box__text"
+        .devise-area__form__box
+          = f.label :password, value: "パスワード"
+          %br/
+          = f.password_field :password, autocomplete: "current-password", class: "devise-area__form__box__text"
+        -# - if devise_mapping.rememberable?
+        -#   .devise-area__form__box
+        -#     = f.check_box :remember_me
+        -#     = f.label :remember_me, class: "remember-password"
+        .devise-area__form__button
+          = f.submit "ログイン", class: "devise-area__form__button__btn"
+    -# .devise-link
+    -#   -# = render "devise/shared/links"
+    -#   = link_to root_path do
+    -#     トップページに戻る
+    .devise-area__link
+      = link_to new_user_registration_path, class: "devise-area__link__btn" do
+        新規登録
+      = link_to root_path, class: "devise-area__link__btn" do
+        トップページ

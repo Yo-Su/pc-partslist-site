@@ -1,4 +1,3 @@
-
 .partslist-edit {
   box-sizing: border-box;
   background-color: #fff;
@@ -30,7 +29,6 @@
         width: 320px;
         box-shadow: 0 0 3px #ddd;
         padding: 3px;
-
       }
     }
 
@@ -94,7 +92,6 @@
           background: rgba(58, 255, 58, 1); /* カーソルタブの背景 */
         }
       }
-
     }
 
     &__button-area {
@@ -109,7 +106,7 @@
   &__link-area {
     &__btn {
       display: block;
-      @include button(#ff3a3f, #fbacff, #f9b5ff);
+      @include button(#2c2c2c, #ebebeb, #adadad);
     }
   }
 }
