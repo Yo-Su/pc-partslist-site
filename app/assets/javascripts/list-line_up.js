@@ -1134,10 +1134,8 @@ $(function(){
 
   function buildPartsListShowFoot(){
     var html = `
-      </div>
       <div class="show-space"></div>
       </div>
-
     `
     return html
   }
