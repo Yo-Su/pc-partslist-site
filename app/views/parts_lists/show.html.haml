@@ -6,23 +6,22 @@
 
   .main
     .contents
-      .show-line-up
-        .show-line-up__box
-          %p.list-title 追加するリスト
-          .select-list
-            = form_with(model: @parts_list,
-              local: true,
-              url: user_parts_list_path(current_user.id),
-              class: "contents-top__list__select") do |f|
-              = f.select :list_id, @lists.map { |parts_list| [parts_list.name, parts_list.id] }, selected: params[:list_id], id: "line-up-select", class: "checkbox"
-              = f.submit id: "line-up-button",class: "show-line-up__add-btn", value: "リスト追加", "data-disable-with":"リスト追加"
-        .show-line-up__btn
-          %p.show-line-up__btn__name 入れ替えるリスト
-          #switchArea
-            %input#choose_list{name: "choose_list", type: "checkbox", checked: "checked"}
-            %label{for: "choose_list"}
-              %span
-            #swImg
+      .show-top
+        = form_with(model: @parts_list,
+          local: true,
+          url: user_parts_list_path(current_user.id),
+          class: "show-top__form") do |f|
+
+          .show-top__form__list-box
+            %p.show-top__form__list-box__label 追加するリスト
+            = f.select :list_id, @lists.map { |parts_list| [parts_list.name, parts_list.id] }, selected: params[:list_id], id: "top-select", class: "show-top__form__list-box__checkbox"
+          .show-top__form__btn
+            #switchArea
+              %input#choose_list{name: "choose_list", type: "checkbox", checked: "checked"}
+              %label{for: "choose_list"}
+                %span
+              #swImg
+            = f.submit id: "line-up-button",class: "show-top__form__btn__add-btn", value: "リスト追加", "data-disable-with":"リスト追加"
       .shows
         .show{ data: {list_up_id: 0}}
           .partslists__show
