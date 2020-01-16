@@ -23,6 +23,7 @@ class DisplaysController < ApplicationController
       # list11 = [] #["TDP"]
       list12 = [] #["画像"]
       list13 = [] #["個別ID"]
+      # https://kakaku.com/specsearch/0085/?st=2&_s=2&Sort=saledate_desc&DispSaleDate=on&Page=2&
       Anemone.crawl("https://kakaku.com/specsearch/0085/?st=2&_s=2&Sort=saledate_desc&DispSaleDate=on&", :depth_limit => 0) do |anemone|
         anemone.on_every_page do |page|
 
