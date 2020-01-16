@@ -1,46 +1,52 @@
 .wrapper
   .header
     = render "parts_lists/header"
-  .main
-    .side-bar
-      = render "side-bar"
-    .contents
-      = form_with(model: @parts_list,
-        local: true,
-        method: :patch,
-        url: user_signed_in? ? user_parts_list_path(current_user.id) : nil) do |f|
-        .contents__top
-          .contents__top__name-area
-            .contents__top__name-area__name
+  -# .header-blank
+  = form_with(model: @parts_list,
+    local: true,
+    method: :patch,
+    url: user_signed_in? ? user_parts_list_path(current_user.id) : nil) do |f|
+    .navi
+      .clearfix
+      .navi__area
+        .navi__area__top
+          .navi__area__top__name-area
+            .navi__area__top__name-area__name
               = @category.category
-            .contents__top__name-area__db-update
+            .navi__area__top__name-area__db-update
               - if user_signed_in?
                 = render "updatedb"
-          .contents__top__category-area
-            = icon 'fas', 'bars', class: 'contents__top__category-area__icon'
+          .navi__area__top__category-area
+            = icon 'fas', 'bars', class: 'navi__area__top__category-area__icon'
           - if user_signed_in?
-            .contents__top__list
-              .select-list
+            .navi__area__top__list
+              .navi__area__top__list__select-list
                 = f.select :list_id, @parts_lists.map { |parts_list| [parts_list.name, parts_list.id] }, selected: params[:list_id]
-        .contents-main
-          - case @category.category
-          - when "CPU"
-            = render partial: "pcparts/category/cpu", collection: @cpus, locals: {f: f}
-          - when "マザーボード"
-            = render partial: "pcparts/category/mb", collection: @mbs, locals: {f: f}
-          - when "メモリー"
-            = render partial: "pcparts/category/memory", collection: @memories, locals: {f: f}
-          - when "HDD"
-            = render partial: "pcparts/category/hdd", collection: @hdds, locals: {f: f}
-          - when "SSD"
-            = render partial: "pcparts/category/ssd", collection: @ssds, locals: {f: f}
-          - when "グラフィックボード"
-            = render partial: "pcparts/category/videocard", collection: @videocards, locals: {f: f}
-          - when "電源ユニット"
-            = render partial: "pcparts/category/power", collection: @powers, locals: {f: f}
-          - when "PCケース"
-            = render partial: "pcparts/category/pccase", collection: @pccases, locals: {f: f}
-          - when "CPUクーラー"
-            = render partial: "pcparts/category/cpucooler", collection: @cpucoolers, locals: {f: f}
-          - when "液晶ディスプレイ"
-            = render partial: "pcparts/category/display", collection: @displays, locals: {f: f}
+    .main
+      .main__area2
+        .form-area
+          .side-bar
+            = render "side-bar"
+          .root-contents
+            .contents-main
+              - case @category.category
+              - when "CPU"
+                = render partial: "pcparts/category/cpu", collection: @cpus, locals: {f: f}
+              - when "マザーボード"
+                = render partial: "pcparts/category/mb", collection: @mbs, locals: {f: f}
+              - when "メモリー"
+                = render partial: "pcparts/category/memory", collection: @memories, locals: {f: f}
+              - when "HDD"
+                = render partial: "pcparts/category/hdd", collection: @hdds, locals: {f: f}
+              - when "SSD"
+                = render partial: "pcparts/category/ssd", collection: @ssds, locals: {f: f}
+              - when "グラフィックボード"
+                = render partial: "pcparts/category/videocard", collection: @videocards, locals: {f: f}
+              - when "電源ユニット"
+                = render partial: "pcparts/category/power", collection: @powers, locals: {f: f}
+              - when "PCケース"
+                = render partial: "pcparts/category/pccase", collection: @pccases, locals: {f: f}
+              - when "CPUクーラー"
+                = render partial: "pcparts/category/cpucooler", collection: @cpucoolers, locals: {f: f}
+              - when "液晶ディスプレイ"
+                = render partial: "pcparts/category/display", collection: @displays, locals: {f: f}

@@ -1,72 +1,73 @@
 .wrapper
   .header
     = render "parts_lists/header"
-  = render 'layouts/notifications'
+  -# = render 'layouts/notifications'
   .main
-    .side-bar
-      = render "side-bar"
-    .contents
-      .contents__top
-        .contents__top__top-name
-          みんなのパーツリスト
-      .contents-main
-        - @parts_lists.each do |list|
-          .partslists__content
-            .partslists__content__title
-              .partslists__content__title__list-name
-                = list.name
-              .partslists__content__title__user
-                = "作成者：#{list.user.name}"
-            .shows
-              .show
-                .show-list
-                  .show-list__head
-                    .show-key-box
-                      .show-key-content= "CPU"
-                    .show-value-box
-                      .show-value-content= get_cpu_name(list.cpu_id)
-                  .show-list__head
-                    .show-key-box
-                      .show-key-content= "マザーボード"
-                    .show-value-box
-                      .show-value-content= get_motherboard_name(list.mb_id)
-                  .show-list__head
-                    .show-key-box
-                      .show-key-content= "メモリー"
-                    .show-value-box
-                      .show-value-content= get_memory_name(list.memory_id)
-                  .show-list__head
-                    .show-key-box
-                      .show-key-content= "HDD"
-                    .show-value-box
-                      .show-value-content= get_hdd_name(list.hdd_id)
-                  .show-list__head
-                    .show-key-box
-                      .show-key-content= "SSD"
-                    .show-value-box
-                      .show-value-content= get_ssd_name(list.ssd_id)
-                  .show-list__head
-                    .show-key-box
-                      .show-key-content= "グラフィックボード"
-                    .show-value-box
-                      .show-value-content= get_videocard_name(list.videocard_id)
-                  .show-list__head
-                    .show-key-box
-                      .show-key-content= "電源ユニット"
-                    .show-value-box
-                      .show-value-content= get_powersupply_name(list.power_id)
-                  .show-list__head
-                    .show-key-box
-                      .show-key-content= "PCケース"
-                    .show-value-box
-                      .show-value-content= get_pccase_name(list.pccase_id)
-                  .show-list__head
-                    .show-key-box
-                      .show-key-content= "CPUクーラー"
-                    .show-value-box
-                      .show-value-content= get_cpucooler_name(list.cpucooler_id)
-                  .show-list__head
-                    .show-key-box
-                      .show-key-content= "液晶ディスプレイ"
-                    .show-value-box
-                      .show-value-content= get_display_name(list.display_id)
+    .main__area
+      .side-bar
+        = render "side-bar"
+      .root-contents
+        .root-contents__top
+          .root-contents__top__top-name
+            みんなのパーツリスト
+        .contents-main
+          - @parts_lists.each do |list|
+            .partslists__content
+              .partslists__content__title
+                .partslists__content__title__list-name
+                  = list.name
+                .partslists__content__title__user
+                  = "作成者：#{list.user.name}"
+              .shows
+                .show
+                  .show-list
+                    .show-list__head
+                      .show-key-box
+                        .show-key-content= "CPU"
+                      .show-value-box
+                        .show-value-content= get_cpu_name(list.cpu_id)
+                    .show-list__head
+                      .show-key-box
+                        .show-key-content= "マザーボード"
+                      .show-value-box
+                        .show-value-content= get_motherboard_name(list.mb_id)
+                    .show-list__head
+                      .show-key-box
+                        .show-key-content= "メモリー"
+                      .show-value-box
+                        .show-value-content= get_memory_name(list.memory_id)
+                    .show-list__head
+                      .show-key-box
+                        .show-key-content= "HDD"
+                      .show-value-box
+                        .show-value-content= get_hdd_name(list.hdd_id)
+                    .show-list__head
+                      .show-key-box
+                        .show-key-content= "SSD"
+                      .show-value-box
+                        .show-value-content= get_ssd_name(list.ssd_id)
+                    .show-list__head
+                      .show-key-box
+                        .show-key-content= "グラフィックボード"
+                      .show-value-box
+                        .show-value-content= get_videocard_name(list.videocard_id)
+                    .show-list__head
+                      .show-key-box
+                        .show-key-content= "電源ユニット"
+                      .show-value-box
+                        .show-value-content= get_powersupply_name(list.power_id)
+                    .show-list__head
+                      .show-key-box
+                        .show-key-content= "PCケース"
+                      .show-value-box
+                        .show-value-content= get_pccase_name(list.pccase_id)
+                    .show-list__head
+                      .show-key-box
+                        .show-key-content= "CPUクーラー"
+                      .show-value-box
+                        .show-value-content= get_cpucooler_name(list.cpucooler_id)
+                    .show-list__head
+                      .show-key-box
+                        .show-key-content= "液晶ディスプレイ"
+                      .show-value-box
+                        .show-value-content= get_display_name(list.display_id)
