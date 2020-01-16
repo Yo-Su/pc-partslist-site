@@ -1,0 +1,278 @@
+.main {
+  .root-contents {
+    box-sizing: border-box;
+    color: $contents_color;
+    min-width: calc(100% - 180px);
+    max-width: calc(100% - 180px);
+    height: 100%;
+    padding-left: 10px;
+
+    // 各PCパーツのページ
+    &__top {
+      padding: 10px 10px 10px;
+      margin: 0 auto;
+
+      &__top-name {
+        box-sizing: border-box;
+        color: #000;
+        background-color: #f9faff;
+        margin: 0 auto;
+        padding: 10px;
+        border-radius: 10px;
+        box-shadow: 0 0 5px #ccc;
+        text-align: center;
+      }
+
+      &__category-area {
+        display: none;
+        color: #fff;
+        background-color: #0e75ff;
+        text-align: center;
+        border-radius: 30px;
+
+        // サイドバーアイコン
+        &__icon {
+          line-height: 50px;
+          height: 50px;
+          width: 50px;
+          font-size: 30px;
+        }
+
+        @media screen and (max-width: 1024px) {
+          display: block;
+        }
+      }
+
+      &__db-update {
+        font-size: 18px;
+      }
+
+      &__list {
+        font-size: 18px;
+        display: flex;
+
+        select {
+          font-size: 18px;
+          width: 300px;
+          height: 50px;
+          margin-left: 10px;
+          margin-bottom: 5px;
+          border-radius: 0;
+          background-color: #dafafa;
+          cursor: pointer;
+          text-indent: 5px;
+    
+          @media screen and (max-width: 599px) {
+            margin-left: 0;
+          }
+        }
+    
+        .list-title {
+          margin-top: 5px;
+        }
+      }
+
+      // トップページ
+      &__top-name {
+        font-size: 24px;
+        font-weight: bold;
+      }
+    }
+
+    .contents-main {
+      height: 100%;
+      padding: 0 10px;
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+
+    .partslists {
+
+      &__content {
+        box-sizing: border-box;
+        color: $content-color;
+        background-color: $content-bgc;
+        margin: 0 auto;
+        padding: 10px;
+        margin-bottom: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 5px #ccc;
+
+        &__title {
+          height: 40px;
+          display: flex;
+          justify-content: space-between;
+          padding-bottom: 5px;
+
+          &__list-name {
+            line-height: 40px;
+            font-size: 24px;
+            font-weight: bold;
+            padding-left: 5px;
+            position: relative;
+            display: flex
+          }
+
+          &__user {
+            line-height: 55px;
+            font-size: 24px;
+            padding-top: 3px;
+            width: 400px;
+            text-align: right;
+          }
+        }
+      }
+    }
+
+    .show-top {
+      width: 100%;
+      min-height: 50px;
+      padding: 10px 0;
+
+      &__form {
+        display: flex;
+
+        @media screen and (max-width: 599px) {
+          display: block;
+          text-align: center;
+        }
+
+        &__list-box {
+          display: flex;
+
+          @media screen and (max-width: 599px) {
+            display: block;
+          }
+
+          &__label {
+            font-size: 20px;
+            font-weight: bold;
+            line-height: 45px;
+            margin-top: 5px;
+            margin-left: 5px;
+
+            @media screen and (max-width: 599px) {
+              width: 300px;
+              margin-left: 0;
+            }
+          }
+        }
+      }
+    }
+
+    .shows {
+      width: 100%;
+      display: flex;
+      padding: 10px 0 0;
+
+      .show {
+        display: block;
+        background-color: #fcfcfc;
+        width: 100%;
+        padding: 0 5px;
+        box-sizing: border-box;
+
+        .show-space {
+          height: 50px;
+          width: 100px;
+          display: block;
+        }
+
+        .show-list {
+          margin-bottom: 10px;
+          background-color: #efe;
+          width: 100%;
+          border-left: 1px solid #000;
+          border-top: 1px solid #000;
+          border-right: 1px solid #000;
+          box-sizing: border-box;
+
+          &__head {
+            // border: 1px solid #000;
+            width: 100%;
+            font-size: 18px;
+            display: flex;
+            box-sizing: border-box;
+
+            .show-title {
+              width: 100%;
+              height: 50px;
+              line-height: 50px;
+              font-size: 20px;
+              font-weight: bold;
+              text-align: center;
+              border-bottom: 1px solid #000;
+            }
+
+            .show-image {
+              height: 140px;
+              padding: 10px;
+              width: 20%;
+              min-width: 140px;
+              border-right: 1px solid #000;
+              border-bottom: 1px solid #000;
+              text-align: center;
+              box-sizing: border-box;
+            }
+
+            .show-image-name-box {
+              padding: 10px;
+              height: 140px;
+              width: 80%;
+              max-width: calc(100% - 140px);
+              border-bottom: 1px solid #000;
+              box-sizing: border-box;
+            }
+
+            .show-image-name-content {
+              line-height: 120px;
+              overflow-x: auto;
+              white-space: nowrap;
+            }
+
+            .show-key-box {
+              width: 20%;
+              min-width: 140px;
+              border-right: 1px solid #000;
+              border-bottom: 1px solid #000;
+              text-align: center;
+              box-sizing: border-box;
+              height: 50px;
+              padding: 0 5px;
+            }
+
+            .link-hover:hover {
+              border: 1.5px solid #000;
+              background-color: #cfc;
+            }
+
+            .show-key-content {
+              line-height: 50px;
+              overflow-x: auto;
+              white-space: nowrap;
+            }
+
+            .show-value-box {
+              width: 80%;
+              max-width: calc(100% - 140px);
+              border-bottom: 1px solid #000;
+              padding-left: 10px;
+              box-sizing: border-box;
+              height: 50px;
+            }
+
+            .show-value-content {
+              line-height: 50px;
+              overflow-x: scroll;
+              white-space: nowrap;
+            }
+          }
+        }
+      }
+    }
+
+    .hidden {
+      visibility: hidden;
+    }
+  }
+}
