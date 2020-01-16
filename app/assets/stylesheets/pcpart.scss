@@ -1,3 +1,6 @@
+.form-area {
+  display: flex;
+}
 .content {
   box-sizing: border-box;
   color: $content-color;
@@ -6,6 +9,11 @@
   min-height: 300px;
   padding: 10px;
   margin-bottom: 20px;
+  // margin: 0 auto;
+  // padding: 10px;
+  // margin-bottom: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 5px #ccc;
 
   .show-list {
     background-color: #efe;
@@ -37,6 +45,7 @@
         height: 140px;
         padding: 10px;
         width: 20%;
+        min-width: 140px;
         border-right: 1px solid #000;
         border-bottom: 1px solid #000;
         text-align: center;
@@ -59,6 +68,7 @@
 
       .show-key-box {
         width: 20%;
+        min-width: 140px;
         border-right: 1px solid #000;
         border-bottom: 1px solid #000;
         text-align: center;
@@ -91,13 +101,16 @@
 
   .content-top {
     display: flex;
+    width: calc(100% - 20px);
+    // padding-right: 10px;
 
     .add-btn {
       @include button(#fff, #fd9535, #d27d00);
+      margin: 0 0 0 auto;
     }
 
     .content-clearbox {
-      height: 60px;
+      height: 40px;
     }
   }
 }

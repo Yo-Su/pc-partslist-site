@@ -1,10 +1,8 @@
 .side-bar {
   box-sizing: border-box;
-  color: $side-bar_color;
-  background-color: $side-bar-bgc;
-  height: 100%;
-  width: 300px;
-  padding: 5px;
+  width: 200px;
+  padding-top: 10px;
+  // height: 100%;
 
   @media screen and (max-width: 1024px) {
     width: 100%;
@@ -12,6 +10,17 @@
   }
 
   &__list {
+    color: $side-bar_color;
+    background-color: $side-bar-bgc;
+    padding: 5px;
+    border-radius: 10px;
+    width: 180px;
+    position: absolute;
+    top: 70px;
+    // z-index: 5;
+    overflow: scroll;
+    max-height: calc(100% - 100px);
+
     @media screen and (max-width: 1024px) {
       display: flex;
       justify-content: center;
@@ -24,7 +33,7 @@
       color: $parts-list__category-color;
       background-color: $parts-list__category-bgc;
       display: block;
-      font-size: 20px;
+      font-size: 16px;
       padding: 1px;
       margin-bottom: 5px;
       text-align: center;

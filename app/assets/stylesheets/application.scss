@@ -4,8 +4,12 @@
 @import "config/mixin";
 @import "config/color-palette";
 @import "config/table";
+@import "module/main";
+@import "module/header";
+@import "module/navi";
 @import "module/side-bar";
 @import "module/partslist-edit";
+@import "module/pcparts-index";
 @import "./parts-list";
 @import "./pcpart";
 @import "./devise";

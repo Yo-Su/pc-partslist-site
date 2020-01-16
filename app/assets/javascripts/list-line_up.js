@@ -8,12 +8,8 @@ $(function(){
             <div class="partslists__content__title__list-name">
               <a href="/users/${partsList.user_id}/parts_lists/${partsList.id}">${partsList.name}</a>
             </div>
-          <div class="partslists__content__title__box">
-            <a class="partslists__content__title__box__edit" href="/users/${partsList.user_id}/parts_lists/${partsList.id}/edit">リストを編集</a>
-            <a class="partslists__content__title__box__delete" rel="nofollow" data-method="delete" href="/users/${partsList.user_id}/parts_lists/${partsList.id}">リストを削除</a>
           </div>
         </div>
-      </div>
     `
     return html
   }
@@ -1138,10 +1134,8 @@ $(function(){
 
   function buildPartsListShowFoot(){
     var html = `
-      </div>
       <div class="show-space"></div>
       </div>
-
     `
     return html
   }

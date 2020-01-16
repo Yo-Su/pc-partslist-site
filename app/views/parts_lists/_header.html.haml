@@ -1,14 +1,15 @@
-= link_to root_path, class: "header__logo" do
-  = image_tag "icon.png", class: "header__logo__icon"
-  = image_tag "icon3.png", class: "header__logo__title-logo"
-.header__lists
-  - if user_signed_in?
-    = link_to user_parts_lists_path(current_user.id), class: "header__lists__list user_name" do
-      = "#{current_user.name} さん"
-    = link_to destroy_user_session_path, method: :delete, class: "header__lists__list" do
-      ログアウト
-  - else
-    = link_to new_user_registration_path, class: "header__lists__list" do
-      新規登録
-    = link_to new_user_session_path, class: "header__lists__list" do
-      ログイン
+.header__area
+  = link_to root_path, class: "header__area__logo" do
+    = image_tag "icon.png", class: "header__area__logo__icon"
+    = image_tag "icon3.png", class: "header__area__logo__title-logo"
+  .header__area__lists
+    - if user_signed_in?
+      = link_to user_parts_lists_path(current_user.id), class: "header__area__lists__list user_name" do
+        = "#{current_user.name} さん"
+      = link_to destroy_user_session_path, method: :delete, class: "header__area__lists__list" do
+        ログアウト
+    - else
+      = link_to new_user_registration_path, class: "header__area__lists__list" do
+        新規登録
+      = link_to new_user_session_path, class: "header__area__lists__list" do
+        ログイン

@@ -1,0 +1,64 @@
+.wrapper {
+  box-sizing: border-box;
+  color: $main_color;
+  background-color: $contents-bgc;
+  height: 100vh;
+  width: 100vw;
+
+  a {
+    text-decoration: none;
+  }
+
+  .notifications {
+    color: white;
+    text-align: center;
+    z-index: 10;
+    float: center;
+    width: 100%;
+    margin: 0 auto;
+
+    .notice {
+      height: 40px;
+      line-height: 40px;
+      font-size: 20px;
+      background-color: #3456f7;
+      text-align: center;
+    }
+
+    .alert {
+      height: 40px;
+      line-height: 40px;
+      font-size: 20px;
+      background-color: #ef1a1f;
+    }
+  }
+
+  form {
+    // height: 100%;
+    overflow: scroll;
+    height: calc(100% - 75px);
+  }
+
+  .main {
+    height: calc(100% - 75px);
+    // display: flex;
+    overflow: scroll;
+
+    @media screen and (max-width: 1024px) {
+      display: block;
+    }
+
+    &__area {
+      width: 80%;
+      max-width: 1280px;
+      display: flex;
+      margin: 0 auto;
+    }
+
+    &__area2 {
+      width: 80%;
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+  }
+}

@@ -1,37 +1,31 @@
 .wrapper
   .header
     = render "header"
-
-  = render 'layouts/notifications'
-
+  -# = render 'layouts/notifications'
   .main
-    .contents
-      .show-line-up
-        .show-line-up__box
-          %p.list-title 追加するリスト
-          .select-list
-            = form_with(model: @parts_list,
-              local: true,
-              url: user_parts_list_path(current_user.id),
-              class: "contents-top__list__select") do |f|
-              = f.select :list_id, @lists.map { |parts_list| [parts_list.name, parts_list.id] }, selected: params[:list_id], id: "line-up-select", class: "checkbox"
-              = f.submit id: "line-up-button",class: "show-line-up__add-btn", value: "リスト追加", "data-disable-with":"リスト追加"
-        .show-line-up__btn
-          %p.show-line-up__btn__name 入れ替えるリスト
-          #switchArea
-            %input#choose_list{name: "choose_list", type: "checkbox", checked: "checked"}
-            %label{for: "choose_list"}
-              %span
-            #swImg
-      .shows
+    .contents.center
+      .show-top
+        = form_with(model: @parts_list,
+          local: true,
+          url: user_parts_list_path(current_user.id),
+          class: "show-top__form") do |f|
+
+          .show-top__form__list-box
+            %p.show-top__form__list-box__label 追加するリスト
+            = f.select :list_id, @lists.map { |parts_list| [parts_list.name, parts_list.id] }, selected: params[:list_id], id: "top-select", class: "show-top__form__list-box__checkbox"
+          .show-top__form__btn
+            #switchArea.switch-area
+              %input#choose_list{name: "choose_list", type: "checkbox", checked: "checked"}
+              %label{for: "choose_list"}
+                %span
+              #swImg
+            = f.submit id: "line-up-button",class: "show-top__form__btn__add-btn submit-button", value: "リスト追加", "data-disable-with":"リスト追加"
+      .shows.radius
         .show{ data: {list_up_id: 0}}
           .partslists__show
             .partslists__show__box
               .partslists__content__title__list-name
                 = link_to @parts_list.name, user_parts_list_path(current_user.id, @parts_list.id)
-              .partslists__content__title__box
-                = link_to "リストを編集", edit_user_parts_list_path(current_user.id, @parts_list.id), class: "partslists__content__title__box__edit"
-                = link_to "リストを削除", user_parts_list_path(current_user.id, @parts_list.id), method: :delete, class: "partslists__content__title__box__delete"
           - if get_cpu(@parts_list.cpu_id) || true
             .show-list
               .show-list__head
