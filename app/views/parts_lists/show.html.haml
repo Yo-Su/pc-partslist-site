@@ -1,11 +1,9 @@
 .wrapper
   .header
     = render "header"
-
-  = render 'layouts/notifications'
-
+  -# = render 'layouts/notifications'
   .main
-    .contents
+    .contents.center
       .show-top
         = form_with(model: @parts_list,
           local: true,
@@ -16,13 +14,13 @@
             %p.show-top__form__list-box__label 追加するリスト
             = f.select :list_id, @lists.map { |parts_list| [parts_list.name, parts_list.id] }, selected: params[:list_id], id: "top-select", class: "show-top__form__list-box__checkbox"
           .show-top__form__btn
-            #switchArea
+            #switchArea.switch-area
               %input#choose_list{name: "choose_list", type: "checkbox", checked: "checked"}
               %label{for: "choose_list"}
                 %span
               #swImg
-            = f.submit id: "line-up-button",class: "show-top__form__btn__add-btn", value: "リスト追加", "data-disable-with":"リスト追加"
-      .shows
+            = f.submit id: "line-up-button",class: "show-top__form__btn__add-btn submit-button", value: "リスト追加", "data-disable-with":"リスト追加"
+      .shows.radius
         .show{ data: {list_up_id: 0}}
           .partslists__show
             .partslists__show__box

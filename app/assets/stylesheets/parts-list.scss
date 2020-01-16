@@ -1,580 +1,490 @@
-.wrapper {
-  box-sizing: border-box;
-  background-color: $wrapper-bgc;
-  height: 100vh;
-  width: 100vw;
-
-  a {
-    text-decoration: none;
-  }
-
-  .header {
-    color: $header_color;
-    background-color: $header-bgc;
-    height: 60px;
+.main {
+  .contents {
+    box-sizing: border-box;
+    color: $contents_color;
     width: 100%;
+    height: 100%;
 
-    &__wide-area {
+    // 各PCパーツのページ
+    &__top {
+      box-sizing: border-box;
       display: flex;
       justify-content: space-between;
-    }
-
-    &__area {
-      display: flex;
-      justify-content: space-between;
-      width: 90%;
+      height: 60px;
+      padding: 5px;
+      line-height: 50px;
       max-width: 1280px;
       margin: 0 auto;
 
-      &__logo {
-        color: $header-logo-color;
-        // background-color: $header-logo-bgc;
-        padding: 0 10px;
+      &__name-area {
+        width: 400px;
+        font-weight: bold;
         display: flex;
 
-        &__icon {
-          width: 60px;
-          height: 60px;
-          padding-right: 10px;
-        }
-
-        &__title-logo {
-          width: 300px;
-          height: 50px;
-          padding: 5px 0;
-        }
-      }
-
-      &__lists {
-        display: flex;
-        line-height: 60px;
-        font-size: 18px;
-
-        &__list {
-          color: $header-list-color;
-          padding: 0 20px;
-          min-width: 100px;
-          text-align: center;
-
-          &:hover {
-            background-color: #375575;
-          }
-        }
-        // .user_name {
-        //   width: 160px;
-        //   text-align: center;
-        // }
-      }
-    }
-  }
-
-  .notifications {
-    color: white;
-    text-align: center;
-    z-index: 10;
-    float: center;
-
-    .notice {
-      height: 40px;
-      line-height: 40px;
-      font-size: 24px;
-      background-color: #3456f7;
-      text-align: center;
-    }
-
-    .alert {
-      height: 40px;
-      line-height: 40px;
-      font-size: 24px;
-      background-color: #ef1a1f;
-    }
-  }
-
-  .main {
-    color: $main_color;
-    background-color: $contents-bgc;
-    height: calc(100% - 60px);
-    display: flex;
-    width: 90%;
-    margin: 0 auto;
-    overflow: scroll;
-
-    @media screen and (max-width: 1024px) {
-      display: block;
-    }
-
-    .main-area {
-      width: 90%;
-      display: flex;
-      margin: 0 auto;
-      overflow: scroll;
-  
-    }
-
-    .contents {
-      box-sizing: border-box;
-      color: $contents_color;
-      width: 100%;
-      height: 100%;
-      overflow: scroll;
-
-      // 各PCパーツのページ
-      &__top {
-        display: flex;
-        justify-content: space-between;
-        height: 50px;
-        padding: 10px;
-        line-height: 50px;
-        max-width: 1280px;
-        margin: 0 auto;
-
-        &__name-area {
-          width: 400px;
-          font-weight: bold;
-          display: flex;
-
-          &__name {
-            font-size: 24px;
-            padding: 0 20px;
-          }
-        }
-
-        &__category-area {
-          display: none;
-          color: #fff;
-          background-color: #0e75ff;
-          text-align: center;
-          border-radius: 30px;
-
-          // サイドバーアイコン
-          &__icon {
-            line-height: 50px;
-            height: 50px;
-            width: 50px;
-            font-size: 30px;
-          }
-
-          @media screen and (max-width: 1024px) {
-            display: block;
-          }
-        }
-
-        &__db-update {
-          font-size: 18px;
-        }
-
-        &__list {
-          font-size: 18px;
-          display: flex;
-
-          .list-title {
-            margin-top: 5px;
-          }
-        }
-
-        // トップページ
-        &__top-name {
+        &__name {
           font-size: 24px;
-          font-weight: bold;
+          padding: 0 20px;
         }
       }
 
-      select {
+      &__category-area {
+        display: none;
+        color: #fff;
+        background-color: #0e75ff;
+        text-align: center;
+        border-radius: 30px;
+
+        // サイドバーアイコン
+        &__icon {
+          line-height: 50px;
+          height: 50px;
+          width: 50px;
+          font-size: 30px;
+        }
+
+        @media screen and (max-width: 1024px) {
+          display: block;
+        }
+      }
+
+      &__db-update {
         font-size: 18px;
-        width: 300px;
-        height: 50px;
-        margin-left: 10px;
-        margin-bottom: 5px;
-        border-radius: 0;
-        background-color: #dafafa;
-        cursor: pointer;
-        text-indent: 5px;
+      }
+
+      &__list {
+        font-size: 18px;
+        display: flex;
+
+        .list-title {
+          margin-top: 5px;
+        }
+      }
+
+      // トップページ
+      &__top-name {
+        font-size: 24px;
+        font-weight: bold;
+      }
+    }
+
+    select {
+      font-size: 18px;
+      width: 250px;
+      height: 40px;
+      margin-top: 5px;
+      // margin-left: 10px;
+      // margin-bottom: 5px;
+      border-radius: 0;
+      background-color: #dafafa;
+      cursor: pointer;
+      text-indent: 5px;
+
+      @media screen and (max-width: 599px) {
+        margin-left: 0;
+      }
+    }
+
+    .contents-main {
+      height: calc(100% - 60px);
+      padding: 0 10px;
+      max-width: 1280px;
+      margin: 0 auto;
+      }
+
+    .partslists {
+      &__controller {
+        height: 60px;
+
+        &__box {
+          display: flex;
+          justify-content: space-between;
+          padding: 10px;
+
+          &__btn {
+            display: block;
+            margin: 0 auto;
+            @include button(#1436f7, #b0cef5, #8ebfff);
+          }
+        }
+      }
+
+      &__show {
+        height: 40px;
+        padding: 10px 0 0;
+
+        &__box {
+          display: flex;
+          justify-content: space-between;
+        }
+      }
+
+      &__content {
+        box-sizing: border-box;
+        color: $content-color;
+        background-color: $content-bgc;
+        // width: 90%;
+        // max-width: 1280px;
+        margin: 0 auto;
+        padding: 10px;
+        margin-bottom: 20px;
+        border-radius: 10px;
+        // border: black solid 1px;
+        box-shadow: 0 0 5px #ccc;
+
+        &__title {
+          height: 40px;
+          display: flex;
+          justify-content: space-between;
+          padding-bottom: 5px;
+
+          &__list-name {
+            line-height: 40px;
+            font-size: 24px;
+            font-weight: bold;
+            padding-left: 5px;
+            position: relative;
+            display: flex;
+
+            a {
+              text-decoration: none;
+              color: #000;
+            }
+
+            &__fukidashi {
+              opacity: 0;
+              width: 390px;
+              font-size: 16px;
+              line-height: 20px;
+              position: absolute;
+              top: -55px;
+              left: 0;
+              padding: 16px;
+              border-radius: 5px;
+              background: #33cc99;
+              color: #fff;
+              font-weight: bold;
+
+              &:after {
+                position: absolute;
+                width: 0;
+                height: 0;
+                left: 0;
+                bottom: -19px;
+                margin-left: 15px;
+                border: solid transparent;
+                border-color: rgba(51, 204, 153, 0);
+                border-top-color: #33cc99;
+                border-width: 10px;
+                pointer-events: none;
+                content: " ";
+              }
+            }
+
+            a:hover + p {
+              opacity: 1;
+              transition-duration: 0.3s;
+            }
+
+            &__public-private {
+              font-size: 18px;
+              line-height: 50px;
+              padding-left: 10px;
+              color: blue;
+            }
+          }
+
+          &__box {
+            padding-top: 3px;
+            padding-right: 5px;
+            display: flex;
+            justify-content: space-between;
+            box-sizing: border-box;
+
+            &__compare {
+              @include button(#fff, #fd9535, #d27d00);
+              margin-right: 20px;
+            }
+
+            &__edit {
+              @include button(#1436f7, #b0cef5, #8ebfff);
+              margin-right: 20px;
+            }
+
+            &__delete {
+              @include button(#2c2c2c, #ebebeb, #adadad);
+            }
+          }
+
+          &__user {
+            line-height: 55px;
+            font-size: 24px;
+            padding-top: 3px;
+            width: 400px;
+            text-align: right;
+          }
+        }
+      }
+    }
+
+    .show-top {
+      width: 100%;
+      min-height: 50px;
+      padding: 10px 0;
+
+
+      &__form {
+        display: flex;
+        // padding: 10px;
+        border-radius: 10px;
+        box-shadow: 0 0 5px #ccc;
+        width: 100%;
+        height: 60px;
+        padding: 5px;
+        box-sizing: border-box;
 
         @media screen and (max-width: 599px) {
-          margin-left: 0;
-        }
-      }
-
-      .contents-main {
-        height: 100%;
-        padding: 0 10px;
-        max-width: 1280px;
-        margin: 0 auto;
+          display: block;
+          text-align: center;
         }
 
-      .partslists {
-        &__controller {
-          height: 60px;
-
-          &__box {
-            display: flex;
-            justify-content: space-between;
-            padding: 10px;
-
-            &__btn {
-              display: block;
-              margin: 0 auto;
-              @include button(#1436f7, #b0cef5, #8ebfff);
-            }
-          }
-        }
-
-        &__show {
-          height: 40px;
-          padding: 10px 0 0;
-
-          &__box {
-            display: flex;
-            justify-content: space-between;
-          }
-        }
-
-        &__content {
-          box-sizing: border-box;
-          color: $content-color;
-          background-color: $content-bgc;
-          width: 90%;
-          max-width: 1280px;
-          margin: 0 auto;
-          padding: 10px;
-          margin-bottom: 20px;
-          border-radius: 10px;
-          // border: black solid 1px;
-          box-shadow: 0 0 5px #ccc;
-
-          &__title {
-            height: 40px;
-            display: flex;
-            justify-content: space-between;
-            padding-bottom: 5px;
-
-            &__list-name {
-              line-height: 40px;
-              font-size: 24px;
-              font-weight: bold;
-              padding-left: 5px;
-              position: relative;
-              display: flex;
-
-              a {
-                text-decoration: none;
-                color: #000;
-              }
-
-              &__fukidashi {
-                opacity: 0;
-                width: 390px;
-                font-size: 16px;
-                line-height: 20px;
-                position: absolute;
-                top: -55px;
-                left: 0;
-                padding: 16px;
-                border-radius: 5px;
-                background: #33cc99;
-                color: #fff;
-                font-weight: bold;
-
-                &:after {
-                  position: absolute;
-                  width: 0;
-                  height: 0;
-                  left: 0;
-                  bottom: -19px;
-                  margin-left: 15px;
-                  border: solid transparent;
-                  border-color: rgba(51, 204, 153, 0);
-                  border-top-color: #33cc99;
-                  border-width: 10px;
-                  pointer-events: none;
-                  content: " ";
-                }
-              }
-
-              a:hover + p {
-                opacity: 1;
-                transition-duration: 0.3s;
-              }
-
-              &__public-private {
-                font-size: 18px;
-                line-height: 50px;
-                padding-left: 10px;
-                color: blue;
-              }
-            }
-
-            &__box {
-              padding-top: 3px;
-              padding-right: 5px;
-              display: flex;
-              justify-content: space-between;
-              box-sizing: border-box;
-
-              &__compare {
-                @include button(#fff, #fd9535, #d27d00);
-                margin-right: 20px;
-              }
-
-              &__edit {
-                @include button(#1436f7, #b0cef5, #8ebfff);
-                margin-right: 20px;
-              }
-
-              &__delete {
-                @include button(#2c2c2c, #ebebeb, #adadad);
-              }
-            }
-
-            &__user {
-              line-height: 55px;
-              font-size: 24px;
-              padding-top: 3px;
-              width: 400px;
-              text-align: right;
-            }
-          }
-        }
-      }
-
-      .show-top {
-        width: 100%;
-        min-height: 50px;
-        padding: 10px 0;
-
-
-        &__form {
+        &__list-box {
           display: flex;
+          margin: 0 0 0 auto;
 
           @media screen and (max-width: 599px) {
             display: block;
-            text-align: center;
           }
 
-          &__list-box {
-            display: flex;
+          &__label {
+            font-size: 20px;
+            font-weight: bold;
+            line-height: 45px;
+            margin-right: 10px;
+            margin-left: 5px;
 
             @media screen and (max-width: 599px) {
-              display: block;
+              width: 300px;
+              margin-left: 0;
             }
+          }
+        }
 
-            &__label {
-              font-size: 20px;
-              font-weight: bold;
-              line-height: 45px;
-              margin-top: 5px;
-              margin-left: 5px;
+        &__btn {
+          display: flex;
+          padding-left: 10px;
 
-              @media screen and (max-width: 599px) {
-                width: 300px;
-                margin-left: 0;
-              }
+          @media screen and (max-width: 599px) {
+            padding-left: 0;
+            margin-top: 10px;
+            display: block;
+          }
+
+          /* === 切替ボタンを表示するエリア ============================== */
+          #switchArea {
+            line-height: 40px; /* 1行の高さ          */
+            letter-spacing: 0; /* 文字間             */
+            text-align: center; /* 文字位置は中央     */
+            font-size: 16px; /* 文字サイズ         */
+            border-radius: 4px;
+
+            position: relative; /* 親要素が基点       */
+            margin: auto; /* 中央寄せ           */
+            width: 200px; /* ボタンの横幅       */
+            background: #fff; /* デフォルト背景色   */
+
+            /* === チェックボックス ==================================== */
+            input[type="checkbox"] {
+              display: none; /* チェックボックス非表示 */
+            }
+            /* === チェックボックスのラベル（標準） ==================== */
+            label {
+              display: block; /* ボックス要素に変更 */
+              box-sizing: border-box; /* 枠線を含んだサイズ */
+              height: 40px; /* ボタンの高さ       */
+              border: 2px solid rgba(142, 191, 255, 1); /* 未選択タブのの枠線 */
+              border-radius: 4px; /* 角丸               */
+            }
+            /* === チェックボックスのラベル（ONのとき） ================ */
+            input[type="checkbox"]:checked + label {
+              border-color: rgba(58, 255, 58, 1); /* 選択タブの枠線     */
+            }
+            /* === 表示する文字（標準） ================================ */
+            label span:after {
+              content: "入替:左のリスト"; /* 表示する文字       */
+              padding: 0 0 0 0px; /* 表示する位置       */
+              color: rgb(56, 135, 238); /* 文字色             */
+            }
+            /* === 表示する文字（ONのとき） ============================ */
+            input[type="checkbox"]:checked + label span:after {
+              content: "入替:右のリスト"; /* 表示する文字       */
+              padding: 0 0 0 0px; /* 表示する位置       */
+              color: rgb(47, 192, 47); /* 文字色             */
+            }
+            /* === 丸部分のSTYLE（標準） =============================== */
+            #swImg {
+              position: absolute; /* 親要素からの相対位置*/
+              width: 32px; /* 丸の横幅           */
+              height: 32px; /* 丸の高さ           */
+              background: rgba(142, 191, 255, 1); /* カーソルタブの背景 */
+              top: 4px; /* 親要素からの位置   */
+              left: 4px; /* 親要素からの位置   */
+              border-radius: 4px; /* 角丸               */
+              transition: 0.2s; /* 滑らか変化         */
+            }
+            /* === 丸部分のSTYLE（ONのとき） =========================== */
+            input[type="checkbox"]:checked ~ #swImg {
+              transform: translateX(160px); /* 丸も右へ移動       */
+              background: rgba(58, 255, 58, 1); /* カーソルタブの背景 */
             }
           }
 
-          &__btn {
-            // padding-left: 70px;
-            display: flex;
+          /* === リスト追加ボタン ======================================= */
+          &__add-btn {
+            @include button(#fff, #fd9535, #d27d00);
+            // width: 200px;
+            margin-top: 5px;
+            margin-left: 10px;
 
             @media screen and (max-width: 599px) {
-              padding-left: 0;
-              margin-top: 10px;
-              display: block;
-            }
-
-            /* === 切替ボタンを表示するエリア ============================== */
-            #switchArea {
-              line-height: 50px; /* 1行の高さ          */
-              letter-spacing: 0; /* 文字間             */
-              text-align: center; /* 文字位置は中央     */
-              font-size: 18px; /* 文字サイズ         */
-              border-radius: 4px;
-
-              position: relative; /* 親要素が基点       */
-              margin: auto; /* 中央寄せ           */
-              width: 300px; /* ボタンの横幅       */
-              background: #fff; /* デフォルト背景色   */
-
-              /* === チェックボックス ==================================== */
-              input[type="checkbox"] {
-                display: none; /* チェックボックス非表示 */
-              }
-              /* === チェックボックスのラベル（標準） ==================== */
-              label {
-                display: block; /* ボックス要素に変更 */
-                box-sizing: border-box; /* 枠線を含んだサイズ */
-                height: 50px; /* ボタンの高さ       */
-                border: 2px solid rgba(142, 191, 255, 1); /* 未選択タブのの枠線 */
-                border-radius: 4px; /* 角丸               */
-              }
-              /* === チェックボックスのラベル（ONのとき） ================ */
-              input[type="checkbox"]:checked + label {
-                border-color: rgba(58, 255, 58, 1); /* 選択タブの枠線     */
-              }
-              /* === 表示する文字（標準） ================================ */
-              label span:after {
-                content: "入替：左のリスト"; /* 表示する文字       */
-                padding: 0 0 0 10px; /* 表示する位置       */
-                color: rgb(56, 135, 238); /* 文字色             */
-              }
-              /* === 表示する文字（ONのとき） ============================ */
-              input[type="checkbox"]:checked + label span:after {
-                content: "入替：右のリスト"; /* 表示する文字       */
-                padding: 0 0 0 10px; /* 表示する位置       */
-                color: rgb(47, 192, 47); /* 文字色             */
-              }
-              /* === 丸部分のSTYLE（標準） =============================== */
-              #swImg {
-                position: absolute; /* 親要素からの相対位置*/
-                width: 42px; /* 丸の横幅           */
-                height: 42px; /* 丸の高さ           */
-                background: rgba(142, 191, 255, 1); /* カーソルタブの背景 */
-                top: 4px; /* 親要素からの位置   */
-                left: 4px; /* 親要素からの位置   */
-                border-radius: 4px; /* 角丸               */
-                transition: 0.2s; /* 滑らか変化         */
-              }
-              /* === 丸部分のSTYLE（ONのとき） =========================== */
-              input[type="checkbox"]:checked ~ #swImg {
-                transform: translateX(250px); /* 丸も右へ移動       */
-                background: rgba(58, 255, 58, 1); /* カーソルタブの背景 */
-              }
-            }
-
-            /* === リスト追加ボタン ======================================= */
-            &__add-btn {
-              @include button(#fff, #fd9535, #d27d00);
-              width: 200px;
-
-              @media screen and (max-width: 599px) {
-                width: 300px;
-                margin: 10px 0;
-              }
+              width: 300px;
+              margin: 10px 0;
             }
           }
         }
-      }
-
-      .shows {
-        width: 100%;
-        display: flex;
-        padding: 10px 0 0;
-
-
-      .show {
-        display: block;
-        background-color: #fcfcfc;
-        width: 100%;
-        padding: 0 5px;
-        box-sizing: border-box;
-
-        .show-space {
-          height: 50px;
-          width: 100px;
-          display: block;
-        }
-
-        .show-list {
-          margin-bottom: 10px;
-          background-color: #efe;
-          width: 100%;
-          border-left: 1px solid #000;
-          border-top: 1px solid #000;
-          border-right: 1px solid #000;
-          box-sizing: border-box;
-
-          &__head {
-            // border: 1px solid #000;
-            width: 100%;
-            font-size: 18px;
-            display: flex;
-            box-sizing: border-box;
-
-            .show-title {
-              width: 100%;
-              height: 50px;
-              line-height: 50px;
-              font-size: 20px;
-              font-weight: bold;
-              text-align: center;
-              border-bottom: 1px solid #000;
-            }
-
-            .show-image {
-              height: 140px;
-              padding: 10px;
-              width: 20%;
-              min-width: 140px;
-              border-right: 1px solid #000;
-              border-bottom: 1px solid #000;
-              text-align: center;
-              box-sizing: border-box;
-            }
-
-            .show-image-name-box {
-              padding: 10px;
-              height: 140px;
-              width: 80%;
-              max-width: calc(100% - 140px);
-              border-bottom: 1px solid #000;
-              box-sizing: border-box;
-            }
-
-            .show-image-name-content {
-              line-height: 120px;
-              overflow-x: auto;
-              white-space: nowrap;
-            }
-
-            .show-key-box {
-              width: 20%;
-              min-width: 140px;
-              border-right: 1px solid #000;
-              border-bottom: 1px solid #000;
-              text-align: center;
-              box-sizing: border-box;
-              height: 50px;
-              padding: 0 5px;
-
-              // &:hover {
-              //   border: 1.5px solid #000;
-              //   background-color: #cfc;
-              // }
-            }
-
-            .link-hover:hover {
-              border: 1.5px solid #000;
-              background-color: #cfc;
-            }
-
-            .show-key-content {
-              line-height: 50px;
-              overflow-x: auto;
-              white-space: nowrap;
-            }
-
-            .show-value-box {
-              width: 80%;
-              max-width: calc(100% - 140px);
-              border-bottom: 1px solid #000;
-              padding-left: 10px;
-              box-sizing: border-box;
-              height: 50px;
-            }
-
-            .show-value-content {
-              line-height: 50px;
-              overflow-x: scroll;
-              white-space: nowrap;
-            }
-          }
-        }
-      }
-      }
-
-      .hidden {
-        visibility: hidden;
       }
     }
+
+    .shows {
+      width: 100%;
+      display: flex;
+      padding: 10px 10px 0;
+      background-color: #fcfcfc;
+      box-sizing: border-box;
+
+    .show {
+      display: block;
+      width: 100%;
+      padding: 0 5px;
+      box-sizing: border-box;
+
+      .show-space {
+        height: 10px;
+        width: 100px;
+        display: block;
+      }
+
+      .show-list {
+        margin-bottom: 10px;
+        background-color: #efe;
+        width: 100%;
+        border-left: 1px solid #000;
+        border-top: 1px solid #000;
+        border-right: 1px solid #000;
+        box-sizing: border-box;
+
+        &__head {
+          // border: 1px solid #000;
+          width: 100%;
+          font-size: 18px;
+          display: flex;
+          box-sizing: border-box;
+
+          .show-title {
+            width: 100%;
+            height: 50px;
+            line-height: 50px;
+            font-size: 20px;
+            font-weight: bold;
+            text-align: center;
+            border-bottom: 1px solid #000;
+          }
+
+          .show-image {
+            height: 140px;
+            padding: 10px;
+            width: 20%;
+            min-width: 140px;
+            border-right: 1px solid #000;
+            border-bottom: 1px solid #000;
+            text-align: center;
+            box-sizing: border-box;
+          }
+
+          .show-image-name-box {
+            padding: 10px;
+            height: 140px;
+            width: 80%;
+            max-width: calc(100% - 140px);
+            border-bottom: 1px solid #000;
+            box-sizing: border-box;
+          }
+
+          .show-image-name-content {
+            line-height: 120px;
+            overflow-x: auto;
+            white-space: nowrap;
+          }
+
+          .show-key-box {
+            width: 20%;
+            min-width: 140px;
+            border-right: 1px solid #000;
+            border-bottom: 1px solid #000;
+            text-align: center;
+            box-sizing: border-box;
+            height: 50px;
+            padding: 0 5px;
+
+            // &:hover {
+            //   border: 1.5px solid #000;
+            //   background-color: #cfc;
+            // }
+          }
+
+          .link-hover:hover {
+            border: 1.5px solid #000;
+            background-color: #cfc;
+          }
+
+          .show-key-content {
+            line-height: 50px;
+            overflow-x: auto;
+            white-space: nowrap;
+          }
+
+          .show-value-box {
+            width: 80%;
+            max-width: calc(100% - 140px);
+            border-bottom: 1px solid #000;
+            padding-left: 10px;
+            box-sizing: border-box;
+            height: 50px;
+          }
+
+          .show-value-content {
+            line-height: 50px;
+            overflow-x: scroll;
+            white-space: nowrap;
+          }
+        }
+      }
+    }
+    }
+
+    .radius {
+      border-radius: 10px;
+      box-shadow: 0 0 5px #ccc;
+      margin-bottom: 20px;
+    }
+
+    .hidden {
+      visibility: hidden;
+    }
+  }
+
+  .center {
+    width: 80%;
+    margin: 0 auto;
+
   }
 }
