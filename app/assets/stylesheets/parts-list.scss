@@ -163,6 +163,7 @@
               background: #33cc99;
               color: #fff;
               font-weight: bold;
+              pointer-events: none;
 
               &:after {
                 position: absolute;
