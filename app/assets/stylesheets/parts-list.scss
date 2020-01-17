@@ -122,13 +122,10 @@
         box-sizing: border-box;
         color: $content-color;
         background-color: $content-bgc;
-        // width: 90%;
-        // max-width: 1280px;
         margin: 0 auto;
         padding: 10px;
         margin-bottom: 20px;
         border-radius: 10px;
-        // border: black solid 1px;
         box-shadow: 0 0 5px #ccc;
 
         &__title {
@@ -148,6 +145,9 @@
             a {
               text-decoration: none;
               color: #000;
+              max-width: 300px;
+              overflow-x: auto;
+              white-space: nowrap;
             }
 
             &__fukidashi {
@@ -232,10 +232,9 @@
       min-height: 50px;
       padding: 10px 0;
 
-
       &__form {
         display: flex;
-        // padding: 10px;
+        background-color: #fcfcfc;
         border-radius: 10px;
         box-shadow: 0 0 5px #ccc;
         width: 100%;
