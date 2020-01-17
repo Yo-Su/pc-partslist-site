@@ -56,13 +56,14 @@
         padding: 10px;
         height: 140px;
         width: 80%;
+        max-width: calc(100% - 140px);
         border-bottom: 1px solid #000;
         box-sizing: border-box;
       }
 
       .show-image-name-content {
         line-height: 120px;
-        overflow-x: auto;
+        overflow-x: scroll;
         white-space: nowrap;
       }
 
@@ -85,6 +86,7 @@
 
       .show-value-box {
         width: 80%;
+        max-width: calc(100% - 140px);
         border-bottom: 1px solid #000;
         padding-left: 10px;
         box-sizing: border-box;
