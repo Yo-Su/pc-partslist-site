@@ -61,12 +61,12 @@
           background-color: #dafafa;
           cursor: pointer;
           text-indent: 5px;
-    
+
           @media screen and (max-width: 559px) {
             margin-left: 0;
           }
         }
-    
+
         .list-title {
           margin-top: 5px;
         }
@@ -87,7 +87,6 @@
     }
 
     .partslists {
-
       &__content {
         box-sizing: border-box;
         color: $content-color;
@@ -99,14 +98,14 @@
         box-shadow: 0 0 5px #ccc;
 
         &__title {
-          height: 40px;
+          height: 30px;
           display: flex;
           justify-content: space-between;
           padding-bottom: 5px;
 
           &__list-name {
-            line-height: 40px;
-            font-size: 24px;
+            line-height: 30px;
+            font-size: 20px;
             font-weight: bold;
             padding-left: 5px;
             position: relative;
@@ -117,9 +116,9 @@
           }
 
           &__user {
-            line-height: 55px;
-            font-size: 24px;
-            padding-top: 3px;
+            line-height: 30px;
+            font-size: 16px;
+            padding-right: 5px;
             text-align: right;
           }
         }
@@ -165,7 +164,6 @@
     .shows {
       width: 100%;
       display: flex;
-      padding: 10px 0 0;
 
       .show {
         display: block;
@@ -190,7 +188,6 @@
           box-sizing: border-box;
 
           &__head {
-            // border: 1px solid #000;
             width: 100%;
             font-size: 18px;
             display: flex;

@@ -1,12 +1,11 @@
 .navi {
   box-sizing: border-box;
-    color: #000;
-    width: 80%;
-    max-width: 1280px;
-    margin: 0 auto;
-    height: 75px;
-    display: flex;
-    // justify-content: space-between;
+  color: #000;
+  width: 80%;
+  max-width: 1280px;
+  margin: 0 auto;
+  height: 75px;
+  display: flex;
   .clearfix {
     width: 190px;
     height: 10px;
@@ -41,9 +40,9 @@
           padding: 0 20px;
         }
 
-      &__db-update a {
-        color: blue;
-      }
+        &__db-update a {
+          color: blue;
+        }
       }
 
       &__category-area {
@@ -74,22 +73,21 @@
           margin-top: 5px;
         }
 
+        select {
+          font-size: 18px;
+          width: 300px;
+          height: 40px;
+          margin-left: 10px;
+          margin-bottom: 5px;
+          border-radius: 0;
+          background-color: #dafafa;
+          cursor: pointer;
+          text-indent: 5px;
 
-    select {
-      font-size: 18px;
-      width: 300px;
-      height: 40px;
-      margin-left: 10px;
-      margin-bottom: 5px;
-      border-radius: 0;
-      background-color: #dafafa;
-      cursor: pointer;
-      text-indent: 5px;
-
-      @media screen and (max-width: 559px) {
-        margin-left: 0;
-      }
-    }
+          @media screen and (max-width: 559px) {
+            margin-left: 0;
+          }
+        }
       }
 
       // トップページ

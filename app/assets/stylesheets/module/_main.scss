@@ -34,14 +34,12 @@
   }
 
   form {
-    // height: 100%;
     overflow: scroll;
     height: calc(100% - 75px);
   }
 
   .main {
     height: calc(100% - 75px);
-    // display: flex;
     overflow: scroll;
 
     @media screen and (max-width: 959px) {

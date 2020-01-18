@@ -9,9 +9,6 @@
   min-height: 300px;
   padding: 10px;
   margin-bottom: 20px;
-  // margin: 0 auto;
-  // padding: 10px;
-  // margin-bottom: 20px;
   border-radius: 10px;
   box-shadow: 0 0 5px #ccc;
 
@@ -25,7 +22,6 @@
     box-sizing: border-box;
 
     &__head {
-      // border: 1px solid #000;
       width: 100%;
       font-size: 20px;
       display: flex;
@@ -104,7 +100,6 @@
   .content-top {
     display: flex;
     width: calc(100% - 20px);
-    // padding-right: 10px;
 
     .add-btn {
       @include button(#fff, #fd9535, #d27d00);
