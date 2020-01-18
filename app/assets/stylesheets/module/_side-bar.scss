@@ -4,7 +4,7 @@
   padding-top: 10px;
   // height: 100%;
 
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 959px) {
     width: 100%;
     height: auto;
   }
@@ -21,7 +21,7 @@
     overflow: scroll;
     max-height: calc(100% - 100px);
 
-    @media screen and (max-width: 1024px) {
+    @media screen and (max-width: 959px) {
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
@@ -45,7 +45,7 @@
         background-color: #0e75ff;
       }
 
-      @media screen and (max-width: 1024px) {
+      @media screen and (max-width: 959px) {
         width: 220px;
         margin-right: 5px;
       }

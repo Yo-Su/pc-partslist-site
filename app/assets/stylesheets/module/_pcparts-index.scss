@@ -38,7 +38,7 @@
           font-size: 30px;
         }
 
-        @media screen and (max-width: 1024px) {
+        @media screen and (max-width: 959px) {
           display: block;
         }
       }
@@ -62,7 +62,7 @@
           cursor: pointer;
           text-indent: 5px;
     
-          @media screen and (max-width: 599px) {
+          @media screen and (max-width: 559px) {
             margin-left: 0;
           }
         }
@@ -110,7 +110,10 @@
             font-weight: bold;
             padding-left: 5px;
             position: relative;
-            display: flex
+            display: flex;
+            max-width: 300px;
+            overflow-x: auto;
+            white-space: nowrap;
           }
 
           &__user {
@@ -131,7 +134,7 @@
       &__form {
         display: flex;
 
-        @media screen and (max-width: 599px) {
+        @media screen and (max-width: 559px) {
           display: block;
           text-align: center;
         }
@@ -139,7 +142,7 @@
         &__list-box {
           display: flex;
 
-          @media screen and (max-width: 599px) {
+          @media screen and (max-width: 559px) {
             display: block;
           }
 
@@ -150,7 +153,7 @@
             margin-top: 5px;
             margin-left: 5px;
 
-            @media screen and (max-width: 599px) {
+            @media screen and (max-width: 559px) {
               width: 300px;
               margin-left: 0;
             }

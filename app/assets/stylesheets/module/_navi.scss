@@ -16,7 +16,7 @@
     width: calc(100% - 190px);
     box-sizing: border-box;
     height: 55px;
-    padding: 5px 10px;
+    padding: 10px 10px 5px;
     line-height: 55px;
     max-width: 1280px;
 
@@ -61,7 +61,7 @@
           font-size: 30px;
         }
 
-        // @media screen and (max-width: 1024px) {
+        // @media screen and (max-width: 959px) {
         //   display: block;
         // }
       }
@@ -86,7 +86,7 @@
       cursor: pointer;
       text-indent: 5px;
 
-      @media screen and (max-width: 599px) {
+      @media screen and (max-width: 559px) {
         margin-left: 0;
       }
     }
