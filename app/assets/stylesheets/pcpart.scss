@@ -9,9 +9,6 @@
   min-height: 300px;
   padding: 10px;
   margin-bottom: 20px;
-  // margin: 0 auto;
-  // padding: 10px;
-  // margin-bottom: 20px;
   border-radius: 10px;
   box-shadow: 0 0 5px #ccc;
 
@@ -25,7 +22,6 @@
     box-sizing: border-box;
 
     &__head {
-      // border: 1px solid #000;
       width: 100%;
       font-size: 20px;
       display: flex;
@@ -56,13 +52,14 @@
         padding: 10px;
         height: 140px;
         width: 80%;
+        max-width: calc(100% - 140px);
         border-bottom: 1px solid #000;
         box-sizing: border-box;
       }
 
       .show-image-name-content {
         line-height: 120px;
-        overflow-x: auto;
+        overflow-x: scroll;
         white-space: nowrap;
       }
 
@@ -85,6 +82,7 @@
 
       .show-value-box {
         width: 80%;
+        max-width: calc(100% - 140px);
         border-bottom: 1px solid #000;
         padding-left: 10px;
         box-sizing: border-box;
@@ -102,7 +100,6 @@
   .content-top {
     display: flex;
     width: calc(100% - 20px);
-    // padding-right: 10px;
 
     .add-btn {
       @include button(#fff, #fd9535, #d27d00);
