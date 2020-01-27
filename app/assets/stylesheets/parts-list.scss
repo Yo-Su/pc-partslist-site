@@ -262,6 +262,7 @@
         &__btn {
           display: flex;
           padding-left: 10px;
+          margin: 0 auto 0 0;
 
           @media screen and (max-width: 559px) {
             padding-left: 0;
